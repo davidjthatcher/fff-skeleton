@@ -1,0 +1,41 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+  <h1 class="page-header">Booking Summary</h1>
+
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th style="text-align:center" > Date </th>
+      <th style="text-align:center" > Charter </th>
+
+      <th style="text-align:center" > Adults </th>
+      <th style="text-align:center" > Children </th>
+      <th style="text-align:center" > Rods  </th>
+      <th style="text-align:center" > Total  </th>
+    </tr>
+
+  <repeat group="{{ @bookings }}" value="{{ @summary }}">
+    <tr>
+      <td style="text-align:center" >
+        <a href="bookingDate?when= {{ @summary.Date }}" target="_blank">
+          {{ date_format(date_create(@summary.Date), 'D m-d-Y') }} </a></td>
+      <td style="text-align:center" > {{ @summary.CharterId }} </td>
+
+      <td style="text-align:center" > {{ @summary.Adults }} </td>
+      <td style="text-align:center" > {{ @summary.Children }} </td>
+      <td style="text-align:center" > {{ @summary.Rods }} </td>
+      <td style="text-align:center" > {{ '$' . @summary.Total }} </td>
+    </tr>
+  </repeat>
+
+  <tr>
+    <td style="text-align:center" > Totals </td>
+    <td style="text-align:center" > - </td>
+    <td style="text-align:center" > {{ @totals.Adults }} </td>
+    <td style="text-align:center" > {{ @totals.Children }} </td>
+    <td style="text-align:center" > {{ @totals.Rods }} </td>
+    <td style="text-align:center" > {{ '$' . @totals.Total }} </td>
+  </tr>
+
+  </table>
+
+</div>

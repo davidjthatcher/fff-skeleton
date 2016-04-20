@@ -1,0 +1,6 @@
+# git ignore for fff-booking-ops
+tmp/
+vendor/
+composer.lock
+composer.json
+
