@@ -1,4 +1,5 @@
-# Fish Saint Augustine Booking Reports Built on Fat-Free-PHP-Bootstrap
-# using WooCommerce REST to read from our main site.
+# Fish Saint Augustine Booking Reports
 
-The project is a result of a tutorial series that you can follow on http://takacsmark.com. 
+Built on Fat-FreePHP Framework, using Bootstrap CSS for layout, and WooCommerce REST to read from our main site.
+
+The Bootstrap layout is based on a tutorial series that you can follow on http://takacsmark.com. 
