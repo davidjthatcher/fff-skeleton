@@ -74,15 +74,16 @@ class MainController extends Controller
         // Get orders from WC API for Booking Process
         $orders = $this->getOrderArray($this->f3);
 
-        $params = $this->f3->get('PARAMS');
-
-		$date = substr(strchr($params[0], "="), 1);
-        echo $date;
+        $query = $this->f3->get('QUERY');
+		$qvars = array();
+        parse_str($query, $qvars);
+		
         $bobj = new Bookings();
-        $bookings = $bobj -> getBookingsForDate($orders, $date);    
+        $bookings = $bobj -> getBookingsForDate($orders, $qvars['when'], $qvars['charter']);    
         $totals   = $bobj -> getBookingSummaryTotals($bookings);    
 
-        $this->f3->set('bookingDate', $date);
+        $this->f3->set('bookingDate', $qvars['when']);
+        $this->f3->set('charterId', $qvars['charter']);
         $this->f3->set('bookings', $bookings);
         $this->f3->set('totals', $totals);
         $this->f3->set('view', 'bookingDate.htm');

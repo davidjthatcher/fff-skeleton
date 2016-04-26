@@ -197,34 +197,32 @@ class Bookings {
 
         $bookings = $this -> getBookingList($orders);
 
-        $trip['Date']      = $bookings[0]['Date'];
-        $trip['CharterId'] = $bookings[0]['CharterId'];
-        $trip['Adults']    = $bookings[0]['Adults'];
-        $trip['Children']  = $bookings[0]['Children'];
-        $trip['Rods']      = $bookings[0]['Rods'];
-        $trip['Total']     = $bookings[0]['Total'];
+        $summary[0]['Date']      = $bookings[0]['Date'];
+        $summary[0]['CharterId'] = $bookings[0]['CharterId'];
+        $summary[0]['Adults']    = $bookings[0]['Adults'];
+        $summary[0]['Children']  = $bookings[0]['Children'];
+        $summary[0]['Rods']      = $bookings[0]['Rods'];
+        $summary[0]['Total']     = $bookings[0]['Total'];
 
         for ($i = 1, $j = 0; $i < count($bookings); $i++) {
 
-            if(($trip['Date']      == $bookings[$i]['Date']) &&
-               ($trip['CharterId'] == $bookings[$i]['CharterId']))
+            if(($summary[$j]['Date']      == $bookings[$i]['Date']) &&
+               ($summary[$j]['CharterId'] == $bookings[$i]['CharterId']))
             {
                 //echo '<p>' . '==' . $bookings[$i]['Date'] . '</p>';
-                $trip['Adults']    += $bookings[$i]['Adults'];
-                $trip['Children']  += $bookings[$i]['Children'];
-                $trip['Rods']      += $bookings[$i]['Rods'];
-                $trip['Total']     += $bookings[$i]['Total'];
+                $summary[$j]['Adults']    += $bookings[$i]['Adults'];
+                $summary[$j]['Children']  += $bookings[$i]['Children'];
+                $summary[$j]['Rods']      += $bookings[$i]['Rods'];
+                $summary[$j]['Total']     += $bookings[$i]['Total'];
             } else {
-                // Save current
-                $summary[$j] = $trip;
                 ++$j;
                 // Get next
-                $trip['Date']      = $bookings[$i]['Date'];
-                $trip['CharterId'] = $bookings[$i]['CharterId'];
-                $trip['Adults']    = $bookings[$i]['Adults'];
-                $trip['Children']  = $bookings[$i]['Children'];
-                $trip['Rods']      = $bookings[$i]['Rods'];
-                $trip['Total']     = $bookings[$i]['Total'];
+                $summary[$j]['Date']      = $bookings[$i]['Date'];
+                $summary[$j]['CharterId'] = $bookings[$i]['CharterId'];
+                $summary[$j]['Adults']    = $bookings[$i]['Adults'];
+                $summary[$j]['Children']  = $bookings[$i]['Children'];
+                $summary[$j]['Rods']      = $bookings[$i]['Rods'];
+                $summary[$j]['Total']     = $bookings[$i]['Total'];
             }
         }
         return($summary);
@@ -249,7 +247,7 @@ class Bookings {
     /*
      * Return booking for each booking entry for a given date
      */
-    public function getBookingsForDate($orders, $date) {
+    public function getBookingsForDate($orders, $date, $charter) {
         $bookingsForDate = array();
 
         $bookings = $this -> getBookingList($orders);
@@ -258,7 +256,8 @@ class Bookings {
 
         $i = 0;
         foreach ($bookings as $booking){
-            if($myDate == new DateTime($booking['Date'])) {
+            if(($charter == $booking['CharterId']) and
+               ($myDate == new DateTime($booking['Date']))) {
                 //echo '<p>' . json_encode($booking) . '</p>';
                 $bookingsForDate[$i++] = $booking;
             }
