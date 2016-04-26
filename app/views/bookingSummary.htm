@@ -16,8 +16,8 @@
   <repeat group="{{ @bookings }}" value="{{ @summary }}">
     <tr>
       <td style="text-align:center" >
-        <a href="bookingDate?when= {{ @summary.Date }}" target="_blank">
-          {{ date_format(date_create(@summary.Date), 'D m-d-Y') }} </a></td>
+        <a href="bookingDate?when={{ @summary.Date }}&charter={{ @summary.CharterId }}">
+          {{ date_format(date_create(@summary.Date), 'D m/d') }} </a></td>
       <td style="text-align:center" > {{ @summary.CharterId }} </td>
 
       <td style="text-align:center" > {{ @summary.Adults }} </td>

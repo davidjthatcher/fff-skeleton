@@ -8,8 +8,7 @@
     <th style="text-align:center" > {{ Date }} </th>
     <th style="text-align:center" > {{ Charter }} </th>
     <th style="text-align:center" > {{ id }} </th>
-    <th style="text-align:left"   > {{ first_name }} </th>
-    <th style="text-align:left"   > {{ last_name }} </th>
+    <th style="text-align:left"   > {{ Name }} </th>
     <th style="text-align:center" > {{ phone }} </th>
     <th style="text-align:center" > {{ Adults }} </th>
     <th style="text-align:center" > {{ Children }} </td>
@@ -23,8 +22,7 @@
     <td style="text-align:center" > {{ @booking.Date }} </td>
     <td style="text-align:center" > {{ @booking.CharterId}} </td>
     <td style="text-align:center" > {{ @booking.id}} </td>
-    <td style="text-align:left"   > {{ @booking.first_name }} </td>
-    <td style="text-align:left"   > {{ @booking.last_name }} </td>
+    <td style="text-align:left"   > {{ @booking.first_name . ' ' . @booking.last_name}} </td>
     <td style="text-align:center" > {{ @booking.phone }} </td>
     <td style="text-align:center" > {{ @booking.Adults }} </td>
     <td style="text-align:center" > {{ @booking.Children }} </td>
