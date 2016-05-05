@@ -33,6 +33,25 @@ class MainController extends Controller
     }
 
     /**
+     * Handle HTTP Error Conditions
+     *
+     * @return void
+     */
+    function handleError() 
+    {
+		$error = $this->f3->get('ERROR');
+
+		if( '403' == $error['code'] ) {
+			$view = 'login.htm';
+		} else {
+			$view = 'error.htm';
+		}
+
+        $template=new Template;
+        echo $template->render($view);
+    }
+
+    /**
      * Renders the messages view template with f3 <repeat>
      *
      * @return void
