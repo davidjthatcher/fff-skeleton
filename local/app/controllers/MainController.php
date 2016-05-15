@@ -120,10 +120,10 @@ class MainController extends Controller
     function displayOrderJson() 
     {
         // Get orders from WC API for Booking Process
-        $orders = $this->getOrderJson($this->f3);
+        $orders = $this->getOrdersJson($this->f3, 'processing');
 
         $this->f3->set('json', $orders);
-        $this->f3->set('header', 'Order Json');
+        $this->f3->set('header', 'Orders Json');
         $this->f3->set('view', 'jsonList.htm');
 
         $template=new Template;
@@ -144,7 +144,7 @@ class MainController extends Controller
         $bobj = new Bookings();
         $bookings = $bobj -> getBookingList($orders);    
 
-        $this->f3->set('json', json_encode($orders));
+        $this->f3->set('json', json_encode($bookings));
         $this->f3->set('header', 'Bookings Json');
         $this->f3->set('view', 'jsonList.htm');
 
@@ -173,10 +173,10 @@ class MainController extends Controller
 
     /**
      * Send request to WooCommerce API for active orders (status == processing)
-     * @status TBD for completed, cancelled, ... orders
+     * @status for processing, completed, cancelled, ... orders
      * @return response json
      */
-    function getOrderJson($f3) {
+    function getOrdersJson($f3, $status) {
 
         $oauth = new OAuth($f3->get('api_consumer_key'),
                            $f3->get('api_consumer_secret'),
@@ -184,7 +184,7 @@ class MainController extends Controller
         // Send request to fsa server per current query
         $oauth->fetch($f3->get('api_url').'/orders?filter[limit]=500',
                       array ('fields' => 'id,status,total,customer,line_items',
-                             'status' => 'processing'));
+                             'status' => $status));
 
         $response = $oauth->getLastResponse();
 
@@ -203,7 +203,7 @@ class MainController extends Controller
      * @return response in array format
      */
     function getOrderArray($f3) {
-        $response = $this->getOrderJson($f3);
+        $response = $this->getOrdersJson($f3, 'processing');
 
         return json_decode($response, true);
     }
