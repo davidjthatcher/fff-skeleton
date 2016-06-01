@@ -8,13 +8,19 @@ class Bookings {
     }
     /*
      * Fitler to sort csv output
+     * Sort on date, charter id, booking id
      */
     private function cmpOrderItems( $row1, $row2 ) {
         $date1 = new DateTime($row1['Date']);
         $date2 = new DateTime($row2['Date']);
 
         if( $date1 == $date2 ) {
-            return( $row1['id'] >= $row2['id'] ? 1 : -1);
+
+			if( $row1['CharterId'] == $row2['CharterId'] ) {
+				return( $row1['id'] >= $row2['id'] ? 1 : -1);
+			} else {
+				return( $row1['CharterId'] >= $row2['CharterId'] ? 1 : -1);
+			}
         } else {
             return( $date1 >= $date2 ? 1 : -1);
         }
@@ -89,7 +95,7 @@ class Bookings {
         for ($i=0, $j=0; $i < count($lineItems); $i++) {
             // Implement State Machine
             if('ROD' == $lineItems[$i]['sku']) {
-                // Event Rod Rental
+                // Event Rod Rental (RR)
                 switch ($state) {
                     case ST_INIT:
                         $state = ST_RR;
@@ -110,7 +116,7 @@ class Bookings {
                         break;
                 }
             } else {
-                // Event Charter
+                // Event Charter (CH)
                 switch ($state) {
                     case ST_INIT:
                         $state = ST_CH;
