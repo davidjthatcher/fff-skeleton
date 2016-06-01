@@ -8,7 +8,7 @@ class Bookings {
     }
     /*
      * Fitler to sort csv output
-     * Sort on date, charter id, booking id
+     * Sort by date, charter id, booking id
      */
     private function cmpOrderItems( $row1, $row2 ) {
         $date1 = new DateTime($row1['Date']);
