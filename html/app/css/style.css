@@ -82,6 +82,17 @@ body {
   margin-top: 0;
 }
 
+/* Color Booking Summary Columns based on count */
+.bookings-low {
+  background-color: #ffffcc;
+}
+.bookings-close {
+  background-color: #e6f2ff;
+}
+.bookings-good {
+  background-color: #b3ffb3;
+}
+
 /*
  * Placeholder dashboard ideas
  */
@@ -103,6 +114,6 @@ body {
 /*
  * Don't show links on printed page
  */
-body a:link:after, body a:visited:after {    
+body a:link:after, body a:visited:after {
   content: "";
 }
