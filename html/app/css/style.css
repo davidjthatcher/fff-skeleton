@@ -83,13 +83,13 @@ body {
 }
 
 /* Color Booking Summary Columns based on count */
-.bookings-low {
+tr.bookings-low {
   background-color: #ffffcc;
 }
-.bookings-close {
+tr.bookings-close {
   background-color: #e6f2ff;
 }
-.bookings-good {
+tr.bookings-good {
   background-color: #b3ffb3;
 }
 
