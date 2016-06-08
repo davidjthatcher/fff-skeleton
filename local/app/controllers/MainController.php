@@ -3,21 +3,21 @@
  * Controller of the main booking view sample applicaiton (bookingSummary.htm)
  *
  * PHP version 5
- * 
+ *
  * @category PHP
  * @package  Fat-Free-PHP-Bootstrap-Site
  * @author   Mark Takacs <takacsmark@takacsmark.com>
- * @license  MIT 
+ * @license  MIT
  * @link     takacsmark.com
  */
- 
+
  /**
  * Controller class
- * 
+ *
  * @category PHP
  * @package  Fat-Free-PHP-Bootstrap-Site
  * @author   Mark Takacs <takacsmark@takacsmark.com>
- * @license  MIT 
+ * @license  MIT
  * @link     takacsmark.com
  */
 class MainController extends Controller
@@ -27,7 +27,7 @@ class MainController extends Controller
      *
      * @return void
      */
-    function render() 
+    function render()
     {
         $this->displayBookingSummary();
     }
@@ -37,15 +37,15 @@ class MainController extends Controller
      *
      * @return void
      */
-    function handleError() 
+    function handleError()
     {
-		$error = $this->f3->get('ERROR');
+        $error = $this->f3->get('ERROR');
 
-		if( '403' == $error['code'] ) {
-			$view = 'login.htm';
-		} else {
-			$view = 'error.htm';
-		}
+        if( '403' == $error['code'] ) {
+            $view = 'login.htm';
+        } else {
+            $view = 'error.htm';
+        }
 
         $template=new Template;
         echo $template->render($view);
@@ -61,14 +61,14 @@ class MainController extends Controller
         // Get orders from WC API for Booking Process
         $orders = $this->getOrderArray($this->f3);
 
-        $bobj = new Bookings();
-        $bookings = $bobj -> getBookingList($orders);    
+        $bobj = Bookings::instance();
+        $bookings = $bobj -> getBookingList($orders);
 
         $this->f3->set('bookings', $bookings);
         $this->f3->set('view', 'bookingList.htm');
 
         $template=new Template;
-        echo $template->render('layout.htm');        
+        echo $template->render('layout.htm');
     }
 
     function displayBookingSummary()
@@ -76,16 +76,16 @@ class MainController extends Controller
         // Get orders from WC API for Booking Process
         $orders = $this->getOrderArray($this->f3);
 
-        $bobj = new Bookings();
-        $bookings = $bobj -> getBookingSummary($orders);    
-        $totals   = $bobj -> getBookingSummaryTotals($bookings);    
+        $bobj = Bookings::instance();
+        $bookings = $bobj -> getBookingSummary($orders);
+        $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
         $this->f3->set('bookings', $bookings);
         $this->f3->set('totals', $totals);
         $this->f3->set('view', 'bookingSummary.htm');
 
         $template=new Template;
-        echo $template->render('layout.htm');        
+        echo $template->render('layout.htm');
     }
 
     function displayBookingDate()
@@ -94,12 +94,12 @@ class MainController extends Controller
         $orders = $this->getOrderArray($this->f3);
 
         $query = $this->f3->get('QUERY');
-		$qvars = array();
+        $qvars = array();
         parse_str($query, $qvars);
-		
-        $bobj = new Bookings();
-        $bookings = $bobj -> getBookingsForDate($orders, $qvars['when'], $qvars['charter']);    
-        $totals   = $bobj -> getBookingSummaryTotals($bookings);    
+
+        $bobj = Bookings::instance();
+        $bookings = $bobj -> getBookingsForDate($orders, $qvars['when'], $qvars['charter']);
+        $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
         $this->f3->set('bookingDate', $qvars['when']);
         $this->f3->set('charterId', $qvars['charter']);
@@ -117,10 +117,11 @@ class MainController extends Controller
      *
      * @return void
      */
-    function displayOrderJson() 
+    function displayOrderJson()
     {
         // Get orders from WC API for Booking Process
-        $orders = $this->getOrdersJson($this->f3, 'processing');
+        $orderStatus = $this->f3->get('order_status');
+        $orders = $this->getOrdersJson($this->f3, $orderStatus);
 
         $this->f3->set('json', $orders);
         $this->f3->set('header', 'Orders Json');
@@ -128,21 +129,58 @@ class MainController extends Controller
 
         $template=new Template;
         echo $template->render('layout.htm');
-	}
+    }
 
+    /**
+     * Display Order Configuration Settings
+     * TBD Change until updated using this Form
+     *
+     * @return void
+     */
+    function displayOrderSettings()
+    {
+        // Show/Update Order (order_) Configuration Settings
+
+        $this->f3->set('header', 'Order Settings');
+        $this->f3->set('view', 'orderSettings.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
+     * Get Order Configuration Settings from orderSettings.htm
+     * TBD on run time variables only read once from config.ini
+     * @return void
+     */
+    function saveOrderSettings()
+    {
+        /** Get form input. **/
+        $orderStatus = $this->f3->get('POST.orderStatus');
+        $orderStartDate = $this->f3->get('POST.orderStartDate');
+
+        /** Update config variables. **/
+        $this->f3->set('order_status', $orderStatus);
+        $this->f3->set('order_start_date', $orderStartDate);
+
+        $this->f3->set('header', 'Order Settings - Updated');
+        $this->f3->set('view', 'orderSettings.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
     /**
      * Provide json api representation of booking data
      * The Booking information I need is processed and condensed for our fishing trips.
      *
      * @return void
      */
-    function displayBookingJson() 
+    function displayBookingJson()
     {
         // Get orders from WC API for Booking Process
         $orders = $this->getOrderArray($this->f3);
 
-        $bobj = new Bookings();
-        $bookings = $bobj -> getBookingList($orders);    
+        $bobj = Bookings::instance();
+        $bookings = $bobj -> getBookingList($orders);
 
         $this->f3->set('json', json_encode($bookings));
         $this->f3->set('header', 'Bookings Json');
@@ -151,17 +189,17 @@ class MainController extends Controller
         $template=new Template;
         echo $template->render('layout.htm');
     }
-    
+
     /**
      * Renders the messages view template with AJAX
      *
      * @return void
-     */    
-    function displayMessagesAjaxView() 
+     */
+    function displayMessagesAjaxView()
     {
         $this->f3->set('view', 'messagesajax.htm');
         $template=new Template;
-        echo $template->render('layout.htm');          
+        echo $template->render('layout.htm');
     }
     /**
      * All Following Imported from David's Bookings API Baseline
@@ -181,9 +219,12 @@ class MainController extends Controller
         $oauth = new OAuth($f3->get('api_consumer_key'),
                            $f3->get('api_consumer_secret'),
                            OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+
         // Send request to fsa server per current query
-        $oauth->fetch($f3->get('api_url').'/orders?filter[limit]=500',
-                      array ('fields' => 'id,status,total,customer,line_items',
+        $oauth->fetch($f3->get('api_url').'/orders',
+                      array ('filter[created_at_min]' => $f3->get('order_start_date'),
+                             'filter[limit]' => '500',
+                             'fields' => 'id,status,total,customer,line_items',
                              'status' => $status));
 
         $response = $oauth->getLastResponse();
@@ -203,7 +244,8 @@ class MainController extends Controller
      * @return response in array format
      */
     function getOrderArray($f3) {
-        $response = $this->getOrdersJson($f3, 'processing');
+
+        $response = $this->getOrdersJson($f3, $this->f3->get('order_status'));
 
         return json_decode($response, true);
     }
