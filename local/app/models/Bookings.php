@@ -2,9 +2,9 @@
 /*
  * Bookings Class parses order arrays for varios booking reports
  */
-class Bookings {
+class Bookings extends \Prefab {
     function __construct( ) {
-        
+
     }
     /*
      * Fitler to sort csv output
@@ -16,11 +16,11 @@ class Bookings {
 
         if( $date1 == $date2 ) {
 
-			if( $row1['CharterId'] == $row2['CharterId'] ) {
-				return( $row1['id'] >= $row2['id'] ? 1 : -1);
-			} else {
-				return( $row1['CharterId'] >= $row2['CharterId'] ? 1 : -1);
-			}
+            if( $row1['CharterId'] == $row2['CharterId'] ) {
+                return( $row1['id'] >= $row2['id'] ? 1 : -1);
+            } else {
+                return( $row1['CharterId'] >= $row2['CharterId'] ? 1 : -1);
+            }
         } else {
             return( $date1 >= $date2 ? 1 : -1);
         }
@@ -29,8 +29,8 @@ class Bookings {
     private function formatPhoneNumber( $num ) {
         //first strip all the non-digit characters from the input
         $num = preg_replace("/[^0-9]+/", "", $num);
-    
-        //and only then re-format the phone-number   
+
+        //and only then re-format the phone-number
         if(!empty($num)){
           $first=  substr($num, 0, 3)."-";
           $second= substr($num,3,3)."-";
@@ -90,7 +90,7 @@ class Bookings {
 
     public function getLineItemsDetail($lineItems) {
         $myItems = array();
-        
+
         $state = ST_INIT;
         for ($i=0, $j=0; $i < count($lineItems); $i++) {
             // Implement State Machine
@@ -160,7 +160,8 @@ class Bookings {
 
     /*
      * Process array of orders. An order will conist of one or more
-     *     line items.
+     *     line items. Note that this function is used to build list for
+     *     getBookingSummary and getBookinsForDate.
      * Return json line per booking entry
      * Add ROD Rental to associated booking
      */
@@ -178,11 +179,12 @@ class Bookings {
             $booking['id']         = $order['id'];
             $booking['first_name'] = $order['customer']['first_name'];
             $booking['last_name']  = $order['customer']['last_name'];
+            $booking['email']  = $order['customer']['email'];
             $booking['phone']      = $order['customer']['billing_address']['phone'];
             $booking['phone']      = $this->formatPhoneNumber($booking['phone']);
             // booking order may have more than one item
             $items = $this -> getLineItemsDetail($order['line_items']);
-            
+
             foreach ($items as $item){
                 $bookings[$i++] = $booking + $item;
             }
@@ -271,5 +273,24 @@ class Bookings {
         return ($bookingsForDate);
     }
 
+    /*
+     * Return Chater Name for given Product Id
+     * TBD on how to make this available at View Creation.
+     */
+    public function getCharterName($charterId) {
+        $charterNames = array(
+            '68316' => 'MSA 5 Hr',
+            '67077' => 'MSA 10 Hr',
+            '68532' => 'MSA 17 Hr'
+        );
+
+        if(array_key_exists( $charterId, $charterNames )) {
+            $charterName = $charterNames[$charterId];
+        } else {
+            $charterName = 'Regulator';
+        }
+
+        return($charterName);
+    }
 }
 ?>
