@@ -100,19 +100,19 @@ class Bookings extends \Prefab {
                     case ST_INIT:
                         $state = ST_RR;
                         $myItems[$j]['Rods']  = intval($lineItems[$i]['quantity']);
-                        $myItems[$j]['Total'] = floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal'] = floatval($lineItems[$i]['total']);
                         break;
                     case ST_CH:
                         $state = ST_CH_RR;
                         // Set RR
                         $myItems[$j]['Rods']  = intval($lineItems[$i]['quantity']);
-                        $myItems[$j]['Total'] += floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
                         break;
                     case ST_CH_RR:
                     case ST_RR:
                         // Add RR
                         $myItems[$j]['Rods']  += intval($lineItems[$i]['quantity']);
-                        $myItems[$j]['Total'] += floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
                         break;
                 }
             } else {
@@ -124,7 +124,7 @@ class Bookings extends \Prefab {
                         $myItems[$j]['Rods'] = intval(0);
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['Total']     += floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal']     += floatval($lineItems[$i]['total']);
                         /* Parse meta for information we want */
                         $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
                         break;
@@ -139,7 +139,7 @@ class Bookings extends \Prefab {
                         $myItems[$j]['Rods'] = intval(0);
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['Total']     += floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal']     += floatval($lineItems[$i]['total']);
                         /* Parse meta for information we want */
                         $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
                         //echo '<p>' . var_dump($myItem[$j]) . '</p>';
@@ -148,7 +148,7 @@ class Bookings extends \Prefab {
                         $state = ST_CH_RR;
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['Total']     += floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal']     += floatval($lineItems[$i]['total']);
                         /* Parse meta for information we want */
                         $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
                         break;
@@ -162,8 +162,9 @@ class Bookings extends \Prefab {
      * Process array of orders. An order will conist of one or more
      *     line items. Note that this function is used to build list for
      *     getBookingSummary and getBookinsForDate.
-     * Return json line per booking entry
+     * Return array entry per booking entry
      * Add ROD Rental to associated booking
+     * TBD total $ vs sub-total $ for order with multi-bookings.
      */
     public function getBookingList($ordersArray) {
         $bookings = array();
@@ -177,6 +178,7 @@ class Bookings extends \Prefab {
             //echo var_dump($order);
             $booking['status']     = $order['status'];
             $booking['id']         = $order['id'];
+            $booking['Total']      = $order['total'];
             $booking['first_name'] = $order['customer']['first_name'];
             $booking['last_name']  = $order['customer']['last_name'];
             $booking['email']  = $order['customer']['email'];
