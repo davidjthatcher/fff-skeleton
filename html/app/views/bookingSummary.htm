@@ -13,6 +13,7 @@
         <th style="text-align:center" > Total  </th>
     </tr>
 
+<!-- TBD set color for Regulator Charters -->
     <repeat group="{{ @bookings }}" value="{{ @summary }}">
         <check if="{{ (@summary.Adults + @summary.Children) >= 15}}">
         <true>
@@ -33,8 +34,7 @@
           <td style="text-align:center" >
             <a href="bookingDate?when={{ @summary.Date }}&charter={{ @summary.CharterId }}">
               {{ date_format(date_create(@summary.Date), 'D m/d') }} </a></td>
-          <td style="text-align:center" > {{ @summary.CharterId }} </td>
-
+          <td style="text-align:center" > {{ @bobj->getCharterName(@summary.CharterId) }} </td>
           <td style="text-align:center" > {{ @summary.Adults }} </td>
           <td style="text-align:center" > {{ @summary.Children }} </td>
           <td style="text-align:center" > {{ @summary.Rods }} </td>

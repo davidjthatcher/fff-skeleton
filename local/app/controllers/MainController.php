@@ -64,6 +64,7 @@ class MainController extends Controller
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingList($orders);
 
+        $this->f3->set('bobj', $bobj);
         $this->f3->set('bookings', $bookings);
         $this->f3->set('view', 'bookingList.htm');
 
@@ -80,6 +81,7 @@ class MainController extends Controller
         $bookings = $bobj -> getBookingSummary($orders);
         $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
+        $this->f3->set('bobj', $bobj);
         $this->f3->set('bookings', $bookings);
         $this->f3->set('totals', $totals);
         $this->f3->set('view', 'bookingSummary.htm');
@@ -103,6 +105,10 @@ class MainController extends Controller
 
         $this->f3->set('bookingDate', $qvars['when']);
         $this->f3->set('charterId', $qvars['charter']);
+
+        $charterName = $bobj -> getCharterName( $this->f3->get('charterId') );
+        $this->f3->set('charterName', $charterName );
+
         $this->f3->set('bookings', $bookings);
         $this->f3->set('totals', $totals);
         $this->f3->set('view', 'bookingDate.htm');
@@ -186,18 +192,6 @@ class MainController extends Controller
         $this->f3->set('header', 'Bookings Json');
         $this->f3->set('view', 'jsonList.htm');
 
-        $template=new Template;
-        echo $template->render('layout.htm');
-    }
-
-    /**
-     * Renders the messages view template with AJAX
-     *
-     * @return void
-     */
-    function displayMessagesAjaxView()
-    {
-        $this->f3->set('view', 'messagesajax.htm');
         $template=new Template;
         echo $template->render('layout.htm');
     }
