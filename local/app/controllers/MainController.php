@@ -126,7 +126,7 @@ class MainController extends Controller
     function displayOrderJson()
     {
         // Get orders from WC API for Booking Process
-        $orderStatus = $this->f3->get('order_status');
+        $orderStatus = $this->f3->get('SESSION.order_status');
         $orders = $this->getOrdersJson($this->f3, $orderStatus);
 
         $this->f3->set('json', $orders);
@@ -154,6 +154,48 @@ class MainController extends Controller
         echo $template->render('layout.htm');
     }
     /**
+     * Simple Form to get text message to send via WC REST API
+     *
+     * @return void
+     */
+    function getRestMessage()
+    {
+        // Show/Update Order (order_) Configuration Settings
+
+        $this->f3->set('header', 'Rest Message');
+        $this->f3->set('view', 'restMessage.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
+     * Send REST Message Text and Show Response in json
+     *
+     * @return void
+     */
+    function showRestResponse($f3)
+    {
+        /** Get form input. **/
+        $restMessage = $this->f3->get('POST.restMessage');
+
+        $oauth = new OAuth($f3->get('api_consumer_key'),
+                           $f3->get('api_consumer_secret'),
+                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+
+        // Send message to fsa server
+        $oauth->fetch($f3->get('api_url'). $restMessage );
+
+        $response = $oauth->getLastResponse();
+
+        $this->f3->set('json', $response);
+
+        $this->f3->set('header', 'Rest Response');
+        $this->f3->set('view', 'jsonList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
      * Get Order Configuration Settings from orderSettings.htm
      * TBD on run time variables only read once from config.ini
      * @return void
@@ -164,9 +206,9 @@ class MainController extends Controller
         $orderStatus = $this->f3->get('POST.orderStatus');
         $orderStartDate = $this->f3->get('POST.orderStartDate');
 
-        /** Update config variables. **/
-        $this->f3->set('order_status', $orderStatus);
-        $this->f3->set('order_start_date', $orderStartDate);
+        /* Set user preferences. djt 6/13/2016 TBD */
+        $this->f3->set('SESSION.order_status', $orderStatus);
+        $this->f3->set('SESSION.order_start_date', $orderStartDate);
 
         $this->f3->set('header', 'Order Settings - Updated');
         $this->f3->set('view', 'orderSettings.htm');
@@ -216,7 +258,7 @@ class MainController extends Controller
 
         // Send request to fsa server per current query
         $oauth->fetch($f3->get('api_url').'/orders',
-                      array ('filter[created_at_min]' => $f3->get('order_start_date'),
+                      array ('filter[created_at_min]' => $f3->get('SESSION.order_start_date'),
                              'filter[limit]' => '500',
                              'fields' => 'id,status,total,customer,line_items',
                              'status' => $status));
@@ -233,13 +275,46 @@ class MainController extends Controller
     }
 
     /**
+     * Send complete order completed request to WooCommerce API
+     * @id from http query vars
+     * @return none
+     */
+    function bookingComplete($f3) {
+        $qvars = array();
+
+        $query = $this->f3->get('QUERY');
+        parse_str($query, $qvars);
+
+        $orderId = $qvars['id'];
+
+        $oauth = new OAuth($f3->get('api_consumer_key'),
+                           $f3->get('api_consumer_secret'),
+                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+
+        // Send request to fsa server
+        $oauth->fetch($f3->get('api_url').'/orders/' . $orderId,
+                      array ('filter[created_at_min]' => $f3->get('SESSION.order_start_date'),
+                             'fields' => 'id,status,total'));
+
+        $response = $oauth->getLastResponse();
+
+        $this->f3->set('json', $response);
+        $this->f3->set('header', 'Booking Complete');
+        $this->f3->set('view', 'jsonList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+
+
+    /**
      * Send request to WooCommerce API for active orders (status == processing)
      *
      * @return response in array format
      */
     function getOrderArray($f3) {
 
-        $response = $this->getOrdersJson($f3, $this->f3->get('order_status'));
+        $response = $this->getOrdersJson($f3, $this->f3->get('SESSION.order_status'));
 
         return json_decode($response, true);
     }
