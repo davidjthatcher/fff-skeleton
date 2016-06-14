@@ -251,6 +251,7 @@ class Bookings extends \Prefab {
             $totals['Children'] += $daily['Children'];
             $totals['Rods']     += $daily['Rods'];
             $totals['Total']    += $daily['Total'];
+            $totals['itemsTotal'] += $daily['itemsTotal'];
         }
         return $totals;
     }
@@ -281,15 +282,23 @@ class Bookings extends \Prefab {
      */
     public function getCharterName($charterId) {
         $charterNames = array(
-            '68316' => 'MSA 5 Hr',
-            '67077' => 'MSA 10 Hr',
-            '68532' => 'MSA 17 Hr'
+            '68316' => 'MSA 5',
+            '67077' => 'MSA 10',
+            '67952' => 'MSA 14',
+            '68532' => 'MSA 17',
+            '67538' => 'MSA 30',
+            '67231' => 'MSA 4th',
+            '66936' => 'Reg 6',
+            '66636' => 'Reg 6',
+            '66635' => 'Reg 8',
+            '66638' => 'Reg 10',
+            '66639' => 'Reg 12'
         );
 
         if(array_key_exists( $charterId, $charterNames )) {
             $charterName = $charterNames[$charterId];
         } else {
-            $charterName = 'Regulator';
+            $charterName = 'Other';
         }
 
         return($charterName);
