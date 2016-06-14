@@ -10,7 +10,7 @@
       <th style="text-align:center" > Rods  </th>
       <th style="text-align:center" > Total  </th>
       <th style="text-align:center" > Phone </th>
-      <th style="text-align:center" > Email </th>
+      <th style="text-align:center" > Complete </th>
     </tr>
 
   <repeat group="{{ @bookings }}" value="{{ @booking }}">
@@ -21,7 +21,8 @@
       <td style="text-align:center" > {{ @booking.Rods }} </td>
       <td style="text-align:center" > {{ '$' . @booking.Total }} </td>
       <td style="text-align:center" > {{ @booking.phone }} </td>
-      <td style="text-align:center" > {{ @booking.email }} </td>
+      <td style="text-align:center" >
+        <a href="bookingComplete?id={{ @booking.id }}&when=?{{ @bookingDate }}"> {{ @booking.id }}</a></td>
     </tr>
   </repeat>
 
@@ -31,7 +32,7 @@
     <td style="text-align:center" > {{ @totals.Children }} </td>
     <td style="text-align:center" > {{ @totals.Rods }} </td>
     <td style="text-align:center" > {{ '$' . @totals.Total }} </td>
-    <td style="text-align:center" > - </td>
+    <td style="text-align:center" > {{ '$' . (@totals.Total - @totals.itemsTotal) }} </td>
     <td style="text-align:center" > - </td>
   </tr>
 
