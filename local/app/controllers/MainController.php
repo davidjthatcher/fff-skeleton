@@ -29,6 +29,7 @@ class MainController extends Controller
      */
     function render()
     {
+        $this->updateLocalOrderArray();
         $this->displayBookingSummary();
     }
 
@@ -303,13 +304,39 @@ class MainController extends Controller
     }
 
     /**
+     * Send request to WooCommerce API to update local orders array
+     *
+     * SESSION varilabe holds array from remote site for fast processing of
+     * Order/Booking Views
+     *
+     * @return none
+     */
+    function updateLocalOrderArray()
+    {
+        // Get orders from WC API for Booking Process
+        $orders = $this->getRemoteOrderArray();
+
+        // Save remote orders in SESSION variable for other views
+        $this->f3->set("SESSION.orders", $orders);
+    }
+    /**
+     * Get Orders Array from Remote System
+     *
+     * @return remote Json response in array format
+     */
+    function getRemoteOrderArray()
+    {
+        $response = $this->getRemoteOrdersJson($this->f3->get('SESSION.order_status'));
+
+        return json_decode($response, true);
+    }
+    /**
      * Send request to WooCommerce API for active orders (status == processing)
      * @status for processing, completed, cancelled, ... orders
      * @return response json
      */
-    function getOrdersJson($status)
+    function getRemoteOrdersJson($status)
     {
-
         $oauth = new OAuth($this->f3->get('api_consumer_key'),
                            $this->f3->get('api_consumer_secret'),
                            OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
@@ -330,33 +357,5 @@ class MainController extends Controller
             fclose( $file);
         }
         return $response;
-    }
-
-    /**
-     * Get Orders Array
-     *
-     * @return remote Json response in array format
-     */
-    function getOrderArray()
-    {
-
-        $response = $this->getOrdersJson($this->f3->get('SESSION.order_status'));
-
-        return json_decode($response, true);
-    }
-    /**
-     * Send request to WooCommerce API to update orders array
-     * Reroute to home
-     * @return none
-     */
-    function updateOrders()
-    {
-        // Get orders from WC API for Booking Process
-        $orders = $this->getOrderArray();
-
-        // Save remote orders in SESSION variable for other views
-        $this->f3->set("SESSION.orders", $orders);
-
-        $this->render();
     }
 }
