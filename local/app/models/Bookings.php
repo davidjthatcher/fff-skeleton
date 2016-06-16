@@ -256,12 +256,13 @@ class Bookings extends \Prefab {
         return $totals;
     }
     /*
-     * Return booking for each booking entry for a given date
+     * Return each booking entry for a given date
      */
     public function getBookingsForDate($orders, $date, $charter) {
         $bookingsForDate = array();
 
         $bookings = $this -> getBookingList($orders);
+
         // Straight compare below did not work. Have to convert first
         $myDate = new DateTime($date);
 
@@ -276,6 +277,27 @@ class Bookings extends \Prefab {
         return ($bookingsForDate);
     }
 
+    /*
+     * Return for each booking entry for a given date
+     */
+    public function getEmailsForDate($orders, $date, $charter) {
+        $emailsForDate = '';
+
+        $bookings = $this -> getBookingList($orders);
+
+        // Straight compare below did not work. Have to convert first
+        $myDate = new DateTime($date);
+
+        $i = 0;
+        foreach ($bookings as $booking){
+            if(($charter == $booking['CharterId']) and
+               ($myDate == new DateTime($booking['Date']))) {
+                $emailsForDate = $emailsForDate . ';' .$booking['email'];
+            }
+        }
+
+        return ($emailsForDate);
+    }
     /*
      * Return Chater Name for given Product Id
      * TBD on how to make this available at View Creation.
