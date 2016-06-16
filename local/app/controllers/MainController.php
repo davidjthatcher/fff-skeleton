@@ -58,8 +58,8 @@ class MainController extends Controller
      */
     function displayBookingList()
     {
-        // Get orders from WC API for Booking Process
-        $orders = $this->getOrderArray($this->f3);
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingList($orders);
@@ -74,8 +74,8 @@ class MainController extends Controller
 
     function displayBookingSummary()
     {
-        // Get orders from WC API for Booking Process
-        $orders = $this->getOrderArray($this->f3);
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingSummary($orders);
@@ -92,8 +92,8 @@ class MainController extends Controller
 
     function displayBookingDate()
     {
-        // Get orders from WC API for Booking Process
-        $orders = $this->getOrderArray($this->f3);
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
 
         $query = $this->f3->get('QUERY');
         $qvars = array();
@@ -118,8 +118,8 @@ class MainController extends Controller
 
     function displayBookingEmails()
     {
-        // Get orders from WC API for Booking Process
-        $orders = $this->getOrderArray($this->f3);
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
 
         // Get query variables: date and charter Id
         $query = $this->f3->get('QUERY');
@@ -151,11 +151,10 @@ class MainController extends Controller
      */
     function displayOrderJson()
     {
-        // Get orders from WC API for Booking Process
-        $orderStatus = $this->f3->get('SESSION.order_status');
-        $orders = $this->getOrdersJson($this->f3, $orderStatus);
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
 
-        $this->f3->set('json', $orders);
+        $this->f3->set('json', json_encode($orders));
         $this->f3->set('header', 'Orders Json');
         $this->f3->set('view', 'jsonList.htm');
 
@@ -199,17 +198,17 @@ class MainController extends Controller
      *
      * @return void
      */
-    function showRestResponse($f3)
+    function showRestResponse()
     {
         /** Get form input. **/
         $restMessage = $this->f3->get('POST.restMessage');
 
-        $oauth = new OAuth($f3->get('api_consumer_key'),
-                           $f3->get('api_consumer_secret'),
+        $oauth = new OAuth($this->f3->get('api_consumer_key'),
+                           $this->f3->get('api_consumer_secret'),
                            OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
 
         // Send message to fsa server
-        $oauth->fetch($f3->get('api_url'). $restMessage );
+        $oauth->fetch($this->f3->get('api_url'). $restMessage );
 
         $response = $oauth->getLastResponse();
 
@@ -223,7 +222,6 @@ class MainController extends Controller
     }
     /**
      * Get Order Configuration Settings from orderSettings.htm
-     * TBD on run time variables only read once from config.ini
      * @return void
      */
     function saveOrderSettings()
@@ -232,7 +230,7 @@ class MainController extends Controller
         $orderStatus = $this->f3->get('POST.orderStatus');
         $orderStartDate = $this->f3->get('POST.orderStartDate');
 
-        /* Set user preferences. djt 6/13/2016 TBD */
+        /* Set user preferences. djt 6/13/2016 */
         $this->f3->set('SESSION.order_status', $orderStatus);
         $this->f3->set('SESSION.order_start_date', $orderStartDate);
 
@@ -250,8 +248,8 @@ class MainController extends Controller
      */
     function displayBookingJson()
     {
-        // Get orders from WC API for Booking Process
-        $orders = $this->getOrderArray($this->f3);
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingList($orders);
@@ -272,40 +270,12 @@ class MainController extends Controller
      */
 
     /**
-     * Send request to WooCommerce API for active orders (status == processing)
-     * @status for processing, completed, cancelled, ... orders
-     * @return response json
-     */
-    function getOrdersJson($f3, $status) {
-
-        $oauth = new OAuth($f3->get('api_consumer_key'),
-                           $f3->get('api_consumer_secret'),
-                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
-
-        // Send request to fsa server per current query
-        $oauth->fetch($f3->get('api_url').'/orders',
-                      array ('filter[created_at_min]' => $f3->get('SESSION.order_start_date'),
-                             'filter[limit]' => '500',
-                             'fields' => 'id,status,total,customer,line_items',
-                             'status' => $status));
-
-        $response = $oauth->getLastResponse();
-
-        // Write file to tmp for review
-        if($f3->get('DEBUG') > 0) {
-            $file = fopen( "tmp/orders.json", "w+");
-            fwrite( $file, $response);
-            fclose( $file);
-        }
-        return $response;
-    }
-
-    /**
      * Send complete order completed request to WooCommerce API
      * @id from http query vars
      * @return none
      */
-    function bookingComplete($f3) {
+    function bookingComplete()
+    {
         $qvars = array();
 
         $query = $this->f3->get('QUERY');
@@ -313,13 +283,13 @@ class MainController extends Controller
 
         $orderId = $qvars['id'];
 
-        $oauth = new OAuth($f3->get('api_consumer_key'),
-                           $f3->get('api_consumer_secret'),
+        $oauth = new OAuth($this->f3->get('api_consumer_key'),
+                           $this->f3->get('api_consumer_secret'),
                            OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
 
         // Send request to fsa server
-        $oauth->fetch($f3->get('api_url').'/orders/' . $orderId,
-                      array ('filter[created_at_min]' => $f3->get('SESSION.order_start_date'),
+        $oauth->fetch($this->f3->get('api_url').'/orders/' . $orderId,
+                      array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
                              'fields' => 'id,status,total'));
 
         $response = $oauth->getLastResponse();
@@ -332,16 +302,61 @@ class MainController extends Controller
         echo $template->render('layout.htm');
     }
 
-
     /**
      * Send request to WooCommerce API for active orders (status == processing)
-     *
-     * @return response in array format
+     * @status for processing, completed, cancelled, ... orders
+     * @return response json
      */
-    function getOrderArray($f3) {
+    function getOrdersJson($status)
+    {
 
-        $response = $this->getOrdersJson($f3, $this->f3->get('SESSION.order_status'));
+        $oauth = new OAuth($this->f3->get('api_consumer_key'),
+                           $this->f3->get('api_consumer_secret'),
+                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+
+        // Send request to fsa server per current query
+        $oauth->fetch($this->f3->get('api_url').'/orders',
+                      array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
+                             'filter[limit]' => '500',
+                             'fields' => 'id,status,total,customer,line_items',
+                             'status' => $status));
+
+        $response = $oauth->getLastResponse();
+
+        // Write file to tmp for review
+        if($this->f3->get('DEBUG') > 0) {
+            $file = fopen( "tmp/orders.json", "w+");
+            fwrite( $file, $response);
+            fclose( $file);
+        }
+        return $response;
+    }
+
+    /**
+     * Get Orders Array
+     *
+     * @return remote Json response in array format
+     */
+    function getOrderArray()
+    {
+
+        $response = $this->getOrdersJson($this->f3->get('SESSION.order_status'));
 
         return json_decode($response, true);
+    }
+    /**
+     * Send request to WooCommerce API to update orders array
+     * Reroute to home
+     * @return none
+     */
+    function updateOrders()
+    {
+        // Get orders from WC API for Booking Process
+        $orders = $this->getOrderArray();
+
+        // Save remote orders in SESSION variable for other views
+        $this->f3->set("SESSION.orders", $orders);
+
+        $this->render();
     }
 }
