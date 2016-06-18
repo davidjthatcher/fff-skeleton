@@ -292,7 +292,7 @@ class Bookings extends \Prefab {
         foreach ($bookings as $booking){
             if(($charter == $booking['CharterId']) and
                ($myDate == new DateTime($booking['Date']))) {
-                $emailsForDate = $emailsForDate . ';' .$booking['email'];
+                $emailsForDate = $emailsForDate . '; ' .$booking['email'];
             }
         }
 
