@@ -5,9 +5,13 @@
     <form action='/restResponse' method="post">
 
       <div class="form-group">
-        <label for="orderStatus">REST Message Text</label>
+        <label for="restMessage">REST Message</label>
         <input type="text" class="form-control" name="restMessage" required=""
-            value="/orders?status=processing" >
+            value="/orders/69029" >
+
+        <label for="restData">REST Data</label>
+        <input type="text" class="form-control" name="restData" required=""
+            value="status: completed" >
       </div>
 
       <button type="submit" class="btn btn-default">Submit</button>
