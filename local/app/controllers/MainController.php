@@ -195,7 +195,23 @@ class MainController extends Controller
         echo $template->render('layout.htm');
     }
     /**
-     * Send REST Message Text and Show Response in json
+     * Simple Form to get text message to send via WC REST API
+     *
+     * @return void
+     */
+    function getRestUpdate()
+    {
+        // Show/Update Order (order_) Configuration Settings
+
+        $this->f3->set('header', 'Rest Update');
+        $this->f3->set('view', 'restUpdate.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
+     * Send REST Message Text
+     * Show Response in json
      *
      * @return void
      */
@@ -222,7 +238,39 @@ class MainController extends Controller
         echo $template->render('layout.htm');
     }
     /**
+     * Send REST Update Text and Data.
+     * Show Response in json
+     *
+     * @return void
+     */
+    function showRestUpdateResponse()
+    {
+        /** Get form input. **/
+        $restMessage = $this->f3->get('POST.restMessage');
+        $restData = $this->f3->get('POST.restData');
+        $restData = array ('status' => 'completed');
+
+        $oauth = new OAuth($this->f3->get('api_consumer_key'),
+                           $this->f3->get('api_consumer_secret'),
+                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+
+        // Send message to fsa server
+        $oauth->fetch($this->f3->put('api_url'). $restMessage, json_encode($restData));
+
+        $response = $oauth->getLastResponse();
+
+        $this->f3->set('json', $response);
+
+        $this->f3->set('header', 'Rest Response');
+        $this->f3->set('view', 'jsonList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
      * Get Order Configuration Settings from orderSettings.htm
+     * Save in SESSION vars
+     * Update the calendar
      * @return void
      */
     function saveOrderSettings()
@@ -235,11 +283,7 @@ class MainController extends Controller
         $this->f3->set('SESSION.order_status', $orderStatus);
         $this->f3->set('SESSION.order_start_date', $orderStartDate);
 
-        $this->f3->set('header', 'Order Settings - Updated');
-        $this->f3->set('view', 'orderSettings.htm');
-
-        $template=new Template;
-        echo $template->render('layout.htm');
+        $this->render();
     }
     /**
      * Provide json api representation of booking data
@@ -345,7 +389,7 @@ class MainController extends Controller
         $oauth->fetch($this->f3->get('api_url').'/orders',
                       array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
                              'filter[limit]' => '500',
-                             'fields' => 'id,status,total,customer,line_items',
+                             'fields' => 'id,status,total,customer,line_items,coupon_lines',
                              'status' => $status));
 
         $response = $oauth->getLastResponse();
