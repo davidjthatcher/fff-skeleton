@@ -40,9 +40,41 @@ class Bookings extends \Prefab {
         return $num;
     }
     /*
+     * Estimate Groupon Revenue based on charter type, persons, rod rental.
+     *  MSA 5 Hour (68316) w/out Rod Rental = 32 %
+     *  MSA 5 Hour (68316) with Rod Rental  = 38 %
+     *  MSA 10 Hour (67077) with Rod Rental = 47 %
+     *  All other = 100 %
+     */
+    private function estimateGrouponRevenue( $value, $charterId, $rods )
+    {
+        switch ( $charterId ) {
+
+            case '68316':
+                if( 0 == $rods ) {
+                    $ourPercent = 0.32;
+                } else {
+                    $ourPercent = 0.38;
+                }
+                break;
+
+            case '67077':
+                $ourPercent = 0.47;
+                break;
+
+            default:
+                $ourPercent = 1.0;
+                break;
+        }
+
+        $ourTake = $value * $ourPercent;
+
+        return( $ourTake );
+    }
+    /*
      * Get the information we want from meta.
      */
-    public function getMetaDetail($metas) {
+    private function getMetaDetail($metas) {
         $myMeta = array();
         // Set Defaults
         $myMeta['Adults'] = 0;
@@ -175,20 +207,29 @@ class Bookings extends \Prefab {
         foreach ($orders as $order){
             $booking = array();
             $items = array();
-            //echo var_dump($order);
+            //echo var_dump($order['coupon_lines'][0]);
             $booking['status']     = $order['status'];
             $booking['id']         = $order['id'];
             $booking['Total']      = $order['total'];
             $booking['first_name'] = $order['customer']['first_name'];
             $booking['last_name']  = $order['customer']['last_name'];
-            $booking['email']  = $order['customer']['email'];
+            $booking['email']      = $order['customer']['email'];
             $booking['phone']      = $order['customer']['billing_address']['phone'];
             $booking['phone']      = $this->formatPhoneNumber($booking['phone']);
+            // add coupon, FSA take will be % of 'amount' and combined revenue field
+            $booking['coupon']     = $order['coupon_lines'][0]['code'];
+            $booking['fsa_take']   = $order['coupon_lines'][0]['amount'];
+
             // booking order may have more than one item
             $items = $this -> getLineItemsDetail($order['line_items']);
-
             foreach ($items as $item){
-                $bookings[$i++] = $booking + $item;
+                $bookings[$i] = $booking + $item;
+
+                $bookings[$i]['fsa_take']  = $this->estimateGrouponRevenue(
+                    $bookings[$i]['fsa_take'], $bookings[$i]['CharterId'], $bookings[$i]['Rods']);
+                $bookings[$i]['fsa_total']  = $bookings[$i]['fsa_take'] + $bookings[$i]['Total'] ;
+
+                $i++;
             }
         }
 
@@ -213,6 +254,8 @@ class Bookings extends \Prefab {
         $summary[0]['Children']  = $bookings[0]['Children'];
         $summary[0]['Rods']      = $bookings[0]['Rods'];
         $summary[0]['Total']     = $bookings[0]['Total'];
+        $summary[0]['fsa_take']  = $bookings[0]['fsa_take'];
+        $summary[0]['fsa_total'] = $bookings[0]['fsa_total'];
 
         for ($i = 1, $j = 0; $i < count($bookings); $i++) {
 
@@ -224,6 +267,8 @@ class Bookings extends \Prefab {
                 $summary[$j]['Children']  += $bookings[$i]['Children'];
                 $summary[$j]['Rods']      += $bookings[$i]['Rods'];
                 $summary[$j]['Total']     += $bookings[$i]['Total'];
+                $summary[$j]['fsa_take']  += $bookings[$i]['fsa_take'];
+                $summary[$j]['fsa_total'] += $bookings[$i]['fsa_total'];
             } else {
                 ++$j;
                 // Get next
@@ -233,6 +278,8 @@ class Bookings extends \Prefab {
                 $summary[$j]['Children']  = $bookings[$i]['Children'];
                 $summary[$j]['Rods']      = $bookings[$i]['Rods'];
                 $summary[$j]['Total']     = $bookings[$i]['Total'];
+                $summary[$j]['fsa_take']  = $bookings[$i]['fsa_take'];
+                $summary[$j]['fsa_total'] = $bookings[$i]['fsa_total'];
             }
         }
         return($summary);
@@ -251,6 +298,8 @@ class Bookings extends \Prefab {
             $totals['Children'] += $daily['Children'];
             $totals['Rods']     += $daily['Rods'];
             $totals['Total']    += $daily['Total'];
+            $totals['fsa_take']   += $daily['fsa_take'];
+            $totals['fsa_total']  += $daily['fsa_total'];
             $totals['itemsTotal'] += $daily['itemsTotal'];
         }
         return $totals;
