@@ -10,26 +10,28 @@
     <th style="text-align:center" > {{ Id }} </th>
     <th style="text-align:left"   > {{ Name }} </th>
     <th style="text-align:center" > {{ Phone }} </th>
-    <th style="text-align:center" > {{ Adult }} </th>
-    <th style="text-align:center" > {{ Child }} </td>
+    <th style="text-align:center" > {{ 'Adult / Child' }} </th>
     <th style="text-align:center" > {{ Rods }} </th>
-    <th style="text-align:center" > {{ Total }} </th>
+    <th style="text-align:center" > {{ Groupon }} </td>
+    <th style="text-align:center" > {{ FSA }} </th>
+    <th style="text-align:center" > {{ Combined }} </th>
     </tr>
 
   <repeat group="{{ @bookings }}" value="{{ @booking }}">
-
     <tr>
     <td style="text-align:center" > {{ @booking.Date }} </td>
     <td style="text-align:center" > {{ @bobj->getCharterName(@booking.CharterId) }} </td>
     <td style="text-align:center" > {{ @booking.id}} </td>
     <td style="text-align:left"   > {{ @booking.first_name . ' ' . @booking.last_name}} </td>
     <td style="text-align:center" > {{ @booking.phone }} </td>
-    <td style="text-align:center" > {{ @booking.Adults }} </td>
-    <td style="text-align:center" > {{ @booking.Children }} </td>
+    <td style="text-align:center" > {{ @booking.Adults . ' / ' . @booking.Children }} </td>
     <td style="text-align:center" > {{ @booking.Rods }} </td>
+    <td style="text-align:center" > {{ @booking.fsa_take }} </td>
     <td style="text-align:center" > {{ @booking.Total }} </td>
+    <td style="text-align:center" > {{ @booking.fsa_total }} </td>
     </tr>
   </repeat>
+
   </table>
 
 </div>
