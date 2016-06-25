@@ -7,10 +7,12 @@
         <th style="text-align:center" > Date </th>
         <th style="text-align:center" > Charter </th>
 
-        <th style="text-align:center" > Adult </th>
-        <th style="text-align:center" > Child </th>
-        <th style="text-align:center" > Rods  </th>
-        <th style="text-align:center" > Total  </th>
+      <th style="text-align:center" > {{ 'Adult / Child' }} </th>
+
+        <th style="text-align:center" > Rods </th>
+        <th style="text-align:center" > Groupon </th>
+        <th style="text-align:center" > FSA </th>
+        <th style="text-align:center" > Combined </th>
     </tr>
 
 <!-- TBD set color for Regulator Charters -->
@@ -37,10 +39,14 @@
           <td style="text-align:center" >
             <a href="bookingContactList?when={{ @summary.Date }}&charter={{ @summary.CharterId }}">
               {{ @bobj->getCharterName(@summary.CharterId) }} </a></td>
-          <td style="text-align:center" > {{ @summary.Adults }} </td>
-          <td style="text-align:center" > {{ @summary.Children }} </td>
+
+          <td style="text-align:center" > {{ @summary.Adults . ' / ' . @summary.Children }} </td>
+
           <td style="text-align:center" > {{ @summary.Rods }} </td>
+
+          <td style="text-align:center" > {{ '$' . @summary.fsa_take }} </td>
           <td style="text-align:center" > {{ '$' . @summary.Total }} </td>
+          <td style="text-align:center" > {{ '$' . @summary.fsa_total }} </td>
         </tr>
     </repeat>
 
@@ -48,9 +54,10 @@
         <td style="text-align:center" > Totals </td>
         <td style="text-align:center" > - </td>
         <td style="text-align:center" > {{ @totals.Adults }} </td>
-        <td style="text-align:center" > {{ @totals.Children }} </td>
-        <td style="text-align:center" > {{ @totals.Rods }} </td>
+        <td style="text-align:center" > {{ @totals.Adults . ' / ' . @totals.Children }} </td>
+        <td style="text-align:center" > {{ '$' . @totals.fsa_take }} </td>
         <td style="text-align:center" > {{ '$' . @totals.Total }} </td>
+        <td style="text-align:center" > {{ '$' . @totals.fsa_total }} </td>
     </tr>
 
     </table>
