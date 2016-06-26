@@ -80,6 +80,7 @@ class MainController extends Controller
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingSummary($orders);
+        // echo json_encode( $bookings );
         $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
         $this->f3->set('bobj', $bobj);
@@ -389,7 +390,7 @@ class MainController extends Controller
         $oauth->fetch($this->f3->get('api_url').'/orders',
                       array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
                              'filter[limit]' => '500',
-                             'fields' => 'id,status,total,customer,line_items,coupon_lines',
+                             'fields' => 'id,status,total,customer,line_items,coupon_lines,created_at',
                              'status' => $status));
 
         $response = $oauth->getLastResponse();
