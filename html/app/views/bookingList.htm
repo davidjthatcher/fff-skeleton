@@ -9,12 +9,12 @@
     <th style="text-align:center" > {{ Charter }} </th>
     <th style="text-align:center" > {{ Id }} </th>
     <th style="text-align:left"   > {{ Name }} </th>
-    <th style="text-align:center" > {{ Phone }} </th>
     <th style="text-align:center" > {{ 'Adult / Child' }} </th>
     <th style="text-align:center" > {{ Rods }} </th>
     <th style="text-align:center" > {{ Groupon }} </td>
     <th style="text-align:center" > {{ FSA }} </th>
     <th style="text-align:center" > {{ Combined }} </th>
+    <th style="text-align:center" > {{ Booked }} </th>
     </tr>
 
   <repeat group="{{ @bookings }}" value="{{ @booking }}">
@@ -23,12 +23,12 @@
     <td style="text-align:center" > {{ @bobj->getCharterName(@booking.CharterId) }} </td>
     <td style="text-align:center" > {{ @booking.id}} </td>
     <td style="text-align:left"   > {{ @booking.first_name . ' ' . @booking.last_name}} </td>
-    <td style="text-align:center" > {{ @booking.phone }} </td>
     <td style="text-align:center" > {{ @booking.Adults . ' / ' . @booking.Children }} </td>
     <td style="text-align:center" > {{ @booking.Rods }} </td>
     <td style="text-align:center" > {{ @booking.fsa_take }} </td>
-    <td style="text-align:center" > {{ @booking.Total }} </td>
+    <td style="text-align:center" > {{ @booking.total }} </td>
     <td style="text-align:center" > {{ @booking.fsa_total }} </td>
+    <td style="text-align:center" > {{ date_format(date_create(@booking.created_at), 'D m/d/y') }} </td>
     </tr>
   </repeat>
 

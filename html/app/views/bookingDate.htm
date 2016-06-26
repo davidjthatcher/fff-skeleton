@@ -9,6 +9,7 @@
       <th style="text-align:center" > Rods  </th>
       <th style="text-align:center" > Coupon  </th>
       <th style="text-align:center" > Phone </th>
+      <th style="text-align:center" > Booked </th>
     </tr>
 
   <repeat group="{{ @bookings }}" value="{{ @booking }}">
@@ -20,6 +21,7 @@
       <td style="text-align:center" >
         <a href="bookingComplete?id={{ @booking.id }}&when=?{{ @bookingDate }}"> {{ @booking.phone }}</a>
       </td>
+      <td style="text-align:center" > {{ date_format(date_create(@booking.created_at), 'D m/d/y') }} </td>
     </tr>
   </repeat>
 
@@ -27,8 +29,9 @@
     <td style="text-align:left" > Totals </td>
     <td style="text-align:center" > {{ @totals.Adults . ' / ' . @totals.Children }} </td>
     <td style="text-align:center" > {{ @totals.Rods }} </td>
-    <td style="text-align:center" > {{ @totals.fsa_take }} </td>
-    <td style="text-align:center" > {{ @totals.Total }} </td>
+    <td style="text-align:center" > {{ '$' . number_format( @totals.fsa_take, 0 ) }} </td>
+    <td style="text-align:center" > {{ '$' . number_format( @totals.total, 0 ) }} </td>
+    <td style="text-align:center" > {{ '-' }} </td>
   </tr>
 
   </table>

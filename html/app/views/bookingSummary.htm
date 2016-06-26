@@ -6,9 +6,7 @@
     <tr>
         <th style="text-align:center" > Date </th>
         <th style="text-align:center" > Charter </th>
-
-      <th style="text-align:center" > {{ 'Adult / Child' }} </th>
-
+        <th style="text-align:center" > {{ 'Adult / Child' }} </th>
         <th style="text-align:center" > Rods </th>
         <th style="text-align:center" > Groupon </th>
         <th style="text-align:center" > FSA </th>
@@ -44,20 +42,20 @@
 
           <td style="text-align:center" > {{ @summary.Rods }} </td>
 
-          <td style="text-align:center" > {{ '$' . @summary.fsa_take }} </td>
-          <td style="text-align:center" > {{ '$' . @summary.Total }} </td>
-          <td style="text-align:center" > {{ '$' . @summary.fsa_total }} </td>
+          <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_take, 0 ) }} </td>
+          <td style="text-align:center" > {{ '$' . number_format( @summary.total, 0 ) }} </td>
+          <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_total, 0 ) }} </td>
         </tr>
     </repeat>
 
     <tr>
         <td style="text-align:center" > Totals </td>
         <td style="text-align:center" > - </td>
-        <td style="text-align:center" > {{ @totals.Adults }} </td>
         <td style="text-align:center" > {{ @totals.Adults . ' / ' . @totals.Children }} </td>
-        <td style="text-align:center" > {{ '$' . @totals.fsa_take }} </td>
-        <td style="text-align:center" > {{ '$' . @totals.Total }} </td>
-        <td style="text-align:center" > {{ '$' . @totals.fsa_total }} </td>
+        <td style="text-align:center" > {{ @totals.Rods }} </td>
+        <td style="text-align:center" > {{ '$' . number_format( @totals.fsa_take, 0 ) }} </td>
+        <td style="text-align:center" > {{ '$' . number_format( @totals.total, 0 ) }} </td>
+        <td style="text-align:center" > {{ '$' . number_format( @totals.fsa_total, 0 ) }} </td>
     </tr>
 
     </table>
