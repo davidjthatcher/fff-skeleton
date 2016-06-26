@@ -210,7 +210,8 @@ class Bookings extends \Prefab {
             //echo var_dump($order['coupon_lines'][0]);
             $booking['status']     = $order['status'];
             $booking['id']         = $order['id'];
-            $booking['Total']      = $order['total'];
+            $booking['created_at'] = $order['created_at'];
+            $booking['total']      = $order['total'];
             $booking['first_name'] = $order['customer']['first_name'];
             $booking['last_name']  = $order['customer']['last_name'];
             $booking['email']      = $order['customer']['email'];
@@ -227,7 +228,7 @@ class Bookings extends \Prefab {
 
                 $bookings[$i]['fsa_take']  = $this->estimateGrouponRevenue(
                     $bookings[$i]['fsa_take'], $bookings[$i]['CharterId'], $bookings[$i]['Rods']);
-                $bookings[$i]['fsa_total']  = $bookings[$i]['fsa_take'] + $bookings[$i]['Total'] ;
+                $bookings[$i]['fsa_total']  = $bookings[$i]['fsa_take'] + $bookings[$i]['total'] ;
 
                 $i++;
             }
@@ -253,7 +254,7 @@ class Bookings extends \Prefab {
         $summary[0]['Adults']    = $bookings[0]['Adults'];
         $summary[0]['Children']  = $bookings[0]['Children'];
         $summary[0]['Rods']      = $bookings[0]['Rods'];
-        $summary[0]['Total']     = $bookings[0]['Total'];
+        $summary[0]['total']     = $bookings[0]['total'];
         $summary[0]['fsa_take']  = $bookings[0]['fsa_take'];
         $summary[0]['fsa_total'] = $bookings[0]['fsa_total'];
 
@@ -266,7 +267,7 @@ class Bookings extends \Prefab {
                 $summary[$j]['Adults']    += $bookings[$i]['Adults'];
                 $summary[$j]['Children']  += $bookings[$i]['Children'];
                 $summary[$j]['Rods']      += $bookings[$i]['Rods'];
-                $summary[$j]['Total']     += $bookings[$i]['Total'];
+                $summary[$j]['total']     += $bookings[$i]['total'];
                 $summary[$j]['fsa_take']  += $bookings[$i]['fsa_take'];
                 $summary[$j]['fsa_total'] += $bookings[$i]['fsa_total'];
             } else {
@@ -277,7 +278,7 @@ class Bookings extends \Prefab {
                 $summary[$j]['Adults']    = $bookings[$i]['Adults'];
                 $summary[$j]['Children']  = $bookings[$i]['Children'];
                 $summary[$j]['Rods']      = $bookings[$i]['Rods'];
-                $summary[$j]['Total']     = $bookings[$i]['Total'];
+                $summary[$j]['total']     = $bookings[$i]['total'];
                 $summary[$j]['fsa_take']  = $bookings[$i]['fsa_take'];
                 $summary[$j]['fsa_total'] = $bookings[$i]['fsa_total'];
             }
@@ -297,7 +298,7 @@ class Bookings extends \Prefab {
             $totals['Adults']   += $daily['Adults'];
             $totals['Children'] += $daily['Children'];
             $totals['Rods']     += $daily['Rods'];
-            $totals['Total']    += $daily['Total'];
+            $totals['total']    += $daily['total'];
             $totals['fsa_take']   += $daily['fsa_take'];
             $totals['fsa_total']  += $daily['fsa_total'];
             $totals['itemsTotal'] += $daily['itemsTotal'];
