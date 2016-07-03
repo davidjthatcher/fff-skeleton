@@ -1,6 +1,7 @@
 <?php
 
-$f3 = require("/var/lib/fatfree-master/lib/base.php");
+$f3 = require('/var/lib/fatfree-master/lib/base.php');
+require_once( '../vendor/WooCommerce-REST-API-Client-Library-master/lib/woocommerce-api.php' );
 
 $f3 = Base::instance();
 
