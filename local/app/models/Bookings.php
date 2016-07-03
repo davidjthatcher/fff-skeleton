@@ -32,10 +32,13 @@ class Bookings extends \Prefab {
 
         //and only then re-format the phone-number
         if(!empty($num)){
-          $first=  substr($num, 0, 3)."-";
-          $second= substr($num,3,3)."-";
-          $third=substr($num,6,4);
-          $num=$first.$second.$third;
+            // Remove 1 in first position (i.e. long distance)
+            $num = preg_replace("/^1/", "", $num);
+
+            $first  = substr($num, 0, 3)."-";
+            $second = substr($num,3,3)."-";
+            $third  = substr($num,6,4);
+            $num    = $first.$second.$third;
         }
         return $num;
     }
@@ -327,6 +330,19 @@ class Bookings extends \Prefab {
         return ($bookingsForDate);
     }
 
+    /*
+     * Return for order Id from array of bookings
+     */
+    public function getIdsJson($bookings) {
+        $ids = array();
+
+        $i = 0;
+        foreach ($bookings as $booking){
+            $ids[$i++] = $booking['id'];
+        }
+
+        return(json_encode($ids));
+    }
     /*
      * Return for each booking entry for a given date
      */
