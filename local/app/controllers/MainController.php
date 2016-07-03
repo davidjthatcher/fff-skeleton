@@ -22,6 +22,13 @@
  */
 class MainController extends Controller
 {
+    protected $api_options = array(
+        'debug'           => false,
+        'return_as_array' => false,
+        'validate_url'    => false,
+        'timeout'         => 30,
+        'ssl_verify'      => false );
+
     /**
      * Renders the dashboard view template
      *
@@ -110,6 +117,7 @@ class MainController extends Controller
         $charterName = $bobj->getCharterName( $charterId );
         $this->f3->set('charterName', $charterName );
 
+        $this->f3->set('bobj', $bobj);
         $this->f3->set('bookings', $bookings);
         $this->f3->set('totals', $totals);
         $this->f3->set('view', 'bookingDate.htm');
@@ -212,56 +220,84 @@ class MainController extends Controller
     }
     /**
      * Send REST Message Text
+     * Get args from message text (json)
      * Show Response in json
      *
      * @return void
      */
-    function showRestResponse()
+    function sendRestMessage()
     {
         /** Get form input. **/
         $restMessage = $this->f3->get('POST.restMessage');
 
-        $oauth = new OAuth($this->f3->get('api_consumer_key'),
-                           $this->f3->get('api_consumer_secret'),
-                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+        $args = array ('fields' => 'id,status,total,coupon_lines');
 
-        // Send message to fsa server
-        $oauth->fetch($this->f3->get('api_url'). $restMessage );
+        try {
+            $client = new WC_API_Client( $this->f3->get('api_client_url'),
+                $this->f3->get('api_consumer_key'),
+                $this->f3->get('api_consumer_secret'),
+                $this->api_options );
 
-        $response = $oauth->getLastResponse();
+            $response = $client->orders->get( $restMessage, $args );
+            $response = json_encode($response);
+
+        } catch ( WC_API_Client_Exception $e ) {
+
+            echo $e->getMessage() . PHP_EOL;
+            echo $e->getCode() . PHP_EOL;
+
+            if ( $e instanceof WC_API_Client_HTTP_Exception ) {
+
+                print_r( $e->get_request() );
+                print_r( $e->get_response() );
+            }
+        }
 
         $this->f3->set('json', $response);
-
         $this->f3->set('header', 'Rest Response');
         $this->f3->set('view', 'jsonList.htm');
 
         $template=new Template;
         echo $template->render('layout.htm');
-    }
-    /**
+    }    /**
      * Send REST Update Text and Data.
      * Show Response in json
      *
      * @return void
      */
-    function showRestUpdateResponse()
+    function sendRestUpdate() /* TBD */
     {
         /** Get form input. **/
         $restMessage = $this->f3->get('POST.restMessage');
         $restData = $this->f3->get('POST.restData');
         $restData = array ('status' => 'completed');
 
-        $oauth = new OAuth($this->f3->get('api_consumer_key'),
-                           $this->f3->get('api_consumer_secret'),
-                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+        $args = array ('fields' => 'id,status,total,coupon_lines');
 
-        // Send message to fsa server
-        $oauth->fetch($this->f3->put('api_url'). $restMessage, json_encode($restData));
+        try {
 
-        $response = $oauth->getLastResponse();
+            $client = new WC_API_Client( $this->f3->get('api_client_url'),
+                $this->f3->get('api_consumer_key'), $this->f3->get('api_consumer_secret'), $this->api_options );
+
+            // orders
+            //print_r( $client->orders->get() );
+            $order_id = '69227';
+            $response = $client->orders->get( $order_id, $args );
+            //$response = $client->orders->update_status( $order_id, 'completed' );
+            $response = json_encode($response);
+        } catch ( WC_API_Client_Exception $e ) {
+
+            echo $e->getMessage() . PHP_EOL;
+            echo $e->getCode() . PHP_EOL;
+
+            if ( $e instanceof WC_API_Client_HTTP_Exception ) {
+
+                print_r( $e->get_request() );
+                print_r( $e->get_response() );
+            }
+        }
 
         $this->f3->set('json', $response);
-
         $this->f3->set('header', 'Rest Response');
         $this->f3->set('view', 'jsonList.htm');
 
@@ -314,6 +350,33 @@ class MainController extends Controller
      *  Send API request.
      *  Return: API Report Filtered
      */
+    function sendOrderComplete( $order_id )
+    {
+        $args = array ('fields' => 'id,status,total,coupon_lines');
+
+        try {
+            $client = new WC_API_Client( $this->f3->get('api_client_url'),
+                $this->f3->get('api_consumer_key'),
+                $this->f3->get('api_consumer_secret'),
+                $this->api_options );
+
+            $response = $client->orders->update_status( $order_id, 'completed' );
+            $response = json_encode($response);
+
+        } catch ( WC_API_Client_Exception $e ) {
+
+            echo $e->getMessage() . PHP_EOL;
+            echo $e->getCode() . PHP_EOL;
+
+            if ( $e instanceof WC_API_Client_HTTP_Exception ) {
+
+                print_r( $e->get_request() );
+                print_r( $e->get_response() );
+            }
+        }
+
+        return $response;
+    }
 
     /**
      * Send complete order completed request to WooCommerce API
@@ -329,23 +392,28 @@ class MainController extends Controller
 
         $orderId = $qvars['id'];
 
-        $oauth = new OAuth($this->f3->get('api_consumer_key'),
-                           $this->f3->get('api_consumer_secret'),
-                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+        $response = $this->sendOrderComplete($orderId);
 
-        // Send request to fsa server
-        $oauth->fetch($this->f3->get('api_url').'/orders/' . $orderId,
-                      array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
-                             'fields' => 'id,status,total'));
+        $this->displayBookingSummary();
+    }
+    /**
+     * Get array of order ids from POST form
+     * Complete each, update local order and refresh summary view
+     * @ids[] from http POST data
+     * @return none
+     */
+    function bookingDayComplete()
+    {
+        $orderIdJson = $this->f3->get('POST.bookingsForDay');
 
-        $response = $oauth->getLastResponse();
+        $orderIds = json_decode($orderIdJson);
 
-        $this->f3->set('json', $response);
-        $this->f3->set('header', 'Booking Complete');
-        $this->f3->set('view', 'jsonList.htm');
+        foreach( $orderIds as $orderId ) {
+            $response = $this->sendOrderComplete($orderId);
+            sleep(1);       // Don't over run the system
+        }
 
-        $template=new Template;
-        echo $template->render('layout.htm');
+        $this->render();
     }
 
     /**
@@ -382,19 +450,31 @@ class MainController extends Controller
      */
     function getRemoteOrdersJson($status)
     {
-        $oauth = new OAuth($this->f3->get('api_consumer_key'),
-                           $this->f3->get('api_consumer_secret'),
-                           OAUTH_SIG_METHOD_HMACSHA1,OAUTH_AUTH_TYPE_URI);
+        $args = array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
+                       'filter[limit]' => '500',
+                       'fields' => 'id,status,total,customer,line_items,coupon_lines,created_at',
+                       'status' => $status);
 
-        // Send request to fsa server per current query
-        $oauth->fetch($this->f3->get('api_url').'/orders',
-                      array ('filter[created_at_min]' => $this->f3->get('SESSION.order_start_date'),
-                             'filter[limit]' => '500',
-                             'fields' => 'id,status,total,customer,line_items,coupon_lines,created_at',
-                             'status' => $status));
+        try {
+            $client = new WC_API_Client( $this->f3->get('api_client_url'),
+                $this->f3->get('api_consumer_key'),
+                $this->f3->get('api_consumer_secret'),
+                $this->api_options );
 
-        $response = $oauth->getLastResponse();
+            $response = $client->orders->get( '', $args );
+            $response = json_encode($response);
 
+        } catch ( WC_API_Client_Exception $e ) {
+
+            echo $e->getMessage() . PHP_EOL;
+            echo $e->getCode() . PHP_EOL;
+
+            if ( $e instanceof WC_API_Client_HTTP_Exception ) {
+
+                print_r( $e->get_request() );
+                print_r( $e->get_response() );
+            }
+        }
         // Write file to tmp for review
         if($this->f3->get('DEBUG') > 0) {
             $file = fopen( "tmp/orders.json", "w+");
