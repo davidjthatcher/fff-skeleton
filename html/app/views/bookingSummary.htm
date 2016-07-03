@@ -13,21 +13,29 @@
         <th style="text-align:center" > Combined </th>
     </tr>
 
-<!-- TBD set color for Regulator Charters -->
+<!-- Set color for Regulator Charters -->
     <repeat group="{{ @bookings }}" value="{{ @summary }}">
-        <check if="{{ (@summary.Adults + @summary.Children) >= 15}}">
+
+        <check if="{{ (FALSE === strpos(@bobj->getCharterName(@summary.CharterId), 'Reg')) }}">
         <true>
-            <tr class="bookings-good">
-        </true>
-        <false>
-            <check if="{{ (@summary.Adults + @summary.Children) >= 10}}">
+            <check if="{{ (@summary.Adults + @summary.Children) >= 15}}">
             <true>
-                <tr class="bookings-close">
+                <tr class="bookings-good">
             </true>
             <false>
-                <tr class="bookings-low">
+                <check if="{{ (@summary.Adults + @summary.Children) >= 10}}">
+                <true>
+                    <tr class="bookings-close">
+                </true>
+                <false>
+                    <tr class="bookings-low">
+                </false>
+                </check>
             </false>
             </check>
+        </true>
+        <false>
+            <tr class="bookings-regulator">
         </false>
         </check>
 
@@ -36,12 +44,9 @@
               {{ date_format(date_create(@summary.Date), 'D m/d') }} </a></td>
           <td style="text-align:center" >
             <a href="bookingContactList?when={{ @summary.Date }}&charter={{ @summary.CharterId }}">
-              {{ @bobj->getCharterName(@summary.CharterId) }} </a></td>
-
+              {{ @bobj->getCharterName(@summary.CharterId) }}</a></td>
           <td style="text-align:center" > {{ @summary.Adults . ' / ' . @summary.Children }} </td>
-
           <td style="text-align:center" > {{ @summary.Rods }} </td>
-
           <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_take, 0 ) }} </td>
           <td style="text-align:center" > {{ '$' . number_format( @summary.total, 0 ) }} </td>
           <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_total, 0 ) }} </td>
