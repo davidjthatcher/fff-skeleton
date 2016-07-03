@@ -1,6 +1,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-  <h1 class="page-header">Bookings for {{ @charterName }} on {{ @bookingDate }} </h1>
+  <h1 class="page-header">Bookings for {{ @charterName }} -
+    {{ date_format(date_create(@booking.created_at), 'D m/d/y') }} </h1>
 
   <table class="table table-striped table-bordered">
     <tr>
@@ -18,10 +19,10 @@
       <td style="text-align:center" > {{ @booking.Adults . ' / ' . @booking.Children }} </td>
       <td style="text-align:center" > {{ @booking.Rods }} </td>
       <td style="text-align:center" > {{ @booking.coupon }} </td>
-      <td style="text-align:center" >
-        <a href="bookingComplete?id={{ @booking.id }}&when=?{{ @bookingDate }}"> {{ @booking.phone }}</a>
+      <td style="text-align:center" > {{ @booking.phone }}</a>
       </td>
-      <td style="text-align:center" > {{ date_format(date_create(@booking.created_at), 'D m/d/y') }} </td>
+      <td style="text-align:center" >
+          {{ date_format(date_create(@booking.created_at), 'D m/d/y') }} </td>
     </tr>
   </repeat>
 
@@ -35,5 +36,14 @@
   </tr>
 
   </table>
+
+    <form action='/bookingDayComplete' method="post">
+    <button type="submit" class="btn btn-default">Complete Bookings for Day</button>
+    <div class="form-group">
+        <input type="text" class="form-control" name="bookingsForDay"
+          value={{ @bobj->getIdsJson(@bookings) }}>
+    </div>
+
+    </form>
 
 </div>
