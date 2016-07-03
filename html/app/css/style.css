@@ -92,6 +92,9 @@ tr.bookings-close {
 tr.bookings-good {
   background-color: #b3ffb3;
 }
+tr.bookings-regulator {
+  background-color: #cce6ff;
+}
 
 /*
  * Placeholder dashboard ideas
