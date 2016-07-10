@@ -87,13 +87,13 @@ tr.bookings-low {
   background-color: #ffffcc;
 }
 tr.bookings-close {
-  background-color: #e6f2ff;
+  background-color: #b3d9ff;
 }
 tr.bookings-good {
   background-color: #b3ffb3;
 }
 tr.bookings-regulator {
-  background-color: #cce6ff;
+  background-color: #ffe6b3;
 }
 
 /*
