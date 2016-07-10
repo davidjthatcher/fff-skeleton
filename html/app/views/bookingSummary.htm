@@ -8,8 +8,6 @@
         <th style="text-align:center" > Charter </th>
         <th style="text-align:center" > {{ 'Adult / Child' }} </th>
         <th style="text-align:center" > Rods </th>
-        <th style="text-align:center" > Groupon </th>
-        <th style="text-align:center" > FSA </th>
         <th style="text-align:center" > Combined </th>
     </tr>
 
@@ -47,8 +45,6 @@
               {{ @bobj->getCharterName(@summary.CharterId) }}</a></td>
           <td style="text-align:center" > {{ @summary.Adults . ' / ' . @summary.Children }} </td>
           <td style="text-align:center" > {{ @summary.Rods }} </td>
-          <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_take, 0 ) }} </td>
-          <td style="text-align:center" > {{ '$' . number_format( @summary.total, 0 ) }} </td>
           <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_total, 0 ) }} </td>
         </tr>
     </repeat>
@@ -58,8 +54,6 @@
         <td style="text-align:center" > - </td>
         <td style="text-align:center" > {{ @totals.Adults . ' / ' . @totals.Children }} </td>
         <td style="text-align:center" > {{ @totals.Rods }} </td>
-        <td style="text-align:center" > {{ '$' . number_format( @totals.fsa_take, 0 ) }} </td>
-        <td style="text-align:center" > {{ '$' . number_format( @totals.total, 0 ) }} </td>
         <td style="text-align:center" > {{ '$' . number_format( @totals.fsa_total, 0 ) }} </td>
     </tr>
 
