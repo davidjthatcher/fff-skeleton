@@ -404,16 +404,24 @@ class MainController extends Controller
      */
     function bookingDayComplete()
     {
-        $orderIdJson = $this->f3->get('POST.bookingsForDay');
+        if('write' == $this->f3->get('SESSION.access'))
+        {
+            $orderIdJson = $this->f3->get('POST.bookingsForDay');
 
-        $orderIds = json_decode($orderIdJson);
+            $orderIds = json_decode($orderIdJson);
 
-        foreach( $orderIds as $orderId ) {
-            $response = $this->sendOrderComplete($orderId);
-            sleep(1);       // Don't over run the system
+            foreach( $orderIds as $orderId ) {
+                $response = $this->sendOrderComplete($orderId);
+                sleep(1);       // Don't over run the system
+            }
+
+            $this->render();
+
+        } else {
+
+            $this->displayBookingSummary();
+
         }
-
-        $this->render();
     }
 
     /**

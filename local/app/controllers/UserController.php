@@ -71,9 +71,12 @@ class UserController extends Controller
         if(password_verify($password, $user->password)) {
 
             $this->f3->set('SESSION.user', $user->username);
-            /* Set user preferences. djt 6/13/2016 TBD */
+            /* Set user preferences. djt 6/13/2016 */
             $this->f3->set('SESSION.order_status', $user->order_status);
             $this->f3->set('SESSION.order_start_date', $user->order_start_date);
+            /* Set user read/write access */
+            $this->f3->set('SESSION.access', $user->access);
+
             $this->f3->reroute('/');
         } else {
             $this->f3->reroute('/login');
