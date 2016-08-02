@@ -17,43 +17,56 @@
     </nav>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
         <div id="collapsable-nav" class="collapse navbar-collapse" >
-            <ul id="nav-list" class="nav navbar-nav navbar-right visible-xs">
+            <ul id="nav-list" class="nav navbar-nav navbar-left visible-xs">
                 <ul class="nav nav-sidebar">
                     <li><a href="/bookingSummary">Bookings Summary</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
                     <li><a href="/bookingList">Bookings List</a></li>
                 </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/bookingTotals">Bookings Totals</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/orderSettings" >Order Settings</a></li>
+                </ul>
             </ul> <!-- #nav-list -->
         </div> <!-- collapsible-nav -->
     </div>
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="/bookingSummary">Overview <span class="sr-only">(current)</span></a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="/bookingList">Bookings List</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="/orderSettings" >Order Settings</a></li>
-          </ul>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="/bookingSummary">Overview <span class="sr-only">(current)</span></a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/bookingList">Bookings List</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/bookingTotals">Bookings Totals</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/orderSettings" >Order Settings</a></li>
+                </ul>
 
-          <ul class="nav nav-sidebar">
-            <li><a href="bookingsJson" >Bookings JSON</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="/ordersJson" >Orders JSON</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="/restMessage" >REST GET Message</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="/restUpdate" >REST PUT Message</a></li>
-          </ul>
+                <check if="{{ @DEBUG > 0}}">
+                <ul class="nav nav-sidebar">
+                    <li><a href="bookingsJson" >Bookings JSON</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/ordersJson" >Orders JSON</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/restMessage" >REST GET Message</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="/restUpdate" >REST PUT Message</a></li>
+                </ul>
+                </check>
 
+            </div>
         </div>
+    </div>

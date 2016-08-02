@@ -99,6 +99,25 @@ class MainController extends Controller
         echo $template->render('layout.htm');
     }
 
+    function displayBookingTotals()
+    {
+        // Get remote orders from SESSION variable
+        $orders = $this->f3->get("SESSION.orders");
+
+        $bobj = Bookings::instance();
+        $bookings = $bobj -> getBookingSummary($orders);
+        // echo json_encode( $bookings );
+        $totals   = $bobj -> getBookingSummaryTotals($bookings);
+
+        $this->f3->set('bobj', $bobj);
+        $this->f3->set('bookings', $bookings);
+        $this->f3->set('totals', $totals);
+        $this->f3->set('view', 'bookingTotals.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+
     function displayBookingDate()
     {
         // Get remote orders from SESSION variable
