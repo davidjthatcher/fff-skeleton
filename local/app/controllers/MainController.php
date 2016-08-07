@@ -129,6 +129,7 @@ class MainController extends Controller
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingsForDate($orders, $qvars['when'], $qvars['charter']);
+
         $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
         $this->f3->set('bookingDate', $qvars['when']);
@@ -140,33 +141,6 @@ class MainController extends Controller
         $this->f3->set('bookings', $bookings);
         $this->f3->set('totals', $totals);
         $this->f3->set('view', 'bookingDate.htm');
-
-        $template=new Template;
-        echo $template->render('layout.htm');
-    }
-
-    function displayBookingEmails()
-    {
-        // Get remote orders from SESSION variable
-        $orders = $this->f3->get("SESSION.orders");
-
-        // Get query variables: date and charter Id
-        $query = $this->f3->get('QUERY');
-        $qvars = array();
-        parse_str($query, $qvars);
-
-        $bobj = Bookings::instance();
-        $emails = $bobj -> getEmailsForDate($orders, $qvars['when'], $qvars['charter']);
-
-        $this->f3->set('bookingDate', $qvars['when']);
-        $charterId = $qvars['charter'];
-        $charterName = $bobj->getCharterName( $charterId );
-        $this->f3->set('charterName', $charterName );
-
-        $this->f3->set('json', $emails);
-        $header = $charterName . ' email list for ' . $qvars['when'];
-        $this->f3->set('header', $header);
-        $this->f3->set('view', 'jsonList.htm');
 
         $template=new Template;
         echo $template->render('layout.htm');

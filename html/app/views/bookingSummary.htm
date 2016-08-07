@@ -40,9 +40,7 @@
           <td style="text-align:center" >
             <a href="bookingDate?when={{ @summary.Date }}&charter={{ @summary.CharterId }}">
               {{ date_format(date_create(@summary.Date), 'D m/d') }} </a></td>
-          <td style="text-align:center" >
-            <a href="bookingContactList?when={{ @summary.Date }}&charter={{ @summary.CharterId }}">
-              {{ @bobj->getCharterName(@summary.CharterId) }}</a></td>
+          <td style="text-align:center" > {{ @bobj->getCharterName(@summary.CharterId) }}</a></td>
           <td style="text-align:center" > {{ @summary.Adults . ' / ' . @summary.Children }} </td>
           <td style="text-align:center" > {{ @summary.Rods }} </td>
           <td style="text-align:center" > {{ '$' . number_format( @summary.fsa_total, 0 ) }} </td>

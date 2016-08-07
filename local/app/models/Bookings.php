@@ -231,6 +231,7 @@ class Bookings extends \Prefab {
 
                 $bookings[$i]['fsa_take']  = $this->estimateGrouponRevenue(
                     $bookings[$i]['fsa_take'], $bookings[$i]['CharterId'], $bookings[$i]['Rods']);
+
                 $bookings[$i]['fsa_total']  = $bookings[$i]['fsa_take'] + $bookings[$i]['total'] ;
 
                 $i++;
@@ -331,7 +332,7 @@ class Bookings extends \Prefab {
     }
 
     /*
-     * Return for order Id from array of bookings
+     * Return order Id from array of bookings
      */
     public function getIdsJson($bookings) {
         $ids = array();
@@ -344,25 +345,17 @@ class Bookings extends \Prefab {
         return(json_encode($ids));
     }
     /*
-     * Return for each booking entry for a given date
+     * Return email from array of bookings
      */
-    public function getEmailsForDate($orders, $date, $charter) {
-        $emailsForDate = '';
+    public function getEmailList($bookings) {
+        $emailList = '';
 
-        $bookings = $this -> getBookingList($orders);
-
-        // Straight compare below did not work. Have to convert first
-        $myDate = new DateTime($date);
-
-        $i = 0;
         foreach ($bookings as $booking){
-            if(($charter == $booking['CharterId']) and
-               ($myDate == new DateTime($booking['Date']))) {
-                $emailsForDate = $emailsForDate . '; ' .$booking['email'];
-            }
+            $emailList .= $booking['email'] . '; ';
         }
 
-        return ($emailsForDate);
+        //return($emailList);
+        return(json_encode($emailList));
     }
     /*
      * Return Chater Name for given Product Id
