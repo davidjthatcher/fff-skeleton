@@ -316,6 +316,22 @@ class MainController extends Controller
         $this->render();
     }
     /**
+     * Provide list of emails for booking advisory messages
+     *
+     * @return void
+     */
+    function displayBookingEmails()
+    {
+        $emails = $this->f3->get("POST.emailListForDay");
+
+        $this->f3->set('json', $emails);
+        $this->f3->set('header', 'Booking Emails');
+        $this->f3->set('view', 'jsonList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
      * Provide json api representation of booking data
      * The Booking information I need is processed and condensed for our fishing trips.
      *
