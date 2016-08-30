@@ -36,14 +36,25 @@ class UserController extends Controller
 
     /**
      * We override the beforeroute function in the `Controller` class
-     * Therefore the parent behaviour will not happen
-     * i.e. we do not check if there is a logged in user, because
-     * no user is logged in when the login view is loaded
+     *
+     * If no logged in user only allow authenticate action.
      *
      * @return void
      */
     function beforeroute()
     {
+        if(null === $this->f3->get('SESSION.user')) {
+
+            /* Allow login or authenticate without valid user*/
+            if( '/login' === $this->f3->get('PATH') ) {
+
+            } elseif( '/authenticate' === $this->f3->get('PATH') ){
+
+            } else {
+                $this->f3->reroute('/login');
+                exit;
+            }
+        }
     }
 
     /**
