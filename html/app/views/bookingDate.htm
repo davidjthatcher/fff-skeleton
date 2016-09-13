@@ -38,17 +38,21 @@
   </table>
 
     <div class="form-group">
+
+        <check if="{{ 'write' == @SESSION.access }}">
         <form action='/bookingDayComplete' method="post">
             <button type="submit" class="btn btn-default"> Complete Bookings for Day </button>
             <input type="hidden" class="form-control" name="bookingsForDay"
               value={{ @bobj->getIdsJson(@bookings) }} >
         </form>
+        </check>
 
         <form action='/bookingEmails' method="post">
             <button type="submit" class="btn btn-default"> Show Booking Emails </button>
             <input type="hidden" class="form-control" name="emailListForDay"
               value={{  @bobj->getEmailList(@bookings) }} >
         </form>
+
     </div>
 
 </div>

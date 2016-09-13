@@ -22,10 +22,14 @@
               <ul class="dropdown-menu">
                 <li><a href="/userEditPassword">Change Password</a></li>
                 <li><a href="/userLogout">Logout</a></li>
+
+                <check if="{{ 'write' == @SESSION.access }}">
                 <li><a href="/userList">List Users</a></li>
+                </check>
+
               </ul>
             </li>
-            <li><a href="#">TBD About</a></li>
+            <li><a href="#">TBD About {{ @SESSION.user }} </a></li>
         </ul>
 
       </div>
@@ -33,7 +37,7 @@
     </header>
 
     <div class="container-fluid">
-        <div id="collapsable-nav" class="collapse navbar-collapse" >
+        <div id="collapsable-nav" class="collapse navbar-collapse">
             <ul id="nav-list" class="nav navbar-nav navbar-left visible-xs">
                 <ul class="nav nav-sidebar">
                     <li><a href="/bookingSummary">Bookings Summary</a></li>
@@ -45,7 +49,7 @@
                     <li><a href="/bookingTotals">Bookings Totals</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="/orderSettings" >Order Settings</a></li>
+                    <li><a href="/orderSettings">Order Settings</a></li>
                 </ul>
             </ul> <!-- #nav-list -->
         </div> <!-- collapsible-nav -->
@@ -64,21 +68,21 @@
                     <li><a href="/bookingTotals">Bookings Totals</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="/orderSettings" >Order Settings</a></li>
+                    <li><a href="/orderSettings">Order Settings</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="bookingsJson">Bookings JSON</a></li>
                 </ul>
 
                 <check if="{{ @DEBUG > 0}}">
                 <ul class="nav nav-sidebar">
-                    <li><a href="bookingsJson" >Bookings JSON</a></li>
+                    <li><a href="/ordersJson">Orders JSON</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="/ordersJson" >Orders JSON</a></li>
+                    <li><a href="/restMessage">REST GET Message</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="/restMessage" >REST GET Message</a></li>
-                </ul>
-                <ul class="nav nav-sidebar">
-                    <li><a href="/restUpdate" >REST PUT Message</a></li>
+                    <li><a href="/restUpdate">REST PUT Message</a></li>
                 </ul>
                 </check>
 
