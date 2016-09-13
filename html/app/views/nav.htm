@@ -20,6 +20,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                  aria-haspopup="true" aria-expanded="false">User Actions<span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a href="#">Logged in as {{ @SESSION.user }}</a></li>
                 <li><a href="/userEditPassword">Change Password</a></li>
                 <li><a href="/userLogout">Logout</a></li>
 
@@ -29,7 +30,7 @@
 
               </ul>
             </li>
-            <li><a href="#">TBD About {{ @SESSION.user }} </a></li>
+            <li><a href="#">Ops {{ @APP_VERSION }} </a></li>
         </ul>
 
       </div>
@@ -51,6 +52,9 @@
                 <ul class="nav nav-sidebar">
                     <li><a href="/orderSettings">Order Settings</a></li>
                 </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="bookingsJson">Bookings Detail</a></li>
+                </ul>
             </ul> <!-- #nav-list -->
         </div> <!-- collapsible-nav -->
     </div>
@@ -71,7 +75,7 @@
                     <li><a href="/orderSettings">Order Settings</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="bookingsJson">Bookings JSON</a></li>
+                    <li><a href="bookingsJson">Bookings Detail</a></li>
                 </ul>
 
                 <check if="{{ @DEBUG > 0}}">
