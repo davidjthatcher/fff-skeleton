@@ -7,9 +7,9 @@
     <tr>
     <th style="text-align:center" > Name </th>
     <th style="text-align:center" > Access </th>
-    <th style="text-align:left"   > Order Status </th>
+    <th style="text-align:center" > Order Status </th>
     <th style="text-align:center" > Order Start </th>
-    <th style="text-align:center" > Edit </th>
+    <th style="text-align:center" > Actions </th>
     </tr>
 
   <repeat group="{{ @users }}" value="{{ @user }}">
@@ -19,11 +19,17 @@
     <td style="text-align:center" > {{ @user.order_status }} </td>
     <td style="text-align:center" > {{ @user.order_start_date }} </td>
     <td style="text-align:center" >
-        <a href="userEdit?id={{ @user.id }}" >Edit</a> </td>
+        <a href="userEdit?id={{ @user.id }}" >Edit</a>
+        <a href="userDelete?id={{ @user.id }}" >Delete</a>
+    </td>
     </tr>
   </repeat>
 
   </table>
+
+  <form action='/userAddNew' method="get">
+    <button type="submit" class="btn btn-default"> Add New User </button>
+  </form>
 
   <form action='/bookingSummary' method="get">
     <button type="submit" class="btn btn-default"> Booking Summary </button>

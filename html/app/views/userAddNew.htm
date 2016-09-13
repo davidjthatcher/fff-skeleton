@@ -1,14 +1,19 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-  <h1 class="page-header">User Edit</h1>
+  <h1 class="page-header">Add New User</h1>
 
-    <form action='/userUpdate' method="post">
+    <form action='/userSaveNew' method="post">
 
     <div class="form-group">
 
         <label for="username">Name</label>
         <input type="text" class="form-control" name="username"
-          required="" value={{ $user->username }}
+          required="" value={{ 'username' }}
+
+        <!-- Set default password = 'password' -->
+        <label for="password1">Password</label>
+        <input type="password" class="form-control" name="password1"
+          required="" value={{ 'password' }}
 
         <label for="access">Access</label>
         <select class="form-control" name="access" >
@@ -27,11 +32,8 @@
 
         <label for="order_start_date">order_start_date</label>
         <input type="date" class="form-control" name="order_start_date"
-          required="" value={{ $user->order_start_date }}
+          required="" value={{ '2016-05-01' }}
 
-        <label for="id"></label>
-        <input type="hidden" class="form-control" name="id"
-          required="" value={{ $user->id }}
     </div>
 
     <p>

@@ -81,6 +81,7 @@ class UserController extends Controller
         // if(password_verify($password, $user->password)) {
         if(password_verify($password, $user->password)) {
 
+            $this->f3->set('SESSION.id', $user->id);
             $this->f3->set('SESSION.user', $user->username);
             /* Set user preferences. djt 6/13/2016 */
             $this->f3->set('SESSION.order_status', $user->order_status);
@@ -129,7 +130,7 @@ class UserController extends Controller
         echo $template->render('layout.htm');
     }
     /**
-     * List Users who have access to system.
+     * Update User data on completion of Edit.
      * If passsword has been changed, create new hash
      */
     function userUpdate()
@@ -138,6 +139,27 @@ class UserController extends Controller
 
         $user = new User($this->db);
         $user->edit($id);
+
+        $this->userList();
+    }
+
+    /**
+     * Delete selected user.
+     * Do not allow to delete yourself.
+     */
+    function userDelete()
+    {
+        $qvars = array();
+
+        $query = $this->f3->get('QUERY');
+        parse_str($query, $qvars);
+        $id = $qvars['id'];
+
+        /* Do not delete current user */
+        if( $this->f3->get('SESSION.id') != $id) {
+            $user = new User($this->db);
+            $user->delete($id);
+        }
 
         $this->userList();
     }
@@ -190,6 +212,38 @@ class UserController extends Controller
         $this->f3->reroute('/bookingSummary');
     }
 
+    /**
+     * Add New User Form
+     */
+    function userAddNew()
+    {
+        $this->f3->set('view', 'userAddNew.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+
+    /**
+     * Save New User from Form Input
+     */
+    function userSaveNew()
+    {
+        $user = new User($this->db);
+
+        /* Password updates require new hash */
+        /* TBD should I just set default for new user? */
+        $password1 = $this->f3->get('POST.password1');
+        $secret = password_hash($password1, PASSWORD_BCRYPT);
+        $this->f3->set('POST.password', $secret);
+
+        $user->add();
+
+        $this->userList();
+    }
+
+    /*
+     * Log User Out of System
+     */
     function userLogout()
     {
         /* Log out of system by reseting SESSION user */
