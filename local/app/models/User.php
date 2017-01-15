@@ -48,12 +48,11 @@ class User extends DB\SQL\Mapper
     *
     * @param int $id User id
     *
-    * @return array (TBD not working for me?)
+    * @return none
     */
     public function getById($id)
     {
         $this->load(array('id=?',$id));
-        return $this->query;
     }
 
     /**
@@ -61,7 +60,7 @@ class User extends DB\SQL\Mapper
     *
     * @param string $name User name
     *
-    * @return array
+    * @return none
     */
     public function getByName($name)
     {
