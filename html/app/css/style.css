@@ -97,6 +97,16 @@ tr.bookings-regulator {
 }
 
 /*
+ * Pass/Fail from Fat Free UT Layout
+ */
+.results span.status.pass {
+	background:#090;
+}
+.results span.status.fail {
+	background:#c00;
+}
+
+/*
  * Placeholder dashboard ideas
  */
 

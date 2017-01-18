@@ -77,9 +77,14 @@ class User extends DB\SQL\Mapper
     public function add()
     {
         $this->copyFrom('POST');
-        $this->save();
-    }
-
+        try {
+			$this->save();
+		}
+		catch(Exception $e) {
+			// TBD How to handle? Just ignore?
+			//echo 'Message: ' .$e->getMessage();
+		}    
+	}
 
     /**
     * Edit a specific record
@@ -92,7 +97,13 @@ class User extends DB\SQL\Mapper
     {
         $this->load(array('id=?',$id));
         $this->copyFrom('POST');
-        $this->update();
+        try {
+			$this->update();
+		}
+		catch(Exception $e) {
+			// TBD How to handle? Just ignore?
+			//echo 'Message: ' .$e->getMessage();
+		}
     }
 
     /**

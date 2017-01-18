@@ -1,0 +1,15 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+	<div class="results">
+		<h1>{{ @active }}</h1>
+		{~ foreach (@results as @i=>@result): ~}
+		<p>
+			<span class="status {{ @result.status?'pass':'fail' }}">{{ @result.status?'pass':'fail' }}</span>
+			<span class="text">{{ @result.text }} {~ if (!@result.status && @result.source) echo '('.@result.source.')' ~}</span><br/>
+		</p>
+		{~ endforeach ~}
+
+		<p class="stats">{{ 'Page rendered in {0} msecs / Memory usage {1} Kibytes',round(1e3*(microtime(TRUE)-$TIME),2),round(memory_get_usage(TRUE)/1e3,1) | format }}</p>
+	</div>
+
+</div>
