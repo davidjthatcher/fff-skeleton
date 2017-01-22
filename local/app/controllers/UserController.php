@@ -114,14 +114,10 @@ class UserController extends Controller
     function userEdit()
     {
         $query = $this->f3->get('QUERY');
-        $qvars = array();
         parse_str($query, $qvars);
 
         $user = new User($this->db);
         $user->getById($qvars['id']);
-
-        echo $user->username;
-        echo json_encode($myUser);
 
         $this->f3->set( 'user', $user );
         $this->f3->set('view', 'userEdit.htm');
@@ -131,7 +127,7 @@ class UserController extends Controller
     }
     /**
      * Update User data on completion of Edit.
-     * If passsword has been changed, create new hash
+	 * TBD No password change by Admin
      */
     function userUpdate()
     {
@@ -149,8 +145,6 @@ class UserController extends Controller
      */
     function userDelete()
     {
-        $qvars = array();
-
         $query = $this->f3->get('QUERY');
         parse_str($query, $qvars);
         $id = $qvars['id'];
@@ -224,14 +218,13 @@ class UserController extends Controller
     }
 
     /**
-     * Save New User from Form Input
+     * Save New User Password from Form Input
      */
     function userSaveNew()
     {
         $user = new User($this->db);
-
+		/* TBD - Need to require two identical password entries. */
         /* Password updates require new hash */
-        /* TBD should I just set default for new user? */
         $password1 = $this->f3->get('POST.password1');
         $secret = password_hash($password1, PASSWORD_BCRYPT);
         $this->f3->set('POST.password', $secret);

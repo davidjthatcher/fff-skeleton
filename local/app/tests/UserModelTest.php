@@ -112,7 +112,7 @@ class UserModelTest extends Controller {
 
 		$test->expect(
 			$user->count() == $beforeCount + 1,
-			'add method - new user'
+			'add method - new user.id = ' . $newUser->id
 		);
 
 		$user->all();
@@ -130,20 +130,18 @@ class UserModelTest extends Controller {
 
 		$user->getByName('username');
 		$user->edit($user->id);
-
 		$test->expect(
 			$user->username == 'new-username',
-			'edit method - set new-username'
+			'edit method - set new-username.id = ' . $user->id
 		);
-
 
 		$beforeCount = $user->count();
 		$user->getByName('new-username');
 		$user->delete($user->id);
-
 		$test->expect(
 			$user->count() == ($beforeCount - 1),
-			'delete method - delete new-username'
+			'delete method - new user.id = ' . $user->id
+
 		);
 
 		$f3->set('results',$test->results());
