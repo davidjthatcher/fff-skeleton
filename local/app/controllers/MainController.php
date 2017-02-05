@@ -306,12 +306,18 @@ class MainController extends Controller
     function saveOrderSettings()
     {
         /** Get form input. **/
-        $orderStatus = $this->f3->get('POST.orderStatus');
-        $orderStartDate = $this->f3->get('POST.orderStartDate');
+        $order_status = $this->f3->get('POST.order_status');
+        $order_start_date = $this->f3->get('POST.order_start_date');
 
         /* Set user preferences. djt 6/13/2016 */
-        $this->f3->set('SESSION.order_status', $orderStatus);
-        $this->f3->set('SESSION.order_start_date', $orderStartDate);
+        $this->f3->set('SESSION.order_status', $order_status);
+        $this->f3->set('SESSION.order_start_date', $order_start_date);
+
+		/* Update DB for persistant change. djt 02/04/2017 */
+		$id = $this->f3->get('SESSION.id');
+        $this->f3->set('POST.id', $id);
+        $user = new User($this->db);
+        $user->edit($id);
 
         $this->render();
     }
