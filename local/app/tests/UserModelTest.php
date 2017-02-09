@@ -24,12 +24,12 @@ class UserModelTest extends Controller {
 
 		$test->expect(
 			true,
-			'User Model Methods(FYI): '.json_encode(get_class_methods($user))
+			'User Model Methods(FYI): '.json_encode(get_class_methods($user), JSON_PRETTY_PRINT)
 		);
 
 		$test->expect(
 			true,
-			'User Model Schema(FYI): ' . json_encode($user->schema())
+			'User Model Schema(FYI): ' . json_encode($user->schema(), JSON_PRETTY_PRINT)
 		);
 
 		$test->expect(
@@ -39,7 +39,7 @@ class UserModelTest extends Controller {
 
 		$test->expect(
 			true,
-			'User Model Fields(FYI): '.json_encode($user->fields())
+			'User Model Fields(FYI): '.json_encode($user->fields(), JSON_PRETTY_PRINT)
 		);
 
 		$myFields = $user->fields();
@@ -48,7 +48,7 @@ class UserModelTest extends Controller {
 			in_array('username', $myFields) &&
 			in_array('password', $myFields) &&
 			in_array('access', $myFields),
-			'These fields must exist for views: '.json_encode($myFields)
+			'These fields must exist for views: '.json_encode($myFields, JSON_PRETTY_PRINT)
 		);
 
 		$test->expect(
@@ -69,7 +69,7 @@ class UserModelTest extends Controller {
 
 		$test->expect(
 			true,
-			'All Users: '.json_encode($myUserArray)
+			'All Users: '.json_encode($myUserArray, JSON_PRETTY_PRINT)
 		);
 		// Find each record by id. Validate equal
 		foreach( $myUserArray as $myUser ) {

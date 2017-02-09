@@ -17,7 +17,7 @@ class UserCntlrTest extends Controller {
 
 		$test->expect(
 			true,
-			'User Controller Methods(FYI): '.json_encode(get_class_methods($cntlr))
+			'User Controller Methods(FYI): '.json_encode(get_class_methods($cntlr), JSON_PRETTY_PRINT)
 		);
 
 		$f3->set('QUIET',true);  	// Can't test output. What can we test?
@@ -35,7 +35,7 @@ class UserCntlrTest extends Controller {
 		$f3->mock($cntlrRoute.'?'.$name.'='.$value);
 		$test->expect(
 			$_GET==array($name=>$value),
-			$cntlrRoute . ': Query name/value pair = ' .  json_encode($_REQUEST)
+			$cntlrRoute . ': Query name/value pair = ' .  json_encode($_REQUEST, JSON_PRETTY_PRINT)
 		);
 		//
 		$cntlrRoute = 'GET  /userEdit';
@@ -47,7 +47,7 @@ class UserCntlrTest extends Controller {
 		);
 		$test->expect(
 			$_GET==array($name=>$value),
-			$cntlrRoute . ': Query name/value pair = ' .  json_encode($_REQUEST)
+			$cntlrRoute . ': Query name/value pair = ' .  json_encode($_REQUEST, JSON_PRETTY_PRINT)
 		);
 		//
 		$cntlrRoute = 'GET  /userEditPassword';
@@ -115,7 +115,7 @@ class UserCntlrTest extends Controller {
 		//$f3->mock($cntlrRoute);
 		$test->expect(
 			true,
-			$cntlrRoute . ' - TBD How can I test?' . json_encode($_POST)
+			$cntlrRoute . ' - TBD How can I test?' . json_encode($_POST, JSON_PRETTY_PRINT)
 		);
 */
 		$f3->set('QUIET',FALSE);  // show output of the active route
