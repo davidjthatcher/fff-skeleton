@@ -87,7 +87,7 @@ class MainController extends Controller
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingSummary($orders);
-        // echo json_encode( $bookings );
+        // echo json_encode( $bookings, JSON_PRETTY_PRINT );
         $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
         $this->f3->set('bobj', $bobj);
@@ -106,7 +106,7 @@ class MainController extends Controller
 
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingSummary($orders);
-        // echo json_encode( $bookings );
+        // echo json_encode( $bookings, JSON_PRETTY_PRINT );
         $totals   = $bobj -> getBookingSummaryTotals($bookings);
 
         $this->f3->set('bobj', $bobj);
@@ -157,7 +157,7 @@ class MainController extends Controller
         // Get remote orders from SESSION variable
         $orders = $this->f3->get("SESSION.orders");
 
-        $this->f3->set('json', json_encode($orders));
+        $this->f3->set('json', json_encode($orders, JSON_PRETTY_PRINT));
         $this->f3->set('header', 'Orders Json');
         $this->f3->set('view', 'jsonList.htm');
 
@@ -351,7 +351,7 @@ class MainController extends Controller
         $bobj = Bookings::instance();
         $bookings = $bobj -> getBookingList($orders);
 
-        $this->f3->set('json', json_encode($bookings));
+        $this->f3->set('json', json_encode($bookings, JSON_PRETTY_PRINT));
         $this->f3->set('header', 'Bookings Json');
         $this->f3->set('view', 'jsonList.htm');
 
@@ -394,7 +394,7 @@ class MainController extends Controller
     }
 
     /**
-     * Send complete order completed request to WooCommerce API
+     * Send order completed request to WooCommerce API
      * @id from http query vars
      * @return none
      */
@@ -421,7 +421,7 @@ class MainController extends Controller
     {
         $orderIdJson = $this->f3->get('POST.bookingsForDay');
 
-        $orderIds = json_decode($orderIdJson);
+        $orderIds = json_decode($orderIdJson); // TBD stdClass not necessary
 
         foreach( $orderIds as $orderId ) {
             $response = $this->sendOrderComplete($orderId);
@@ -476,8 +476,7 @@ class MainController extends Controller
                 $this->f3->get('api_consumer_secret'),
                 $this->api_options );
 
-            $response = $client->orders->get( '', $args );
-            $response = json_encode($response);
+            $orders = $client->orders->get( '', $args );
 
         } catch ( WC_API_Client_Exception $e ) {
 
@@ -493,9 +492,10 @@ class MainController extends Controller
         // Write file to tmp for review
         if($this->f3->get('DEBUG') > 0) {
             $file = fopen( "tmp/orders.json", "w+");
-            fwrite( $file, $response);
+            fwrite($file, json_encode($orders));
             fclose( $file);
         }
-        return $response;
+
+        return json_encode($orders); // TBD json vs array
     }
 }
