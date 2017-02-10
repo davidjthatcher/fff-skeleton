@@ -355,6 +355,13 @@ class MainController extends Controller
         $this->f3->set('header', 'Bookings Json');
         $this->f3->set('view', 'jsonList.htm');
 
+        // Write file to tmp for review
+        if($this->f3->get('DEBUG') > 0) {
+            $file = fopen( "tmp/bookings.json", "w+");
+            fwrite($file, $this->f3->get('json'));
+            fclose( $file);
+        }
+
         $template=new Template;
         echo $template->render('layout.htm');
     }
@@ -442,7 +449,7 @@ class MainController extends Controller
     function updateLocalOrderArray()
     {
         // Get orders from WC API for Booking Process
-        $orders = $this->getRemoteOrderArray();
+        $orders = $this->getRemoteOrderArray($this->f3->get('SESSION.order_status'));
 
         // Save remote orders in SESSION variable for other views
         $this->f3->set("SESSION.orders", $orders);
@@ -452,11 +459,9 @@ class MainController extends Controller
      *
      * @return remote Json response in array format
      */
-    function getRemoteOrderArray()
+    function getRemoteOrderArray($status)
     {
-        $response = $this->getRemoteOrdersJson($this->f3->get('SESSION.order_status'));
-
-        return json_decode($response, true);
+        return json_decode($this->getRemoteOrdersJson($status), true);
     }
     /**
      * Send request to WooCommerce API for active orders (status == processing)
@@ -476,7 +481,8 @@ class MainController extends Controller
                 $this->f3->get('api_consumer_secret'),
                 $this->api_options );
 
-            $orders = $client->orders->get( '', $args );
+			// Client returns array of stdClass which must be json decoded into array of orders
+            $orders = json_encode($client->orders->get( '', $args ));
 
         } catch ( WC_API_Client_Exception $e ) {
 
@@ -492,10 +498,10 @@ class MainController extends Controller
         // Write file to tmp for review
         if($this->f3->get('DEBUG') > 0) {
             $file = fopen( "tmp/orders.json", "w+");
-            fwrite($file, json_encode($orders));
+            fwrite($file, $orders);
             fclose( $file);
         }
 
-        return json_encode($orders); // TBD json vs array
+        return $orders;
     }
 }
