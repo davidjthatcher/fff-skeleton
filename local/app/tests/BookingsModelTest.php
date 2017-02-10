@@ -29,26 +29,26 @@ class BookingsModelTest extends Controller {
 
 		$test->expect(
 			($expectedTotals['Adults']   == $bookingsTotals['Adults']) &&
-            ($expectedTotals['Children']  == $bookingsTotals['Children']) &&
-            ($expectedTotals['Rods']      == $bookingsTotals['Rods']),
+            ($expectedTotals['Children'] == $bookingsTotals['Children']) &&
+            ($expectedTotals['Rods']     == $bookingsTotals['Rods']),
 			$description.': Adults: '.$expectedTotals['Adults'].', '.$bookingsTotals['Adults'].
 						 ': Children: '.$expectedTotals['Children'].', '.$bookingsTotals['Children'].
 						 ': Rods: '.$expectedTotals['Rods'].', '.$bookingsTotals['Rods']
 		);
 		$test->expect(
-            ($expectedTotals['total'] == $bookingsTotals['total']),
+            (abs($expectedTotals['total'] - $bookingsTotals['total']) < 0.01),
 			$description.': total: '.$expectedTotals['total'].', '.$bookingsTotals['total']
 		);
 		$test->expect(
-            ($expectedTotals['fsa_take'] == $bookingsTotals['fsa_take']),
+            (abs($expectedTotals['fsa_take'] - $bookingsTotals['fsa_take']) < 0.01),
 			$description.': fsa_take: '.$expectedTotals['fsa_take'].', '.$bookingsTotals['fsa_take']
 		);
 		$test->expect(
-            ($expectedTotals['fsa_total'] == $bookingsTotals['fsa_total']),
+            (abs($expectedTotals['fsa_total'] - $bookingsTotals['fsa_total']) < 0.01),
 			$description.': fsa_total: '.$expectedTotals['fsa_total'].', '.$bookingsTotals['fsa_total']
 		);
 		$test->expect(
-            ($expectedTotals['itemsTotal'] == $bookingsTotals['itemsTotal']),
+            (abs($expectedTotals['itemsTotal'] - $bookingsTotals['itemsTotal']) < 0.01),
 			$description.': itemsTotal: '.$expectedTotals['itemsTotal'].', '.$bookingsTotals['itemsTotal']
 		);
 	}
