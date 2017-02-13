@@ -106,17 +106,17 @@ class Bookings extends \Prefab {
     /*
      * Get the information we want from line items.
      * Generally a single item but can be several.
-     * Combine ROD rental w/charter booking
+     * Combine ROD rental (RR) w/charter booking (CH)
      */
     /*  Implement a State Machine
-     *  States:         Init,       CH,             CH-w-RR,        RR
+     *  States:         ST_INIT,    ST_CH,          ST_CH_RR,       ST_RR
      *
      *  Events: RR      Set RR/     Set RR/         Add RR/         Add RR/
-     *                  RR          CH-w-RR         CH-w-RR         RR
+     *                  ST_RR       ST_CH_RR        ST_CH_RR        ST_RR
      *
      *          CH      Set CH +    Save CH +       Save CH +       Set CH
      *                  Init RR/    Set CH/         Set CH/
-     *                  CH          INIT            INIT            CH-w-RR
+     *                  ST_CH       ST_INIT         ST_INIT         ST_CH_RR
      */
     const   ST_INIT  = 0;
     const   ST_CH    = 1;
@@ -137,12 +137,14 @@ class Bookings extends \Prefab {
                         $myItems[$j]['Rods']  = intval($lineItems[$i]['quantity']);
                         $myItems[$j]['itemsTotal'] = floatval($lineItems[$i]['total']);
                         break;
+
                     case ST_CH:
                         $state = ST_CH_RR;
                         // Set RR
                         $myItems[$j]['Rods']  = intval($lineItems[$i]['quantity']);
                         $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
                         break;
+
                     case ST_CH_RR:
                     case ST_RR:
                         // Add RR
@@ -159,26 +161,37 @@ class Bookings extends \Prefab {
                         $myItems[$j]['Rods'] = intval(0);
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['itemsTotal']     += floatval($lineItems[$i]['total']);
+                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
                         /* Parse meta for information we want */
                         $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
                         break;
+
                     case ST_CH:
                         // Init RR
                         $myItems[$j]['Rods'] = intval(0);
                     case ST_CH_RR:
-                        $state = ST_INIT;
-                        // Save CH
-                        $j++;
-                        // Init RR
-                        $myItems[$j]['Rods'] = intval(0);
+                        /* Parse meta for information we want */
+						$meta = $this -> getMetaDetail($lineItems[$i]['meta']);
+						if(($myItems[$j]['date'] == $meta['date']) &&
+						   ($myItems[$j]['CharterId'] == $lineItems[$i]['product_id']))
+						{
+							// Additional people for booking
+							$myItems[$j]['Adults']   += $meta['Adults'];
+							$myItems[$j]['Children'] += $meta['Children'];
+						} else {
+							// Save CH if new date.
+							$state = ST_INIT;
+							$j++;
+							// Init RR
+							$myItems[$j]['Rods'] = intval(0);
+							$myItems[$j] += $meta;
+						}
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['itemsTotal']     += floatval($lineItems[$i]['total']);
-                        /* Parse meta for information we want */
-                        $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
+                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
                         //echo '<p>' . var_dump($myItem[$j]) . '</p>';
                         break;
+
                     case ST_RR:
                         $state = ST_CH_RR;
                         // Set CH
