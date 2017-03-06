@@ -114,9 +114,9 @@ class Bookings extends \Prefab {
      *  Events: RR      Set RR/     Set RR/         Add RR/         Add RR/
      *                  ST_RR       ST_CH_RR        ST_CH_RR        ST_RR
      *
-     *          CH      Set CH +    Save CH +       Save CH +       Set CH
+     *          CH      Set CH +    Save CH +       Save CH +       Set CH/
      *                  Init RR/    Set CH/         Set CH/
-     *                  ST_CH       ST_INIT         ST_INIT         ST_CH_RR
+     *                  ST_CH       ST_CH           ST_CH           ST_CH_RR
      */
     const   ST_INIT  = 0;
     const   ST_CH    = 1;
@@ -128,6 +128,7 @@ class Bookings extends \Prefab {
 
         $state = ST_INIT;
         for ($i=0, $j=0; $i < count($lineItems); $i++) {
+
             // Implement State Machine
             if('ROD' == $lineItems[$i]['sku']) {
                 // Event Rod Rental (RR)
@@ -154,6 +155,8 @@ class Bookings extends \Prefab {
                 }
             } else {
                 // Event Charter (CH)
+                /* Parse meta for information we want */
+                $meta = $this -> getMetaDetail($lineItems[$i]['meta']);
                 switch ($state) {
                     case ST_INIT:
                         $state = ST_CH;
@@ -161,48 +164,45 @@ class Bookings extends \Prefab {
                         $myItems[$j]['Rods'] = intval(0);
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
-                        /* Parse meta for information we want */
-                        $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
+                        $myItems[$j]['itemsTotal'] = floatval($lineItems[$i]['total']);
+                        $myItems[$j] += $meta;
                         break;
 
                     case ST_CH:
-                        // Init RR
-                        $myItems[$j]['Rods'] = intval(0);
                     case ST_CH_RR:
-                        /* Parse meta for information we want */
-						$meta = $this -> getMetaDetail($lineItems[$i]['meta']);
-						if(($myItems[$j]['date'] == $meta['date']) &&
-						   ($myItems[$j]['CharterId'] == $lineItems[$i]['product_id']))
-						{
-							// Additional people for booking
-							$myItems[$j]['Adults']   += $meta['Adults'];
-							$myItems[$j]['Children'] += $meta['Children'];
-						} else {
-							// Save CH if new date.
-							$state = ST_INIT;
-							$j++;
-							// Init RR
-							$myItems[$j]['Rods'] = intval(0);
-							$myItems[$j] += $meta;
-						}
-                        // Set CH
-                        $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
-                        //echo '<p>' . var_dump($myItem[$j]) . '</p>';
+                        if(($myItems[$j]['Date'] == $meta['Date']) &&
+                           ($myItems[$j]['CharterId'] == $lineItems[$i]['product_id']))
+                        {
+                            // Additional people for booking
+                            $myItems[$j]['Adults']   += $meta['Adults'];
+                            $myItems[$j]['Children'] += $meta['Children'];
+                            $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
+                        } else {
+                            // Save CH if new date.
+                            $state = ST_CH;
+                            $j++;
+                            // Init RR
+                            $myItems[$j]['Rods'] = intval(0);
+                            $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
+                            $myItems[$j]['itemsTotal'] = floatval($lineItems[$i]['total']);
+                            $myItems[$j] += $meta;
+                        }
                         break;
 
                     case ST_RR:
                         $state = ST_CH_RR;
                         // Set CH
                         $myItems[$j]['CharterId']  = $lineItems[$i]['product_id'];
-                        $myItems[$j]['itemsTotal']     += floatval($lineItems[$i]['total']);
-                        /* Parse meta for information we want */
-                        $myItems[$j] += $this -> getMetaDetail($lineItems[$i]['meta']);
+                        $myItems[$j]['itemsTotal'] += floatval($lineItems[$i]['total']);
+                        $myItems[$j] += $meta;
                         break;
-                }
-            }
-        }
+                } /* End switch state */
+            
+            } /* End if event = CH */
+
+            //echo '<p>Line items('.$i.', '.$j.'): '.$lineItems[$i]['id'].' '.json_encode($myItems[$j], JSON_PRETTY_PRINT).'</p>';
+        } /* End for each line item */
+
         return($myItems);
     }
 
@@ -212,11 +212,13 @@ class Bookings extends \Prefab {
      *     getBookingSummary and getBookinsForDate.
      * Return array entry per booking entry
      * Add ROD Rental to associated booking
-     * TBD total $ vs sub-total $ for order with multi-bookings.
+     * DJT 03/06/2010 Use Line items total $ with multiple-bookings.
+     *      Save the number_of_bookings for use with close order issue.
      */
     public function getBookingList($ordersArray) {
         $bookings = array();
         $rodRentals = array();
+        $gratuity = 1.15;
 
         $orders = $ordersArray['orders'];
         $i = 0;
@@ -237,15 +239,20 @@ class Bookings extends \Prefab {
             $booking['coupon']     = $order['coupon_lines'][0]['code'];
             $booking['fsa_take']   = $order['coupon_lines'][0]['amount'];
 
-            // booking order may have more than one item
+            // order may occasionally have more than one booking line_item
             $items = $this -> getLineItemsDetail($order['line_items']);
+            $numberOfItems = sizeof($items);
             foreach ($items as $item){
                 $bookings[$i] = $booking + $item;
 
                 $bookings[$i]['fsa_take']  = $this->estimateGrouponRevenue(
                     $bookings[$i]['fsa_take'], $bookings[$i]['CharterId'], $bookings[$i]['Rods']);
 
+                if($numberOfItems > 1) {
+                    $bookings[$i]['total'] = $gratuity * $bookings[$i]['itemsTotal'];
+                }
                 $bookings[$i]['fsa_total']  = $bookings[$i]['fsa_take'] + $bookings[$i]['total'] ;
+                $bookings[$i]['number_of_bookings'] = $numberOfItems;
 
                 $i++;
             }
@@ -377,7 +384,7 @@ class Bookings extends \Prefab {
     public function getCharterName($charterId) {
         $charterNames = array(
             '68316' => 'MSA 5',
-            '67077' => 'MSA 10',
+            '67077' => 'MSA 12',
             '67952' => 'MSA 14',
             '68532' => 'MSA 17',
             '67538' => 'MSA 30',
