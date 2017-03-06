@@ -79,7 +79,7 @@ class BookingsModelTest extends Controller {
 		// 		Adults [Children]
 		// 		Coupons null, groupon
 		// 		Rod Rentals
-		//      Multiple booking dates (71747)
+		//      Multiple booking dates (73162)
 		//      Multiple line items, one date (72677)
 		$this->bookingTestSuite($test,
 			$testing.'Order Set 1',
@@ -93,12 +93,12 @@ class BookingsModelTest extends Controller {
 			'app/testdata/orders-72677-input.json',
 			'app/testdata/orders-72677-output.json');
 
-		// Order 71747 should result in 2 Booking items at $115 each.
-		//             should not be closed until 2nd trip complete.
+		// Order 73162 should result in 3 Booking items at $140 + tax each ($161).
+		//             should not be closed until 3rd trip complete.
 		$this->bookingTestSuite($test,
-			$testing.'Order 71747',
-			'app/testdata/orders-71747-input.json',
-			'app/testdata/orders-71747-output.json');
+			$testing.'Order 73162',
+			'app/testdata/orders-73162-input.json',
+			'app/testdata/orders-73162-output.json');
 
 		// Test Important Bookings Keys
 		$bobj = New Bookings();
@@ -107,7 +107,7 @@ class BookingsModelTest extends Controller {
 
 		$requiredKeys = array("status", "id", "created_at", "total", "first_name", "last_name",
 			"email", "phone", "coupon", "fsa_take", "Rods", "CharterId", "itemsTotal",
-			"Adults", "Children", "Date", "fsa_total");
+			"Adults", "Children", "Date", "fsa_total", "number_of_bookings");
 		$currentKeys = array(); $k=0;
 		foreach($bookingsList[0] as $key => $value) {
 			$currentKeys[$k++] = $key;
