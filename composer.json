@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bcosca/fatfree": "^3.6",
+        "woothemes/woocommerce-api": "^2.0"
+    }
+}

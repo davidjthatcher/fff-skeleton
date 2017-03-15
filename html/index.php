@@ -1,7 +1,8 @@
 <?php
 
-$f3 = require('/var/lib/fatfree-master/lib/base.php');
-require_once( '../vendor/WooCommerce-REST-API-Client-Library/lib/woocommerce-api.php' );
+require_once( '../vendor/autoload.php' );
+
+$f3 = \Base::instance();
 
 $f3->config('../local/config.ini');
 $f3->config('../local/routes.ini');
