@@ -16,13 +16,5 @@ VALUES (1,'david','$2y$10$QdRxyYlRFqG0/ltueW1Tj.9RZjN5w4pq/8mZSCUpvzvT58sHQylua'
     'write', 'processing', "2016-09-01");
 
 INSERT INTO user (id, username, password, access, order_status, order_start_date)
-VALUES (2,'luke','$2y$10$QdRxyYlRFqG0/ltueW1Tj.9RZjN5w4pq/8mZSCUpvzvT58sHQylua',
-    'read', 'processing', "2016-09-01");
-
-INSERT INTO user (id, username, password, access, order_status, order_start_date)
-VALUES (3,'judy','$2y$10$QdRxyYlRFqG0/ltueW1Tj.9RZjN5w4pq/8mZSCUpvzvT58sHQylua',
-    'read', 'processing', "2016-09-01");
-
-INSERT INTO user (id, username, password, access, order_status, order_start_date)
-VALUES (4,'sean','$2y$10$QdRxyYlRFqG0/ltueW1Tj.9RZjN5w4pq/8mZSCUpvzvT58sHQylua',
+VALUES (2,'rider','$2y$10$QdRxyYlRFqG0/ltueW1Tj.9RZjN5w4pq/8mZSCUpvzvT58sHQylua',
     'read', 'processing', "2016-09-01");
