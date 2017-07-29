@@ -29,8 +29,7 @@ class MainController extends Controller
      */
     function render()
     {
-        $this->updateLocalOrderArray();
-        $this->displayBookingSummary();
+        $this->displayOrderSettings();
     }
 
     /**
