@@ -1,5 +1,5 @@
-# Fish Saint Augustine Booking Reports
+# PHP Application Skeleton
 
-Built on Fat-FreePHP Framework, using Bootstrap CSS for layout, and WooCommerce REST to read from our main site.
+Built on Fat-FreePHP Framework, using Bootstrap CSS for layout, and Model-View-Controller (MVC) structure.
 
-The Bootstrap layout is based on a tutorial series that you can follow on http://takacsmark.com. 
+The Bootstrap layout and MVC structrue is based on a tutorial series at http://takacsmark.com. 
