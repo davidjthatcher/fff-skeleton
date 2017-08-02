@@ -1,0 +1,23 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+  <h1 class="page-header">Event Lists</h1>
+
+  <table class="table table-striped table-bordered">
+
+    <tr>
+    <th style="text-align:center" > File Name </th>
+    <th style="text-align:center" > Load Date </th>
+    <th style="text-align:center" > Key List </th>
+    </tr>
+
+  <repeat group="{{ @events }}" value="{{ @event }}">
+    <tr>
+    <td style="text-align:center" > {{ @event.filename }} </td>
+    <td style="text-align:center" > {{ @event.load_date }} </td>
+    <td style="text-align:center" > {{ @event.keylist }} </td>
+    </tr>
+  </repeat>
+
+  </table>
+
+</div>
