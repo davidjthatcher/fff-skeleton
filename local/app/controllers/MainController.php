@@ -1,6 +1,6 @@
 <?php
 /**
- * Controller of the main booking view sample applicaiton (bookingSummary.htm)
+ * Main Controller of the Responsivie Application Skeleton
  *
  * PHP version 5
  *
@@ -59,13 +59,59 @@ class MainController extends Controller
      */
     function displayOrderSettings()
     {
-        // Show/Update Order (order_) Configuration Settings
-
         $this->f3->set('header', 'Order Settings');
         $this->f3->set('view', 'orderSettings.htm');
 
         $template=new Template;
         echo $template->render('layout.htm');
+    }
+    /**
+     * Display Event List
+     *
+     * @return void
+     */
+    function eventList()
+    {
+        $event = new Event($this->db);
+        $events = $event->all();
+
+        $this->f3->set('events', $events );
+
+        $this->f3->set('header', 'Event Listing');
+        $this->f3->set('view', 'eventList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
+     * Load Event List Name TBD name
+     *
+     * @return void
+     */
+    function eventLoad()
+    {
+		// Load new event list from CSV File
+        $this->f3->set('header', 'Select Event File');
+        $this->f3->set('view', 'eventLoad.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
+     * Load Event List Name TBD name
+     *
+     * @return void
+     */
+    function eventLoadList()
+    {
+		// Store filename, load date.
+		$event = new Event($this->db);
+
+		// Get keylist from first line of file
+		// Read file into eventlist
+        $event->add();
+
+        $this->eventList();
     }
     /**
      * Simple Form to get text message to send via WC REST API
@@ -90,38 +136,11 @@ class MainController extends Controller
      */
     function getRestUpdate()
     {
-        // Show/Update Order (order_) Configuration Settings
-
         $this->f3->set('header', 'Rest Update');
         $this->f3->set('view', 'restUpdate.htm');
 
         $template=new Template;
         echo $template->render('layout.htm');
-    }
-
-    /**
-     * Get Order Configuration Settings from orderSettings.htm
-     * Save in SESSION vars
-     * Update the calendar
-     * @return void
-     */
-    function saveOrderSettings()
-    {
-        /** Get form input. **/
-        $order_status = $this->f3->get('POST.order_status');
-        $order_start_date = $this->f3->get('POST.order_start_date');
-
-        /* Set user preferences. djt 6/13/2016 */
-        $this->f3->set('SESSION.order_status', $order_status);
-        $this->f3->set('SESSION.order_start_date', $order_start_date);
-
-		/* Update DB for persistant change. djt 02/04/2017 */
-		$id = $this->f3->get('SESSION.id');
-        $this->f3->set('POST.id', $id);
-        $user = new User($this->db);
-        $user->edit($id);
-
-        $this->render();
     }
 
 }
