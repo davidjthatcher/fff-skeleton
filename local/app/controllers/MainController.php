@@ -29,7 +29,7 @@ class MainController extends Controller
      */
     function render()
     {
-        $this->displayOrderSettings();
+        $this->eventList();
     }
 
     /**
@@ -49,21 +49,6 @@ class MainController extends Controller
 
         $template=new Template;
         echo $template->render($view);
-    }
-
-    /**
-     * Display Order Configuration Settings
-     * TBD Change until updated using this Form
-     *
-     * @return void
-     */
-    function displayOrderSettings()
-    {
-        $this->f3->set('header', 'Order Settings');
-        $this->f3->set('view', 'orderSettings.htm');
-
-        $template=new Template;
-        echo $template->render('layout.htm');
     }
     /**
      * Display Event List
