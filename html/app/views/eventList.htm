@@ -5,16 +5,22 @@
   <table class="table table-striped table-bordered">
 
     <tr>
-    <th style="text-align:center" > File Name </th>
+    <th style="text-align:left" > File Name </th>
     <th style="text-align:center" > Load Date </th>
     <th style="text-align:center" > Key List </th>
+    <th style="text-align:center" > Actions </th>
     </tr>
 
   <repeat group="{{ @events }}" value="{{ @event }}">
     <tr>
-    <td style="text-align:center" > {{ @event.filename }} </td>
+    <td style="text-align:left" > {{ @event.filename }} </td>
     <td style="text-align:center" > {{ @event.load_date }} </td>
     <td style="text-align:center" > {{ @event.keylist }} </td>
+    <td style="text-align:center" >
+        <a href="eventView?id={{ @event.id }}" >View Detail</a>
+        <a href="eventDelete?id={{ @event.id }}" >Delete</a>
+    </td>
+
     </tr>
   </repeat>
 
