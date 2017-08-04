@@ -1,0 +1,661 @@
+dayofweek,timeofday,area,grp,address,city,state,zip,type,misc,geocode
+SUN,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
+SUN,07:45 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+SUN,08:00 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-OL-HF,NULL,NULL
+SUN,08:00 AM,H,Surfs Up Group,350 A1a Beach Blvd,St Augustine,FL,32080,C-D-SS,NULL,NULL
+SUN,08:30 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,C-D-HF,NULL,NULL
+SUN,09:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SUN,09:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+SUN,09:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-S-HF,NULL,NULL
+SUN,09:00 AM,H,RAW Group,318 Osceola St,Palatka,FL,32177,O-D-S,The Lions Club,NULL
+SUN,10:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D-BBS,Camden Serenity Club - (912) 265-0892,NULL
+SUN,10:00 AM,A,Phoenix Mens Group,51 E First St,Jacksonville,FL,32206,M-C-D-HF,NULL,NULL
+SUN,10:00 AM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-D 2nd & 4th Sunday,NULL,NULL
+SUN,10:00 AM,H,Sunday Morning Group,400 Health Park Blvd,St Augustine,FL,32086,O-D-HF,Flagler Hospital Osceola Room,NULL
+SUN,10:00 AM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-D-Beg-HF,NULL,NULL
+SUN,11:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SUN,11:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+SUN,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+SUN,11:00 AM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+SUN,11:00 AM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+SUN,11:00 AM,D,Language of the Heart,6500 Ft Caroline Rd,Jacksonville,FL,32277,O-D-HF,NULL,NULL
+SUN,11:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+SUN,11:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+SUN,12:00 PM,H,New Life Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+SUN,01:00 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+FRI,06:00 PM,C,Fruit Cove 11th Step Meditatio,2777 Race Track Rd,St Johns,FL,32259,O-Med (S-Last Fri),Unity Church for Creative Living,NULL
+SUN,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+SUN,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-BBS-HF,NULL,NULL
+SUN,05:30 PM,H,Happy Hour Group,18 S Dixie Hwy,St Augustine,FL,32084,O-BS-Beg-HF,NULL,NULL
+SUN,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF-YP,NULL,NULL
+SUN,05:30 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-BBS-HF,NULL,NULL
+SUN,06:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-Beg-HF (1.5 hrs long),NULL,NULL
+SUN,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-BS,NULL,NULL
+SUN,06:00 PM,C,Fruit Cove Womens Group,1221 State Road 13,St Johns,FL,32259,L-O-BBS,St Patricks Episcopal,NULL
+SUN,06:30 PM,B,One Step at a Time,634 Lomax St,Jacksonville,FL,32204,C-D-HF,Unity Church - May St entrance,NULL
+SUN,06:30 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,L-O-D-HF,Grace Free Will Baptist Church,NULL
+SUN,06:30 PM,A,Step Brothers,1147 W 21st St,Jacksonville,FL,32209,M-O-BS-SM,NULL,NULL
+SUN,07:00 PM,E,BLIS,400 San Juan Dr,Ponte Vedra Beach,FL,32082,L-O-BS,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+SUN,07:00 PM,F,Callahan Group,45031 Historical Lane,Callahan,FL,32011,O-D,Greater Mt Pleasant Baptist Church,NULL
+SUN,07:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-SS-HF,NULL,NULL
+SUN,07:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,C-BS-HF,NULL,NULL
+SUN,07:00 PM,H,Sandpiper Group,1650 A1A S,St Augustine,FL,32080,O-TBS-HF,Anastasia Baptist Church Annex-Rectory Building in,NULL
+SUN,07:30 PM,A,Fresh Start Group,51 E First St,Jacksonville,FL,32206,O-SS-HF,NULL,NULL
+SUN,07:30 PM,C,Sunset Group,11924 San Jose Blvd,Jacksonville,FL,32223,O-D-Beg-HF,First Christian Church of Mandarin,NULL
+SUN,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+SUN,08:00 PM,H,Azalea City Group,123 S 2nd St,Palatka,FL,32177,O-D,First Presbyterian Church,NULL
+SUN,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-Beg-HF,NULL,NULL
+SUN,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+SUN,08:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-D-HF,NULL,NULL
+SUN,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+SUN,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D-S,Camden Serenity Club - (912) 265-0892,NULL
+SUN,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+SUN,08:00 PM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-BS,NULL,NULL
+SUN,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-D-HF,Grace Free Will Baptist Church,NULL
+SUN,08:00 PM,B,Tradition Group,2911 Riverside Ave,Jacksonville,FL,32205,O-S-SM,NULL,NULL
+SUN,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-D,NULL,NULL
+SUN,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-S-D-HF,NULL,NULL
+SUN,08:00 PM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-D-Bld 6,YMCA - Building 6,NULL
+SUN,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-YP-HF,NULL,NULL
+SUN,08:30 PM,H,Island Serenity Group,2200 A1A S,St Augustine,FL,32080,O-D-HF,KOA Campground Pavilion,NULL
+MON,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
+MON,07:00 AM,E,Design For Living,826 4th St N,Jacksonville Beach,FL,32250,C-BBS-HF,NULL,NULL
+MON,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,C-D-HF,Amelia Room 904-261-8349,NULL
+MON,07:00 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-BBS-HF,NULL,NULL
+MON,07:00 AM,A,Sunrise Breakfast Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+MON,07:00 AM,H,Winning Game Group,18 S Dixie Hwy,St Augustine,FL,32084,O-BBS-HF,NULL,NULL
+MON,08:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+MON,08:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-BBS-HF,NULL,NULL
+MON,08:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+MON,08:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+MON,08:30 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-TBS-HF,NULL,NULL
+MON,09:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D-TBS,Camden Serenity Club - (912) 265-0892,NULL
+MON,09:30 AM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,O-BBS-HF,NULL,NULL
+MON,09:30 AM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+MON,10:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+MON,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,C-D-HF,Amelia Room 904-261-8349,NULL
+MON,11:30 AM,H,Lest We Forget Group,5205 A1A S,St Augustine,FL,32080,L-C-D-HF,St Anastasia Catholic Church (A1A & Weff Rd),NULL
+MON,12:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+MON,12:00 PM,E,BAA,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-D-HF,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+MON,12:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+MON,12:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-D,NULL,NULL
+MON,12:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+MON,12:00 PM,H,Freedom Group,318 Osceola St,Palatka,FL,32177,O-BBS,The Lions Club,NULL
+MON,12:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+MON,12:00 PM,F,Keep It Simple Group,2600 Atlantic Ave,Fernandina Beach,FL,32034,O-S-D,Prince of Peace Lutheran Church,NULL
+MON,12:00 PM,H,New Life Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+MON,12:00 PM,H,Night Owl Group,38 Cathedral Place,St Augustine,FL,32084,O-D,Cathedral Basilica Church-Enter E Side of Building,NULL
+MON,12:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+MON,12:00 PM,A,Phoenix Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+MON,12:00 PM,C,Serenity at Noon,2501 Loretto Road,Jacksonville,FL,32223,O-BBS-HF,Mandarin Presbyterian Church-Choir Room,NULL
+MON,12:00 PM,E,Sunshine Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-TBS,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+MON,01:30 PM,E,Women Enjoying Sobriety,322 Penman Rd,Jacksonville Beach,FL,32250,L-O-BS-HF,NULL,NULL
+MON,02:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+MON,02:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+MON,03:30 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+MON,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-TBS,NULL,NULL
+MON,05:30 PM,A,Billy Goat Hill Group,256 E Church St,Jacksonville,FL,32202,O-D,St Johns Cathedral,NULL
+MON,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-TBS-HF,NULL,NULL
+MON,05:30 PM,H,Happy Hour Group,18 S Dixie Hwy,St Augustine,FL,32084,O-TBS-HF,NULL,NULL
+MON,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+MON,05:30 PM,D,Q Branch Group,11265 Alumni Way,Jacksonville,FL,32246,O-D,Quality Life Center,NULL
+MON,05:30 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+MON,06:00 PM,H,A Way Out Group,200 Main St,Palatka,FL,32177,O-D-Beg,St Marks Episcopal Church,NULL
+MON,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+WED,06:00 PM,G,Hole in the Wall,City Hall County Rd 18,Hampton,FL,32044,O-D-HF,NULL,NULL
+MON,06:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D-Beg,Camden Serenity Club - (912) 265-0892,NULL
+MON,06:00 PM,C,On The Way Home,210 N Ridgecrest Lane,St Johns,FL,32259,O-D-DR,Fruit Cove Baptist Church - Room 100,NULL
+MON,06:00 PM,H,Villagers,4225 Pacetti Rd,St Augustine,FL,32092,O-D-HF,Village Church,NULL
+MON,06:00 PM,C,Women in Recovery Group,2001 W University Blvd,Jacksonville,FL,32217,L-O-D,Lakewood Presbyterian Church-Edu Bld Room 10,NULL
+MON,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-Beg-HF,NULL,NULL
+MON,06:30 PM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-Beg-HF,Amelia Room 904-261-8349,NULL
+MON,06:30 PM,A,Fresh Start Group,51 E First St,Jacksonville,FL,32206,O-S-HF,NULL,NULL
+MON,06:30 PM,D,Language of the Heart,6500 Ft Caroline Rd,Jacksonville,FL,32277,L-O-D-HF,NULL,NULL
+MON,06:30 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,M-O-D-HF,Grace Free Will Baptist Church,NULL
+MON,06:30 PM,A,Womens Upstart Group,1620 Naldo Ave,Jacksonville,FL,32207,L-O-D (S-Last Mon),Community Connections,NULL
+MON,06:45 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,L-O-D-HF,NULL,NULL
+MON,06:45 PM,D,Roving Stag,3645 Spring Park Rd,Jacksonville,FL,32207,M-O-D-HF,NULL,NULL
+MON,07:00 PM,A,City Group,1704 N Pearl St,Jacksonville,FL,32206,O-D,NULL,NULL
+MON,07:00 PM,H,Crescent City Group,233 N Summit St,Crescent City,FL,32112,O-SD-TD-D,Church of the Holy Comforter,NULL
+MON,07:00 PM,A,Fourth Street Group,20 W 4th St,Jacksonville,FL,32206,O-D,NULL,NULL
+MON,07:00 PM,E,Its Come to This,325 N 7th Ave,Jacksonville Beach,FL,32250,O-BS-D,Disciple House,NULL
+MON,07:00 PM,E,Neptune Beach Book Study,610 Florida Blvd,Neptune Beach,FL,32266,C-BS,Beaches Chapel room 205,NULL
+MON,07:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,M-C-D-HF,NULL,NULL
+MON,07:00 PM,E,Ponte Vedra Mens Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,M-C-D-HF,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+MON,07:00 PM,B,Primary Purpose Group,4758 Shelby Ave,Jacksonville,FL,32210,O-BS-HF,St Catherines Episcopal Church,NULL
+MON,07:00 PM,E,The Missing Link,130 4th Ave S,Jacksonville Beach,FL,32250,L-O-D-HF,NULL,NULL
+MON,07:30 PM,H,Fresh Start Group,400 Health Park Blvd,St Augustine,FL,32086,O-D-Beg-CC-HF,Flagler Hospital Osceola Room,NULL
+MON,07:30 PM,G,Lawtey Primary Purpose Group,1822 Madison St,Lawtey,FL,32058,O-BS,Grace United Methodist Church,NULL
+MON,08:00 PM,C,Amethyst Group,11924 San Jose Blvd,Jacksonville,FL,32223,O-D,First Christian Church of Mandarin,NULL
+MON,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D-Beg-SM,NULL,NULL
+MON,08:00 PM,D,Baymeadows Group,9800 Baymeadows Rd,Jacksonville,FL,32256,C-D-HF,Holy Family Catholic Church,NULL
+MON,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+MON,08:00 PM,F,Callahan Group,45031 Historical Lane,Callahan,FL,32011,O-D,Greater Mt Pleasant Baptist Church,NULL
+MON,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-S,NULL,NULL
+MON,08:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-TBS-HF,NULL,NULL
+MON,08:00 PM,F,Folkston Group,51 Shady Lane,Folkston,GA,31537,O-D-Beg,For Info Or Directions call: (912) 496-1007,NULL
+MON,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-BS-HF,Nanas House-2 blks W of US 17,NULL
+MON,08:00 PM,A,Helping Hands Group,2625 N Market St,Jacksonville,FL,32206,O-BS-SM,NULL,NULL
+MON,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-D,Camden Serenity Club - (912) 265-0892,NULL
+MON,08:00 PM,B,Macclenny Group,8981 S SR 228,Macclenny,FL,32063,O-D-HF,Wayne Fryer Trailer Sales Office,NULL
+MON,08:00 PM,G,Middleburg Group,4564 Rosemary St,Middleburg,FL,32068,O-D,Middleburg Presbyterian Church,NULL
+MON,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+MON,08:00 PM,A,Phoenix Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+MON,08:00 PM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-S,NULL,NULL
+MON,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-BBS-HF,Grace Free Will Baptist Church,NULL
+MON,08:00 PM,A,Stepping in Sobriety,51 E First St,Jacksonville,FL,32206,O-BBS-S-HF,NULL,NULL
+MON,08:00 PM,B,TLC,849 Park St,Jacksonville,FL,32204,C-BS-HF,Riverside Presbyterian Church,NULL
+MON,08:00 PM,H,Triangle Group,26 Artillery Lane,St Augustine,FL,32084,C-D-HF,Trinity Episc Church-Enter Assembly Hall in Rear,NULL
+MON,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-SS,NULL,NULL
+MON,07:00 PM,B,Wesconnett Group,3889 Eloise St,Jacksonville,FL,32210,O-D-HF,Holy Trinity Anglican,NULL
+MON,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+MON,08:15 PM,E,Sawgrass Dutch Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-S-HF,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+MON,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+TUE,07:00 AM,E,Back To Basics,322 Penman Rd,Jacksonville Beach,FL,32250,O-BS-HF,Small Room,NULL
+TUE,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR & TBS-HF,NULL,NULL
+TUE,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-TBS-HF,Amelia Room 904-261-8349,NULL
+TUE,07:00 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-BS-HF,NULL,NULL
+TUE,07:00 AM,A,Sunrise Breakfast Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+TUE,07:00 AM,H,Winning Game Group,18 S Dixie Hwy,St Augustine,FL,32084,O-TBS-HF,NULL,NULL
+TUE,08:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+TUE,08:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-D-HF,NULL,NULL
+TUE,08:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+TUE,08:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+TUE,08:30 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+TUE,09:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-D-TBS,Camden Serenity Club - (912) 265-0892,NULL
+TUE,09:30 AM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,O-TBS-HF,NULL,NULL
+TUE,09:30 AM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+TUE,10:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+TUE,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,C-D-HF,Amelia Room 904-261-8349,NULL
+TUE,12:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+TUE,12:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SAT,04:00 PM,H,Celebration Group,233 N Summit St,Crescent City,FL,32112,O-D-BS,Howe Memorial Methodist Church,NULL
+TUE,12:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+TUE,12:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+TUE,12:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+TUE,12:00 PM,H,Ladies Unity Group,18 S Dixie Hwy,St Augustine,FL,32084,L-O-D-HF,NULL,NULL
+TUE,12:00 PM,C,Mandarin Hi-Noon Group,2501 Loretto Rd,Jacksonville,FL,32223,O-D-HF,Mandarin Presbyterian Church - Choir Room,NULL
+TUE,12:00 PM,H,Oldest City Mens Group,2200 A1A S,St Augustine,FL,32080,M-O-TBS-HF,St Augustine Beach City Hall,NULL
+TUE,12:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+TUE,12:00 PM,H,Other Side of the Bridge,686 S Hwy 17,San Mateo,FL,32187,O-BS,Dunns Creek Baptist Church,NULL
+TUE,12:00 PM,A,Phoenix Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+TUE,02:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+TUE,02:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+TUE,05:30 PM,H,11th Step Meeting,21 Milton St,St Augustine,FL,32084,C-D-TBS-HF,Lutheran Church of the Martyrs,NULL
+TUE,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,C-D,NULL,NULL
+TUE,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+TUE,05:30 PM,G,Melrose Happy Hour,204 SR 26,Melrose,FL,32666,O-D-HF,Trinity Episcopal Church,NULL
+TUE,05:30 PM,C,Los Lobos Mens Group,1620 Naldo Ave,Jacksonville,FL,32207,M-O-D,Swaim Methodist Church,NULL
+TUE,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+TUE,05:30 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-TBS-HF,NULL,NULL
+TUE,05:30 PM,D,Q Branch Group,11265 Alumni Way,Jacksonville,FL,32246,O-D,Quality Life Center,NULL
+TUE,05:30 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-D,NULL,NULL
+TUE,05:30 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-BS-HF,In Strip Mall-End Unit,NULL
+TUE,06:00 PM,H,A Way Out Group,200 Main St,Palatka,FL,32177,O-D,St Marks Episcopal Church,NULL
+TUE,06:00 PM,H,As Bill Sees It Group,6195 S Main St,Hastings,FL,32145,O-OL,Hastings Library Meeting Room,NULL
+TUE,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+TUE,06:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,L-C-D,Camden Serenity Club - (912) 265-0892,NULL
+TUE,06:00 PM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,L-O-D-HF,NULL,NULL
+TUE,06:30 PM,A,Alexis Group,2304 N Myrtle Ave,Jacksonville,FL,32209,O-D (S 4th Tues),Dallas Graham Library,NULL
+TUE,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+TUE,06:30 PM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+TUE,06:30 PM,E,Step-A-Month Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-BS-HF,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+TUE,07:00 PM,H,A New Life Group,233 N Summit St,Crescent City,FL,32112,O-BBS,Howe Memorial Methodist Church,NULL
+TUE,07:00 PM,D,Conscious Contact Group,2002 San Pablo Rd S,Jacksonville,FL,32224,O-S-D-11th Step,Christ Episcopal Church San Pablo,NULL
+TUE,07:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-S-HF,NULL,NULL
+TUE,07:00 PM,E,I Am Responsible Group,2125 Oceanfront,Neptune Beach,FL,32266,O-D-GV,First Christian Church of the Beaches,NULL
+TUE,07:00 PM,D,Language of the Heart,6500 Ft Caroline Rd,Jacksonville,FL,32277,O-S-HF,NULL,NULL
+TUE,07:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+TUE,07:30 PM,H,Palatka Group,318 Osceola St,Palatka,FL,32177,O-BS-D-HF,The Lions Club,NULL
+TUE,07:00 PM,B,Road To Freedom,5123-03 Timiquana Rd,Jacksonville,FL,32210,O-D,Consuming Fire Ministry,NULL
+TUE,07:00 PM,A,This Too Shall Pass,2311 Starratt Rd,Jacksonville,FL,32226,O-D,Encounter Christian Church - Oceanway,NULL
+THR,07:00 PM,D,Primary Purpose Group of St Ni,3134 Beach Blvd,Jacksonville,FL,32207,C-BBS-HF,NULL,NULL
+TUE,07:00 PM,H,Womens Candlelight Group,2487 A1A S,St Augustine,FL,32080,L-O-TBS-HF,Unitarian Universalist Church - Basement S of 312,NULL
+TUE,07:15 PM,D,James Gang II,2701 Hodges Blvd,Jacksonville,FL,32224,O-D-HF,New Life Christian/Providence School Room 101-A,NULL
+TUE,07:30 PM,A,Fresh Start Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+TUE,07:00 PM,C,Greenland Rd Mandarin Group,6045 Greenland Rd,Jacksonville,FL,32258,O-D-DR-HF,Christs Church,NULL
+TUE,07:30 PM,C,Mandarin Women In Recovery,2501 Lorretto Rd,Jacksonville,FL,32223,L-O-D (TBS-First S-Last),Mandarin Presbyterian Church - Room W-107,NULL
+TUE,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+TUE,08:00 PM,E,BS Group,400 Penman Rd,Neptune Beach,FL,32266,O-D,Christ United Methodist Church,NULL
+TUE,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,M-C-D & L-C-D-HF,NULL,NULL
+TUE,08:00 PM,H,Beginners Group,1111 Francis St,Interlachen,FL,32148,O-D,St Andrews Episcopal Church,NULL
+TUE,08:00 PM,F,Callahan Group,45031 Historical Lane,Callahan,FL,32011,O-D,Greater Mt Pleasant Baptist Church,NULL
+TUE,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-S,NULL,NULL
+TUE,08:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-S-HF,NULL,NULL
+TUE,08:00 PM,F,Folkston Group,51 Shady Lane,Folkston,GA,31537,O-TBS,For Info Or Directions call: (912) 496-1007,NULL
+TUE,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+TUE,08:00 PM,G,Happy Hour Group,212 N Church St,Starke,FL,32091,C-D-CC-HF,St Marks Episcopal Church,NULL
+TUE,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-D-BBS,Camden Serenity Club - (912) 265-0892,NULL
+TUE,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+TUE,08:00 PM,B,Riverside/Ortega Group,4807 Roosevelt Blvd,Jacksonville,FL,32210,C-D,Ortega Methodist Church-Ed Bldg Rm 4,NULL
+TUE,08:00 PM,C,San Man Group,7423 San Jose Blvd,Jacksonville,FL,32217,C-D (S-last Tue),San Jose Episcopal Church Lounge - Across from Bol,NULL
+TUE,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-Beg-HF,Grace Free Will Baptist Church,NULL
+TUE,08:00 PM,A,Step Brothers,1147 W 21st St,Jacksonville,FL,32209,M-O-S-SM,NULL,NULL
+TUE,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-BBS,NULL,NULL
+SUN,10:00 AM,C,Subject to Change,3645 Spring Park Rd,Jacksonville,FL,32207,C-D,NULL,NULL
+TUE,08:00 PM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-SS-Bld. 6,YMCA - Building 6,NULL
+TUE,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+WED,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
+WED,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+WED,07:00 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+WED,07:00 AM,A,Sunrise Breakfast Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+WED,07:00 AM,H,Winning Game Group,18 S Dixie Hwy,St Augustine,FL,32084,O-AB-HF,NULL,NULL
+WED,08:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+WED,08:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-D-HF,NULL,NULL
+WED,08:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+WED,08:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+WED,08:30 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-OL-HF,NULL,NULL
+WED,09:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D,Camden Serenity Club - (912) 265-0892,NULL
+WED,09:30 AM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,O-BS-HF,NULL,NULL
+WED,09:30 AM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+WED,10:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+WED,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-SD-HF,Amelia Room 904-261-8349,NULL
+WED,12:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+WED,12:00 PM,E,BAA,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-D-HF,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+WED,12:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+WED,12:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-D,NULL,NULL
+WED,12:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+WED,12:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+WED,12:00 PM,C,Mandarin Hi-Noon Group,2501 Loretto Rd,Jacksonville,FL,32223,O-S-HF,Mandarin Presbyterian Church - Choir Room,NULL
+WED,12:00 PM,H,New Life Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+WED,12:00 PM,H,Night Owl Group,38 Cathedral Place,St Augustine,FL,32084,O-BBS,Cathedral Basilica Church-Enter E side of building,NULL
+WED,12:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+WED,12:00 PM,A,Phoenix Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+WED,12:00 PM,D,Stepping Up Group,7500 Southside Blvd,Jacksonville,FL,32256,O-D-HF,Episcopal Church of the Redeemer-Classroom # 6 (Ba,NULL
+WED,02:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+WED,02:00 PM,H,New Horizon Group,21 Milton Street,St Augustine,FL,32084,O-D-TBS-HF,Public Health Building,NULL
+WED,02:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+WED,03:30 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+WED,04:00 PM,H,Half Way Through Group,130 Martin Luther King Ave,St Augustine,FL,32084,O-D-HF,NULL,NULL
+WED,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,C-D,NULL,NULL
+WED,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-SS-HF,NULL,NULL
+WED,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+WED,05:30 PM,D,Q Branch Group,11265 Alumni Way,Jacksonville,FL,32246,O-D,Quality Life Center,NULL
+WED,05:30 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+WED,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+MON,06:00 PM,G,Hole in the Wall,City Hall County Rd 18,Hampton,FL,32044,C-BBS-HF,NULL,NULL
+WED,06:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-TBS-TD,Camden Serenity Club - (912) 265-0892,NULL
+WED,06:00 PM,B,Stepsisters Grace Group,2904 Ionic Ave,Jacksonville,FL,32210,L-O-D,St Marks Episcopal - Grace House,NULL
+WED,05:30 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-BS,NULL,NULL
+WED,06:15 PM,A,Clean & Free Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+WED,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-Beg-HF,NULL,NULL
+WED,06:30 PM,C,Coyote 2 Mens Group,11270 San Jose Blvd,Jacksonville,FL,32223,M-O-D,Mandarin United Methodist Church Bldg G 2nd Floor,NULL
+WED,06:30 PM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-SS-TS-HF,Amelia Room 904-261-8349,NULL
+WED,06:42 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-BS-HF,Small Room,NULL
+WED,07:00 PM,E,Beaches Book Study,1801 Beach Blvd,Jacksonville Beach,FL,32250,M-O-BS,NULL,NULL
+WED,07:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,L-C-D-HF,NULL,NULL
+WED,07:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+WED,07:00 PM,H,Liberty Group,301 Cypress St,Crescent City,FL,32112,O-SD-TD,First Presbyterian Church,NULL
+WED,07:30 PM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32084,O-S-YP-HF,NULL,NULL
+WED,07:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,M-C-D-HF,NULL,NULL
+WED,07:00 PM,E,Seaside Step Study,130 4th Ave S,Jacksonville Beach,FL,32250,O-L-S-HF,NULL,NULL
+WED,07:00 PM,E,Wednesday Evening Book Study,3410 3rd St S,Jacksonville Beach,FL,32250,C-BS-HF-CC,Palms Presbyterian Church Office Building - Upstai,NULL
+WED,07:30 PM,G,Fleming Island Group,4325 Highway 17,Fleming Island,FL,32003,O-D-HF,Heritage Baptist Church,NULL
+WED,07:30 PM,H,Stepping Stone Group,1795 Old Moultrie Rd,St Augustine,FL,32084,O-TBS-HF,Center for Spiritual Living,NULL
+WED,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+WED,08:00 PM,H,Azalea City Group,123 S 2nd St,Palatka,FL,32177,O-D,First Presbyterian Church,NULL
+WED,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,C-D & O-BS-HF,NULL,NULL
+WED,08:00 PM,F,Callahan Group,45031 Historical Lane,Callahan,FL,32011,O-D,Greater Mt Pleasant Baptist Church,NULL
+WED,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-D-Beg,NULL,NULL
+WED,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+WED,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+FRI,08:00 PM,D,Grupo Vida Y Esperanza,4040 Sunbeam Rd ste 4,Jacksonville,FL,32257,C-D-SP-2hrs,NULL,NULL
+SAT,08:00 PM,D,Grupo Vida Y Esperanza,4040 Sunbeam Rd ste 4,Jacksonville,FL,32257,C-D-SP-2hrs,NULL,NULL
+WED,08:00 PM,A,Jax Mens Group,51 E First St,Jacksonville,FL,32206,M-C-D-HF,NULL,NULL
+WED,08:00 PM,G,Keystone Group,2738 SE SR 21,Keystone Heights,FL,32656,O-BBS-HF,Faith Presbyterian Church,NULL
+WED,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D,Camden Serenity Club - (912) 265-0892,NULL
+WED,07:00 PM,D,Language of the Heart,6500 Ft Caroline Rd,Jacksonville,FL,32277,O-D-HF,NULL,NULL
+WED,08:00 PM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-D,NULL,NULL
+WED,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-D-HF,Grace Free Will Baptist Church,NULL
+WED,08:00 PM,E,Surrender To Win,800 Shetter Ave,Jacksonville Beach,FL,32250,O-D-HF,Mission House-behind the bowling alley,NULL
+WED,08:00 PM,B,Tradition Group,2911 Riverside Ave,Jacksonville,FL,32205,O-BS,NULL,NULL
+WED,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-S,NULL,NULL
+WED,08:00 PM,B,West Jax Mens Group,940 Talbot Ave,Jacksonville,FL,32205,C-D-HF,Murray Hill Presbyterian Church,NULL
+WED,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-SS-HF,NULL,NULL
+WED,07:00 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-BS-HF,In Strip Mall-End Unit,NULL
+WED,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-D-HF,NULL,NULL
+WED,08:30 PM,C,Switzerland Group,210 N Ridgecrest Lane,St Johns,FL,32259,O-D(SD-First Wed)-HF,Room 100,NULL
+THR,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
+THR,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-BBS-HF,Amelia Room 904-261-8349,NULL
+THR,07:00 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+THR,07:00 AM,A,Sunrise Breakfast Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+THR,07:00 AM,H,Winning Game Group,18 S Dixie Hwy,St Augustine,FL,32084,O-BS-HF,NULL,NULL
+THR,08:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+THR,08:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-D-HF,NULL,NULL
+THR,08:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+THR,08:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+THR,08:30 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+THR,09:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-BBS,Camden Serenity Club - (912) 265-0892,NULL
+THR,09:30 AM,A,Living In the Light,900 Bridier St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+THR,09:30 AM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+THR,10:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+THR,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+THR,11:00 AM,E,More About Alcoholism,2400 Mayport Rd,Atlantic Beach,FL,32233,O-BBS-HF,St Johns Catholic Church - Meets in Library behind,NULL
+THR,12:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-BBS,NULL,NULL
+THR,12:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,C-D & O-D-HF,NULL,NULL
+THR,07:00 PM,H,Celebration Group,233 N Summit St,Crescent City,FL,32112,O-D-BS,Howe Memorial Methodist Church,NULL
+THR,12:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+THR,12:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-SS-HF,NULL,NULL
+THR,12:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+TUE,06:00 PM,E,Back to Basics,322 Penman Rd,Jacksonville Beach,FL,32250,O-D,"Southeast Community Church, enter by carport",NULL
+THR,12:00 PM,C,Mandarin Hi-Noon Group,2501 Loretto Rd,Jacksonville,FL,32223,O-D-Beg-HF,Mandarin Presbyterian Church - Choir Room,NULL
+THR,12:00 PM,H,New Life Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+THR,12:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+THR,12:00 PM,H,Other Side of the Bridge,686 S Hwy 17,San Mateo,FL,32187,O-BS,Dunns Creek Baptist Church,NULL
+THR,12:00 PM,A,Phoenix Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+THR,01:00 PM,F,Keep It Simple Group,801 Atlantic Ave,Fernandina Beach,FL,32034,L-C-D,St Peters Episcopal Church - Youth Center,NULL
+MON,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+THR,02:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+THR,02:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+THR,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+THR,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,L-O-D-HF,NULL,NULL
+THR,05:30 PM,H,Happy Hour Group,18 S Dixie Hwy,St Augustine,FL,32084,O-BBS-HF,NULL,NULL
+THR,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+THR,05:30 PM,D,Q Branch Group,11265 Alumni Way,Jacksonville,FL,32246,O-D,Quality Life Center,NULL
+THR,05:30 PM,D,Roving Stag,3645 Spring Park Rd,Jacksonville,FL,32207,M-O-D,NULL,NULL
+THR,05:30 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-D,NULL,NULL
+THR,05:30 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+THR,06:00 PM,H,A Way Out Group,200 Main St,Palatka,FL,32177,C-BBS,St Marks Episcopal Church,NULL
+THR,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+THR,06:00 PM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,M-O-D-HF,NULL,NULL
+THR,06:00 PM,E,7/11 Meditation Group,2125 Oceanfront,Neptune Beach,FL,32266,O-Med,First Christian Church,NULL
+THR,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D & O-D-Beg-HF,NULL,NULL
+THR,06:30 PM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-BBS-HF,Amelia Room 904-261-8349,NULL
+THR,06:30 PM,B,Thirsty Thursdays,2858 Post Street,Jacksonville,FL,32205,O-D-LGBT-(S 3rd Th),Riverside United Church,NULL
+THR,06:45 PM,E,Mens Red Eye Group,1423 8th Ave N,Jacksonville Beach,FL,32250,M-C-BS,Bethlehem Lutheran Church,NULL
+THR,07:00 PM,G,FIG,6865 Pine Ave,Orange Park,FL,32065,O-BS,St Margaret Episcopal Church-Green Cove,NULL
+THR,07:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-CL-Med-HF,NULL,NULL
+THR,07:00 PM,B,Murray Hill Group,940 Talbot Ave,Jacksonville,FL,32205,O-D,Murray Hill Presbyterian Church,NULL
+THR,07:30 PM,H,Palatka Group,318 Osceola St,Palatka,FL,32177,O-D-HF,The Lions Club,NULL
+THR,07:00 PM,E,Nocatee Sobriety,895 Palm Valley Rd,Ponte Vedra,FL,32081,O-D,St Francis In The Field Episcopal Church SR210 E,NULL
+THR,07:00 PM,B,Primary Purpose Group,4758 Shelby Ave,Jacksonville,FL,32210,C-BS-1.5hrs,St Catherines Episcopal Church,NULL
+THR,07:00 PM,D,San Pablo Sober Sisters,1821 San Pablo Rd S,Jacksonville,FL,32224,L-C-D-BS,Isle of Faith United Methodist Church,NULL
+THR,07:00 PM,H,Women Speak,37 Lovett St,St Augustine,FL,32084,L-O-BBS-S-HF,St Cyprians Episcopal Church,NULL
+THR,07:15 PM,D,Reborn Group,711 St Johns Bluff Rd,Jacksonville,FL,32225,O-BS,North Lot Back of Bld Follow Sign,NULL
+THR,07:15 PM,D,The James Gang,10302 Deerwood Park Blvd,Jacksonville,FL,32256,O-D,Celebration Church,NULL
+THR,07:30 PM,C,Damascus Group,6133 San Jose Blvd,Jacksonville,FL,32217,M-O-D-HF,Lakewood United Methodist Church - Room 102,NULL
+THR,07:30 PM,A,Fresh Start Group,51 E First St,Jacksonville,FL,32206,O-S-HF,NULL,NULL
+THR,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-BBS,NULL,NULL
+THR,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-BS & SS-HF,NULL,NULL
+THR,08:00 PM,F,Callahan Group,45031 Historical Lane,Callahan,FL,32011,O-BBS,Greater Mt Pleasant Baptist Church,NULL
+THR,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+THR,08:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+THR,08:00 PM,F,Folkston Group,51 Shady Lane,Folkston,GA,31537,O-BBS,For Info Or Directions call: (912) 496-1007,NULL
+THR,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-Beg-HF,Nanas House-2 blks W of US 17,NULL
+THR,08:00 PM,G,Happy Hour Group,212 N Church St,Starke,FL,32091,O-S-CC-HF,St Marks Episcopal Church,NULL
+THR,08:00 PM,A,Helping Hands Group,2625 N Market St,Jacksonville,FL,32206,O-BS-SM,NULL,NULL
+THR,08:00 PM,E,Jax Beaches YPG,2125 Oceanfront,Neptune Beach,FL,32266,C-BS-YP,First Christian Church of the Beaches,NULL
+THR,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-D,Camden Serenity Club - (912) 265-0892,NULL
+THR,08:00 PM,C,Mandarin Group,12001 Mandarin Rd,Jacksonville,FL,32223,O-BS,Mandarin Presbyterian Church - Room W-107,NULL
+THR,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-BBS-HF,NULL,NULL
+THR,08:00 PM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-D-Beg,NULL,NULL
+THR,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-TBS-HF,Grace Free Will Baptist Church,NULL
+THR,08:00 PM,H,Student Group,26 Artillery Lane,St Augustine,Fl,32084,O-D-HF,Trinity Episcopal Church-Enter at Assem Hall,NULL
+THR,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-D,NULL,NULL
+THR,08:00 PM,H,Way Out Group,3375 US 1,St Augustine,FL,32086,C-D-HF,Memorial Lutheran Church-Sign Language Interpretat,NULL
+THR,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,Character Defects,NULL
+THR,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-SM-HF,Outside Meeting,NULL
+THR,08:00 PM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-OD-Bld. 6,YMCA - Building 6,NULL
+THR,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-BS-HF,NULL,NULL
+FRI,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
+FRI,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,C-BS-HF,Amelia Room 904-261-8349,NULL
+FRI,07:00 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-TBS-HF,NULL,NULL
+FRI,07:00 AM,A,Sunrise Breakfast Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+FRI,07:00 AM,H,Winning Game Group,18 S Dixie Hwy,St Augustine,FL,32084,O-DR-HF,NULL,NULL
+FRI,07:30 AM,F,Dunes Group,1974 S Fletcher St,Fernandina Beach,FL,32034,O-OL,Peters Point Beach,NULL
+FRI,07:30 AM,E,Intensive Care Group,1320 13th Ave S,Jacksonville Beach,FL,32250,O-D-HF,Wilson Nash Epstein Bldg across fr Bchs Bapt MedCt,NULL
+FRI,08:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+FRI,08:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,C-D-HF,NULL,NULL
+FRI,08:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+FRI,08:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+FRI,08:30 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-BBS-HF,NULL,NULL
+FRI,09:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D,Camden Serenity Club - (912) 265-0892,NULL
+FRI,09:30 AM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,O-S-HF,NULL,NULL
+FRI,09:30 AM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+FRI,10:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+FRI,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-BBS-HF,Amelia Room 904-261-8349,NULL
+FRI,11:30 AM,H,Vilano Beach Combers,120 Meadow Ave (off A1A N),St Augustine,FL,32084,O-D-HF,Vilano Community Center,NULL
+FRI,12:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+FRI,12:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D & TBS-HF,NULL,NULL
+FRI,12:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-D,NULL,NULL
+FRI,12:00 PM,E,Daily Reflections Group,148 Canal Blvd,Palm Valley,FL,32082,O-D-HF,Palm Valley Community Center,NULL
+FRI,12:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-S-HF,NULL,NULL
+FRI,12:00 PM,H,Freedom Group,318 Osceola St,Palatka,FL,32177,O-D,The Lions Club,NULL
+FRI,12:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+FRI,12:00 PM,C,Mandarin Hi-Noon Group,2501 Loretto Rd,Jacksonville,FL,32223,O-D-HF,Mandarin Presbyterian Church - Choir Room,NULL
+FRI,12:00 PM,H,New Life Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+FRI,12:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+FRI,12:00 PM,A,Phoenix Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+FRI,12:00 PM,H,Seascape Group,5205 A1A South,St Augustine,FL,32080,C-S-HF,St Anastasia Catholic Church (A1A & Weff Rd),NULL
+FRI,01:30 PM,E,Women Enjoying Sobriety,322 Penman Rd,Jacksonville Beach,FL,32250,L-O-D-HF,NULL,NULL
+FRI,02:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+FRI,02:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+FRI,03:30 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+FRI,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-BBS,NULL,NULL
+FRI,05:30 PM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,C-D-HF (O-First Fri),Amelia Room 904-261-8349,NULL
+FRI,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-OL-HF,NULL,NULL
+FRI,05:30 PM,H,Happy Hour Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,Ask It Basket,NULL
+FRI,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-S-HF,NULL,NULL
+FRI,05:30 PM,D,Q Branch Group,11265 Alumni Way,Jacksonville,FL,32246,O-D,Quality Life Center,NULL
+FRI,05:30 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+FRI,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+FRI,06:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D,Camden Serenity Club - (912) 265-0892,NULL
+FRI,06:00 PM,H,Lake Como Meeting,100 Block of Highland Ave,Lake Como,FL,32157,O-D (Last Fri O-S),Lake Como Community Center,NULL
+FRI,06:00 PM,E,Stepping Stones,400 San Juan Dr,Ponte Vedra Beach,FL,32082,C-TBS,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+FRI,06:00 PM,C,Women in Recovery Group,2001 W University Blvd,Jacksonville,FL,32217,L-O-D,Lakewood Presbyterian Church,NULL
+FRI,06:30 PM,E,Beach Side Step Study Group,2125 Oceanfront,Neptune Beach,FL,32266,O-TBS-D (Last Fri O-TD),First Christian Church of the Beaches,NULL
+FRI,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,C-D-HF,NULL,NULL
+FRI,06:30 PM,G,Middleburg Group,4564 Rosemary St,Middleburg,FL,32068,O-D,Middleburg Presbyterian Church,NULL
+FRI,06:30 PM,H,Sons of the Spirit Group,1795 Old Moultrie Rd,St Augustine,FL,32084,M-C-D-HF,Center for Spiritual Living,NULL
+FRI,07:00 PM,A,City Group,1704 N Pearl St,Jacksonville,FL,32206,O-D,NULL,NULL
+SUN,06:00 AM,F,Sunrise Beach Meeting,1974 Fletcher St,Fernandina Beach,FL,32034,O-D,On the Beach at Peter's Point,NULL
+FRI,07:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-Beg-HF,NULL,NULL
+FRI,07:00 PM,F,Fireside Group,19 S 14th St,Fernandina Beach,FL,32034,O-D (1st & 2nd Sat Only),NULL,NULL
+FRI,07:00 PM,A,Fourth Street Group,20 W 4th St,Jacksonville,FL,32206,O-D,NULL,NULL
+FRI,07:00 PM,D,Language of the Heart,6500 Ft Caroline Rd,Jacksonville,FL,32277,O-BS-HF,NULL,NULL
+FRI,07:00 PM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,O-SS-HF,NULL,NULL
+FRI,07:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+TUE,7:00 AM,C,Fruit Cove Literature Study,1500 Bishop Estates Road Villa 31A,St. Johns,FL,32259,O-BS,NULL,NULL
+FRI,07:30 PM,D,Salisbury Mens Group,3947 Salisbury Rd,Jacksonville,FL,32216,M-C-D,NULL,NULL
+THR,08:00 PM,F,5th Tradition Group,801 Atlantic Ave,Fernandina Beach,FL,32034,C-BBS,St Peters Episcopal Church Room 203,NULL
+FRI,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,C-BS-SM,NULL,NULL
+FRI,08:00 PM,H,Azalea City Group,123 S 2nd St,Palatka,FL,32177,O-D,First Presbyterian Church,NULL
+FRI,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-Beg & O-D-HF,NULL,NULL
+FRI,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,O-D-BS-HF,NULL,NULL
+FRI,08:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+FRI,08:00 PM,A,Eastside Group,1025 Jessie St,Jacksonville,FL,32206,O-BS-D-S-HF,1st Baptist Church of Oakland,NULL
+FRI,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-BS-HF (Last Fri Eat@7,Nanas House-2 blks W of US 17,NULL
+WED,08:00 PM,D,Grupo Vida Y Esperanza,4040 Sunbeam Rd ste 4,Jacksonville,FL,32257,C-D-SP-2hrs,NULL,NULL
+FRI,08:00 PM,H,Its In The Book Group,400 Health Park Blvd,St Augustine,FL,32086,O-BBS-HF,Flagler Hospital Osceola Room,NULL
+FRI,08:00 PM,B,Keep It Simple Sister,5975 Park St,Jacksonville,FL,32205,L-O-BS-HF,New Life at Park St Church-Candlelight,NULL
+MON,08:00 PM,G,Keystone Group,2738 SE SR 21,Keystone Heights,FL,32656,C-D-HF,Faith Presbyterian,NULL
+FRI,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-D,Camden Serenity Club - (912) 265-0892,NULL
+FRI,08:00 PM,B,Macclenny Group,8981 S SR 228,Macclenny,FL,32063,O-D-HF,Wayne Fryer Trailer Sales Office,NULL
+FRI,08:00 PM,C,Mandarin Young Peoples Group,11924 San Jose Blvd,Jacksonville,FL,32223,O-D-YP,First Christian Church of Mandarin-2nd Fri CL-4th,NULL
+TUE,07:30 PM,D,We Agnostics,7405 Arlington Expressway,Jacksonville,FL,32211,O-D,Unitarian Universalist Church Fletcher Room,NULL
+FRI,08:00 PM,C,New Beginnings Group,11924 San Jose Blvd,Jacksonville,FL,32223,O-D-HF,First Christian Church of Mandarin,NULL
+FRI,08:00 PM,B,Ortega Group,2904 Ionic Ave,Jacksonville,FL,32210,C-D,St Marks Episcopal - Grace House,NULL
+FRI,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+FRI,08:00 PM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-S,NULL,NULL
+FRI,08:00 PM,A,Safehaven Group,611 E Adams St,Jacksonville,FL,32202,O-D,IM Sulzbacher Center,NULL
+FRI,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-D-CL-HF,Grace Free Will Baptist Church,NULL
+FRI,08:00 PM,E,Third St Third Tradition Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-D,Christ Episcopal Church - Rm 203-Park on Second Fl,NULL
+FRI,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-S,NULL,NULL
+THR,05:00 PM,B,Big Book Study at Wiley,6970 Wiley Road,Jacksonville,FL,32210,C- BBS,NULL,NULL
+FRI,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+FRI,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+FRI,10:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D-CL,Camden Serenity Club - (912) 265-0892,NULL
+FRI,Midnight,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+SAT,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
+SAT,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+SAT,07:00 AM,H,Winning Game Group,18 S Dixie Hwy,St Augustine,FL,32084,O-AB-HF,NULL,NULL
+SAT,07:30 AM,C,Coyote Mens Group,11924 San Jose Blvd,Jacksonville,FL,32223,M-O-D-HF,First Christian Church of Mandarin,NULL
+SAT,07:45 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+SAT,08:00 AM,E,Big Book Field Study,895 Palm Valley Rd,Ponte Vedra,FL,32081,C-BBS-D,St Francis in the Field Episcopal Church,NULL
+SAT,08:00 AM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+SAT,08:00 AM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+SAT,08:15 AM,A,Sunrise Breakfast Group,51 E First St,Jacksonville,FL,32206,O-D-HF,NULL,NULL
+SAT,08:30 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+SAT,08:30 AM,E,Solutions Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,M-C-D-HF,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+SAT,08:45 AM,E,Mens Red Eye Group,1423 8th Ave N,Jacksonville Beach,FL,32250,M-C-D,Bethlehem Lutheran Church,NULL
+SAT,09:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+SAT,09:00 AM,E,DTs Group,325 N 7th Ave,Jacksonville Beach,FL,32250,O-BS,Disciple House,NULL
+SAT,09:00 AM,G,Orange Park Stepsisters,245 Kingsley Ave,Orange Park,FL,32073,L-O-BS,Meets in Benedict Hall at Grace Episcopal Church,NULL
+SAT,09:00 AM,H,Sober Sisters,1795 Old Moultrie Rd,St Augustine,FL,32084,L-O-D-HF,The Center For Spiritual Living,NULL
+SAT,09:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-BBS-HF,NULL,NULL
+SAT,09:30 AM,A,Living in the Light,900 Bridier St,Jacksonville,FL,32206,O-S-D-HF,NULL,NULL
+SAT,10:00 AM,E,Joy Group,400 San Juan Dr,Ponte Vedra Beach,FL,32082,O-BS,Christ Episcopal Church-Park on Second Floor of Ga,NULL
+SAT,10:00 AM,F,Keep It Simple Group,2600 Atlantic Ave,Fernandina Beach,FL,32034,C-SD-TD,Prince of Peace Lutheran Church,NULL
+SAT,10:00 AM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,C-D,Camden Serenity Club - (912) 265-0892,NULL
+SAT,11:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SAT,11:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+SAT,11:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,C-SD-HF,Amelia Room 904-261-8349,NULL
+SAT,11:00 AM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,L-O-D-HF,NULL,NULL
+SAT,12:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-TBS,NULL,NULL
+SAT,12:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+SAT,12:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-HF,Nanas House-2 blks W of US 17,NULL
+SAT,12:00 PM,H,Night Owl Group,38 Cathedral Place,St Augustine,FL,32084,O-S,Cathedral Basilica Church-Enter E side of building,NULL
+SAT,12:00 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+SAT,01:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,L-O-D-HF,NULL,NULL
+SAT,01:00 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,O-D-HF,In Strip Mall-End Unit,NULL
+SAT,01:15 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,L-O-D-HF,NULL,NULL
+SAT,02:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+SAT,03:00 PM,E,I Am Responsible Group,2125 Oceanfront,Neptune Beach,FL,32266,O-D-S,First Christian Church of the Beaches,NULL
+SAT,05:00 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,L-O-D-HF,In Strip Mall-End Unit,NULL
+SAT,05:30 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-S,NULL,NULL
+SAT,05:30 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+SAT,05:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,L-C-D-HF,NULL,NULL
+SAT,06:00 PM,H,A Way Out Group,200 Main St,Palatka,FL,32177,C-BS,St Marks Episcopal Church-Back Classroom,NULL
+SAT,06:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-D,NULL,NULL
+SAT,06:00 PM,H,Young Peoples Group,400 Health Park Blvd,St Augustine,FL,32086,O-D-YP-HF,Flagler Hospital Osceola Room,NULL
+SAT,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SAT,06:30 PM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+SAT,06:30 PM,E,Jax Beaches YPG,2125 Oceanfront,Neptune Beach,FL,32266,O-D-YP,First Christian Church of the Beaches,NULL
+SAT,06:30 PM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-BBS-Bld. 6,YMCA - Building 6,NULL
+WED,08:15 pm,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,M-C-D-HF,NULL,NULL
+SAT,07:00 PM,D,Fiesta Group,3645 Spring Park Rd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
+SAT,07:00 PM,B,Riverside YPG,1651 Talbot Ave,Jacksonville,FL,32205,O-D-YP-HF,Avondale United Methodist Church,NULL
+SAT,07:30 PM,C,Switzerland Group,210 N Ridgecrest Lane,St Johns,FL,32259,O-S-HF,Room 100,NULL
+SAT,08:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D,NULL,NULL
+SAT,08:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-S-HF,NULL,NULL
+SAT,08:00 PM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32177,O-S,NULL,NULL
+SAT,08:00 PM,B,Contentment Group,2904 Ionic Ave,Jacksonville,FL,32207,O-D,St Marks Episcopal - Grace House,NULL
+SAT,08:00 PM,F,Downtown Group,32 N 3rd St,Fernandina Beach,FL,32034,O-D-HF,NULL,NULL
+SAT,08:00 PM,F,Folkston Group,51 Shady Lane,Folkston,GA,31537,O-S,For Info Or Directions call: (912) 496-1007,NULL
+SAT,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D -HF,Nanas House-2 blks W of US 17,NULL
+SAT,08:00 PM,G,Happy Hour Group,212 N Church St,Starke,FL,32091,C-D-CC-HF,St Marks Episcopal Church,NULL
+SAT,08:00 PM,F,Kingsland Recovery Group,313 Central Ave,Kingsland,GA,31548,O-D,Camden Serenity Club - (912) 265-0892,NULL
+SAT,08:00 PM,H,Oyster Creek Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+SAT,08:00 PM,A,Riverview Study Group,7944 Smyrna St,Jacksonville,FL,32208,O-D,NULL,NULL
+SAT,08:00 PM,H,Saturday Night Live Group,27 Sevilla St,St Augustine,FL,32084,O-S-HF,Ancient City Baptist Church-Through Courtyard then,NULL
+SAT,07:30 PM,A,Stepping in Sobriety,51 E First St,Jacksonville,FL,32206,O-TBS-HF,NULL,NULL
+SAT,08:00 PM,G,Sojourn Group,557 Madison,Orange Park,FL,32065,O-D-HF,Grace Free Will Baptist Church,NULL
+SAT,08:00 PM,A,Trout River Group,9745 Lem Turner,Jacksonville,FL,32208,O-D,NULL,NULL
+SAT,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-HF,NULL,NULL
+SAT,08:30 PM,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-S-HF,NULL,NULL
+SAT,10:00 PM,D,Arlington Group,1343 Cesery Terr,Jacksonville,FL,32211,O-D-SM-CL,NULL,NULL
+SAT,Midnight,G,Orange Park Group,1835 Smith St,Orange Park,FL,32073,O-D-HF,NULL,NULL
+FRI,08:00 PM,G,Keystone Group,2738 SE SR 21,Keystone Heights,FL,32656,O-S-D-HF,Faith Presbyterian Church,NULL
+SUN,07:00 PM,G,Keystone Group,2738 SE SR 21,Keystone Heights,FL,32656,O-SD-HF,Faith Presbyterian Church,NULL
+THR,07:00 PM,G,Language of the Heart Womens,204 SR 26,Melrose,FL,32666,L-O-D-HF,Trinity Episcopal Church,NULL
+FRI,06:00 PM,G,Hole in the Wall,City Hall County Rd 18,Hampton,FL,32044,C-OL-HF,NULL,NULL
+SAT,07:00 AM,E,Sunrise Serenity Beach Meeting,8th Ave N on the Beach,Jacksonville Beach,FL,32250,O-D,Meets On The Beach,NULL
+MON,07:00 PM,F,A New Freedom,1014 S 10th St,Fernandina Beach,FL,32034,O-D,NULL,NULL
+SAT,09:30 PM,F,A New Freedom,1014 S 10th St,Fernandina Beach,FL,32034,O-D-CL,NULL,NULL
+THR,06:30 PM,G,The Cove Step Sisters,400 St Johns Ave,Green Cove Springs,FL,32043,L-C-SD,St Marys Episcopal Church,NULL
+MON,07:00 PM,F,Grupo North 5th St,416 Alachua St,Fernandina Beach,FL,32034,O-D-Beg-SP,Promised Land Church Rm 101,NULL
+MON,06:30 PM,D,Yes We Can,3947 Salisbury Rd N,Jacksonville,FL,32216,L-O-Beg,NULL,NULL
+SAT,08:30 AM,E,Eye of The Hurricane,800 Shetter Ave,Jacksonville Beach,FL,32250,O-D,NULL,NULL
+TUE,06:30 PM,B,Arcobaleno,2858 Post Street,Jacksonville,FL,32205,O-BS-LGBT,Riverside United Church,NULL
+MON,08:00 PM,C,Young Wild and Free,3810-3 Williamsburg Park Blvd,Jacksonville,FL,32257,O-D-YP,NULL,NULL
+THR,7:00 AM,C,Fruit Cove Literature Study,1500 Bishop Estates Road Villa 31A,St. Johns,FL,32259,O-SD,NULL,NULL
+SAT,08:52 AM,E,Mens Black Eye B.U.G.,322 Penman Rd,Jacksonville Beach,FL,32250,M-O-D-HF,NULL,NULL
+TUE,08:00 PM,H,Ive Come To Believe,5605 US 1 South,St Augustine,FL,32080,O-D-HF,Homeport News Church,NULL
+WED,12:00 PM,H,Other Side of the Bridge,686 S Hwy 17,San Mateo,FL,32187,O-BS,Dunns Creek Baptist Church,NULL
+MON,06:30 PM,B,Free To Be LGBT,634 Lomax St,Jacksonville,FL,32204,O-D-LGBT,Unity Church of Jacksonville-May St Entrance,NULL
+FRI,06:30 PM,B,Free To Be LGBT,634 Lomax St,Jacksonville,FL,32204,O-D-LGBT,Unity Church of Jacksonville-May St Entrance,NULL
+FRI,11.59 PM,B,Last Call YPG,634 Lomax Street,Jacksonville,FL,32205,O-D-YP,Unity Church,NULL
+WED,07:00 PM,A,Fourth Street Group,20 W 4th St,Jacksonville,FL,32206,O-S,NULL,NULL
+TUE,12:00 PM,B,Timuquana Ladies of Grace,2904 Ionic Ave,Jacksonville,FL,32210,L-O-BS,St Marks Episcopal Grace House,NULL
+THR,12:00PM,B,Timuquana Ladies of Grace,2904 Ionic Ave,Jacksonville,FL,32210,L-C-D,St Marks Episcopal Grace House,NULL
+WED,11:00 AM,C,New Life Group,3810-3 Williamsburg Park Blvd,Jacksonville,FL,32257,O-D,NULL,NULL
+SUN,05:30 PM,A,Living In The Light,900 Bridier St,Jacksonville,FL,32206,O-BBS-HF,NULL,NULL
+WED,08:00 PM,H,Bostwick Evergreen Group,125 Tillman St,Bostwick,FL,32007,O-D-HF,Bostwick Community Center,NULL
+TUE,08:00 PM,D,Grupo Vida Y Esperanza,4040 Sunbeam Rd Ste 4,Jacksonville,FL,32257,C-BS-SP-2hrs,NULL,NULL
+MON,08:00 PM,D,Grupo Vida Y Esperanza,4040 Sunbeam Rd ste 4,Jacksonville,FL,32257,C-D-SP-2hrs,NULL,NULL
+TUE,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+WED,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+THR,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+FRI,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+MON,07:15 PM,D,Reborn Group,711 St Johns Bluff Rd,Jacksonville,FL,32225,O-D,North Lot Back of Bld Follow Sign,NULL
+MON,08:00 PM,F,Service Training 101 Group,906 South 7th St,Fernandina Beach,FL,32034,O-TD,Amelia Room,NULL
+SAT,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SUN,04:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-HF,NULL,NULL
+SAT,09:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-L-BS-HF,NULL,NULL
+SAT,05:00 PM,A,Heavy Hitters Mens Group,900 Bridier St,Jacksonville,FL,32206,O-M-BBS-HF,Alumni House,NULL
+TUE,07:00 AM,C,Central Group,1423 San Marco Blvd,Jacksonville,FL,32207,C-L-D,AA Only,NULL
+SUN,07:00 AM,F,Fernandina Beach Group,906 S 7th St,Fernandina Beach,FL,32034,O-D-HF,Amelia Room 904-261-8349,NULL
+SAT,04:00 PM,D,Barney Q,2140 St Johns Bluff Rd S,Jacksonville,FL,32246,O-D-HF,St Barnabas Anglican Church,NULL
+THR,08:00 PM,H,Moving on Interlachen Group,1111 Francis Street,Interlachen,FL,32148,O-D,NULL,NULL
+FRI,08:00 PM,B,Winners,1400 Cassat Ave,Jacksonville,FL,32205,M-O-D-HF,In Strip Mall-End Unit,NULL
+MON,08:00 PM,B,Riverside Group,2904 Ionic Ave,Jacksonville,FL,32210,M-O-D-HF,Grace House-St Marks Episcopal Church,NULL
+SAT,08:00 AM,E,Bchs Agnostic and Free Thinker,391 3rd Ave South,Jacksonville Beach,FL,32250,O-D,NULL,NULL
+TUE,04:00PM,H,Island Serenity Group,2200 A1A S,St Augustine,FL,32080,O-D,KOA Campground Pavilion,NULL
+THR,07:30 PM,E,The Alcoholics Group,826 4th St N,Jacksonville Beach,FL,32250,M-C-D-HF,NULL,NULL
+MON,07:30 PM,C,Mandarin Big Book Step Study,6045 Greenland Road,Jacksonville,FL,32258,C-BS,Middle Portable,NULL
+THR,06:30 PM,F,Keep It Simple Group,801 Atlantic Ave,Fernandina Beach,FL,32034,O-Beg-D-HF,St Peters Episcopal Church - Youth Center,NULL
+MON,11:00 AM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-D-Bld. 6,YMCA - Building 6,NULL
+WED,11:00 AM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-D-Bld. 6,YMCA - Building 6,NULL
+FRI,11:00 AM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-D-Bld.6,YMCA - Building 6,NULL
+THR,07:00 PM,H,A Design for Living,5950 SR 16,St Augustine,FL,32092,O-BBS-HF,Our Lady of Good Council Cath Church,NULL
+SAT,12:00 PM,H,New Life Group,18 S Dixie Hwy,St Augustine,FL,32084,O-D-HF,NULL,NULL
+THR,12:00 PM,H,Ancient City Group,2200 A1A South,St Augustine,FL,32080,O-D,St Aug Beach City Hall,NULL
+FRI,08:00 PM,H,Ancient City Group,2200 A1A South,St Augustine,FL,32080,O-D,St Aug Beach City Hall,NULL
+WED,07:00PM,H,Sand Dollar Group,2200 A1A South,St Augustine,FL,32080,O-D-HF,St. Augustine Beach City Hall,NULL
+TUE,08:00 PM,B,Macclenny Group,8981 S SR 228,Macclenny,FL,32063,O-D-HF,Wayne Fryer Trailer Sales Office,NULL
+WED,08:00 PM,B,Macclenny Group,8981 S SR 228,Macclenny,FL,32063,O-D-HF,Wayne Fryer Trailer Sales Office,NULL
+THR,08:00 PM,B,Macclenny Group,8981 S SR 228,Macclenny,FL,32063,O-D-HF,Wayne Fryer Trailer Sales Office,NULL
+TUE,07:00 PM,C,Drop the Rock,11270 San Jose Blvd,Jacksonville,FL,32223,O-OL-HF,Mandarin United Methodist-Bldg G-Rm 711 (upstairs),NULL
+WED,07:00 PM,H,Liars Paradise Group,3574 US-1; Suite 108,St Augustine,FL,32086,O-S-D,Behind Domino's Pizza; Beside EPIC Recovery Center,NULL
+FRI,07:00 PM,A,Fresh Start Group,51 E First St,Jacksonville,FL,32206,O-TBS-HF,NULL,NULL
+THR,06:30 PM,E,Spiritual Awakenings,400 San Juan Dr,Ponte Vedra Beach,FL,32082,L-O-BBS & TBS,Christ Episcopal Church-Room 204,NULL
+SUN,10:00 AM,A,From the Heart Mens Group,900 Bridier Street,Jacksonville,FL,32206,M-C-D,Alumni House,NULL
+MON,10:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-BS-HF,NULL,NULL
+MON,01:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,L-O-D-HF,NULL,NULL
+TUE,10:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-BS-HF,NULL,NULL
+WED,10:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-BS-HF,NULL,NULL
+WED,12:00 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,L-C-BS-HF,NULL,NULL
+THR,10:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-BS-HF,NULL,NULL
+FRI,10:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-D-BS-HF,NULL,NULL
+FRI,01:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,L-C-D-HF,NULL,NULL
+SAT,08:52 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,M-O-D-HF,NULL,NULL
+SAT,10:30 AM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,L-O-D-HF,Nanas House-2 blks W of US 17,NULL
+FRI,7:00 PM,D,We Agnostics,7405 Arlington Expressway,Jacksonville,FL,32211,O-D,Epic Recovery Center,NULL
+FRI,7:00 PM,H,12 Step Sacred Path,"Ancient Wisdom Spiritual Ctr, 4475 US 1 S, Ste 506",St. Augustine,FL,32086,O/SS/D,NULL,NULL
+TUE,11:00 AM,E,Step Study,2400 Mayport Road,Atlantic Beach,FL,32233,C-BS-HF,St Johns Catholic Church,NULL
+SUN,04:30 PM,C,New Generation Sobriety,2501 Loretto Rd,Jacksonville,FL,32223,O-D,Choir Room of West/New Campus,NULL
+SAT,10:30 AM,G,Orange Park Group,1835 Smith Street,Orange Park,FL,32073,L-O-D-HF,NULL,NULL
+TUE,04:30 PM,B,Wiley Beginners Group,6970 Wiley Road,Jacksonville,FL,32210,C-D-Beg,In the Clubhouse,NULL
+MON,07:00 PM,E,Men's Hooked on Sobriety,2125 Ocean Front,Neptune Beach,FL,32266,M-C-D,First Christian Church of the Beaches,NULL
+TUE,08:00 PM,B,Westside Group,4615 Lexington Ave,Jacksonville,FL,32210,O-D-Beg-HF,NULL,NULL
+SUN,07:00 PM,F,Fernandina Bch Primary Purpose,801 Atlantic Avenue,Fernandina Beach,FL,32034,O-BBS-HF,"St. Peter's Episcopal, Room 201, 2nd floor",NULL
+WED,07:00 PM,C,Primary Purpose Group Mandarin,6045 Greenland Road,Jacksonville,FL,32258,O-BBS,Christ's Church-Middle Trailer by 1st Parking lot,NULL
+WED,08:00 PM,D,Baymeadows Group,9800 Baymeadows Rd,Jacksonville,FL,32256,O-D-HF,NULL,NULL
+MON,07:15 PM,D,The Crux of the Problem,10302 Deerwood Park Blvd,Jacksonville,FL,32256,C-TBS,Celebration Church,NULL
+TUE,11:00 AM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-D Bld 6,YMCA - Building 6,NULL
+THR,11:00 AM,F,Yulee Florida Group,6 Koen Lane,Yulee,FL,32097,O-D-Bld 6,YMCA - Building 6,NULL
+THR,06:00 PM,F,Back to Basics Group,313 Central Ave,Kingsland,GA,31548,O-D,Kingsland Recovery Group Clubhouse,NULL
+TUE,06:00 PM,F,Back to Basics Group,313 Central Ave,Kingsland,GA,31548,O-D,Kingsland Recovery Group Clubhouse,NULL
+MON,06:30 PM,B,First Step Group,93 N 5th Street,Macclenny,FL,32063,O-D,United Methodist Church,NULL
+FRI,08:00PM,B,Truly Blessed Women,4615 Lexington Ave,Jacksonville,FL,32210,W-O-D-CL,NULL,NULL
+SUN,08:00 PM,E,Sunset in the Sand,Ocean Front S & 10th Ave S,Jacksonville Beach,FL,32250,O-D,Directly on the Beach,NULL
+MON,07:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-BBS,NULL,NULL
+THR,06:30 PM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,W-O-BS,NULL,NULL
+WED,07:00 PM,E,Sound of Sobriety,3410 3rd St S,Jacksonville Beach,FL,32250,O-STM-HF,Palms Presbyterian Church,NULL
+SAT,08:00 PM,B,Macclenny Group,8981 S SR 228,Macclenny,FL,32063,O-D-HF,Wayne Fryer Trailer Sales Office,NULL
+WED,08:00 PM,G,Green Cove Springs Group,610 Ferris St,Green Cove Springs,FL,32043,O-D-CL-HF,NULL,NULL
+WED,07:00 PM,H,Sicker Than Others,37 Lovett St,St Augustine,FL,32084,C-SS-D,St. Cyprian Episcopal Church,NULL
+SAT,09:00 AM,H,A Design for Living,5950 SR 16,St Augustine,FL,32092,O-SS,Our Lady of Good Council,NULL
+MON,07:30 PM,H,The Jumping Off Place,6 May Street,St Augustine,FL,32084,O-BB-SS,Church of Nazarene,NULL
+TUE,5:30 PM,E,Nocetee Promises,211 Davis Park Road,Ponte Vedra,FL,32081,O/D,Crosswater Community Church,NULL
+TUE,7:00 PM,H,Keep an Open Mind,"Ancient Wisdom Spiritual Ctr, 4475 US 1 S, Ste 506",St. Augustine,Fl,32086,O/Beg/S/D,NULL,NULL
