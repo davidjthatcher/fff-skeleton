@@ -55,7 +55,6 @@ class Event extends DB\SQL\Mapper
         $this->load(array('id=?',$id));
     }
 
- 
     /**
     * Add a Event record
     * there are no paramaters, becuase record data is copied from $_POST

@@ -83,7 +83,7 @@ class MainController extends Controller
         echo $template->render('layout.htm');
     }
     /**
-     * Load Event List TBD
+     * Load Event List to Model(database)
      *
      * @return void
      */
@@ -95,21 +95,33 @@ class MainController extends Controller
 
 		// Get keylist from first line of file
         $event->filename = $this->f3->get('POST.filename');
+
 		$myfile = fopen('app/testdata/'."$event->filename", "r");
 		$event->keylist = fgets($myfile);
-
-		// Read file into eventlist
-		$this->f3->set('my_eventlist', array());
-		while (($buffer = fgets($myfile, 4096)) !== false) {
-			$this->f3->push('my_eventlist', $buffer);
-		}
+		// Read file into eventlist - TBD this block
+		$my_eventlist = $this->eventListRead($myfile);
 		fclose($myfile);
-		$event->eventlist = json_encode($this->f3->get('my_eventlist'), JSON_PRETTY_PRINT);
+
+		// TBD How to set eventlist?
+		// $event->eventlist =  json_encode($my_eventlist, JSON_PRETTY_PRINT);
+		$event->eventlist = 'TBD How to store eventlist?';
 
         $event->add();
 
-        //$this->eventList();
-        $this->showArray($this->f3->get('my_eventlist'));
+        $this->eventList();
+    }
+    /**
+     * Read event list from file.
+     */
+    function eventListRead($myfile)
+    {
+		$new_eventlist = array();
+
+		while (($buffer = fgets($myfile, 4096)) !== false) {
+			$new_eventlist[] = $buffer;
+		}
+
+		return $new_eventlist;
     }
     /**
      * Delete selected event.
@@ -137,35 +149,13 @@ class MainController extends Controller
         $event = new Event($this->db);
         $event->getById($id);
 
-        $this->showArray(json_decode($event->eventlist));
-    }
-    /**
-     * Simple Form to get text message to send via WC REST API
-     *
-     * @return void
-     */
-    function getRestMessage()
-    {
-        // Show/Update Order (order_) Configuration Settings
+		$myfile = fopen('app/testdata/'."$event->filename", "r");
+		$event->keylist = fgets($myfile);
+		// Read file into eventlist - TBD this block
+		$my_eventlist = $this->eventListRead($myfile);
+		fclose($myfile);
 
-        $this->f3->set('header', 'Rest Message');
-        $this->f3->set('view', 'restMessage.htm');
-
-        $template=new Template;
-        echo $template->render('layout.htm');
-    }
-    /**
-     * Simple Form to get text message to send via WC REST API
-     *
-     * @return void
-     */
-    function getRestUpdate()
-    {
-        $this->f3->set('header', 'Rest Update');
-        $this->f3->set('view', 'restUpdate.htm');
-
-        $template=new Template;
-        echo $template->render('layout.htm');
+        $this->showArray($my_eventlist);
     }
     /**
      * Simple view to show text
