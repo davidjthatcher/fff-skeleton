@@ -28,7 +28,7 @@ class UserController extends Controller
      *
      * @return void
      */
-    function render()
+    function login()
     {
         $template=new Template;
         echo $template->render('login.htm');
@@ -83,9 +83,6 @@ class UserController extends Controller
 
             $this->f3->set('SESSION.id', $user->id);
             $this->f3->set('SESSION.user', $user->username);
-            /* Set user preferences. djt 6/13/2016 */
-            $this->f3->set('SESSION.order_status', $user->order_status);
-            $this->f3->set('SESSION.order_start_date', $user->order_start_date);
             /* Set user read/write access */
             $this->f3->set('SESSION.access', $user->access);
 

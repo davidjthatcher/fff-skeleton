@@ -1,4 +1,3 @@
-dayofweek,timeofday,area,grp,address,city,state,zip,type,misc,geocode
 SUN,07:00 AM,E,Beaches Unity Group,322 Penman Rd,Jacksonville Beach,FL,32250,O-DR-HF,NULL,NULL
 SUN,07:45 AM,D,St Nicholas Group,3134 Beach Blvd,Jacksonville,FL,32207,O-D-HF,NULL,NULL
 SUN,08:00 AM,H,Morning After Group,18 S Dixie Hwy,St Augustine,FL,32084,O-OL-HF,NULL,NULL

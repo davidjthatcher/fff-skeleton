@@ -10,10 +10,10 @@ class UserModelTest extends Controller {
 			'Starting User Model Test'
 		);
 
-		$cntlr = New UserController();
+		$cntlr = New Controller();
 		$test->expect(
 			!empty($cntlr),
-			'User Controller Provides db handle for New User Object Instance'
+			'Controller Provides db handle for New User Object Instance'
 		);
 
 		$user = New User( $cntlr->db );

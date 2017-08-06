@@ -77,4 +77,33 @@ class Controller
 
         $this->db=$db;
     }
+
+    /**
+     * Simple view to show text
+     *
+     * @return void
+     */
+    function showArrayJson($array)
+    {
+        $this->f3->set('header', 'Show Array JSON');
+        $this->f3->set('json', json_encode($array, JSON_PRETTY_PRINT));
+        $this->f3->set('view', 'jsonList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
+    /**
+     * Simple view to show text
+     *
+     * @return void
+     */
+    function showArray($array)
+    {
+        $this->f3->set('header', 'Show Array');
+        $this->f3->set('my_array', $array);
+        $this->f3->set('view', 'arrayList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
 }
