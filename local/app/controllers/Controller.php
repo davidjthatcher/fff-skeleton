@@ -106,4 +106,18 @@ class Controller
         $template=new Template;
         echo $template->render('layout.htm');
     }
+    /**
+     * Simple view to show text
+     *
+     * @return void
+     */
+    function showString($string)
+    {
+        $this->f3->set('header', 'Show String');
+        $this->f3->set('json', $string);
+        $this->f3->set('view', 'jsonList.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
+    }
 }

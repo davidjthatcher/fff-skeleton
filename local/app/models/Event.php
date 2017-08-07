@@ -106,4 +106,24 @@ class Event extends DB\SQL\Mapper
         $this->load(array('id=?',$id));
         $this->erase();
     }
+    /**
+    * Get lenght of elements
+    *
+    * @param string $name is element name
+    *   element can be of type int(n) or varchar(m) where n and m define
+    *   the length of the element
+    *
+    * @return integer
+    */
+    public function elementLength($name)
+    {
+        $schema = $this->schema();
+        $type = $schema[$name]['type'];
+
+		$start = strpos($type, "(");
+		$end = strpos($type, ")");
+		$length=substr($type, $start+1, $end-$start-1);
+
+        return($length);
+    }
 }

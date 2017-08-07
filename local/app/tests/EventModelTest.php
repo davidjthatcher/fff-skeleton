@@ -29,17 +29,29 @@ class EventModelTest extends Controller {
 
 		$test->expect(
 			true,
-			'Event Model Schema(FYI): ' . json_encode($event->schema(), JSON_PRETTY_PRINT)
+			'Event Model Fields(FYI): '.json_encode($event->fields(), JSON_PRETTY_PRINT)
 		);
 
+		$schema = $event->schema();
+		foreach($schema as $key => $value) {
+			$test->expect(
+				true,
+				'Schema ' . $key . ' => '. json_encode($value, JSON_PRETTY_PRINT)
+			);
+		}
+
+		$test->expect(
+			$event->elementLength('grp') == 50,
+			'Event Model Element grp: '. $event->elementLength('grp')
+		);
+			
+		$test->expect(
+			$event->elementLength('dayofweek') == 3,
+			'Event Model Element dayofweek: '. $event->elementLength('dayofweek')
+		);
 		$test->expect(
 			'event' == $event->table(),
 			'Table name is Model Name == event'
-		);
-
-		$test->expect(
-			true,
-			'Event Model Fields(FYI): '.json_encode($event->fields(), JSON_PRETTY_PRINT)
 		);
 
 		$test->expect(

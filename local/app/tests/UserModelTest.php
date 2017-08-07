@@ -29,17 +29,17 @@ class UserModelTest extends Controller {
 
 		$test->expect(
 			true,
+			'User Model Fields(FYI): '.json_encode($user->fields(), JSON_PRETTY_PRINT)
+		);
+
+		$test->expect(
+			true,
 			'User Model Schema(FYI): ' . json_encode($user->schema(), JSON_PRETTY_PRINT)
 		);
 
 		$test->expect(
 			'user' == $user->table(),
 			'Table name is Model Name == user'
-		);
-
-		$test->expect(
-			true,
-			'User Model Fields(FYI): '.json_encode($user->fields(), JSON_PRETTY_PRINT)
 		);
 
 		$myFields = $user->fields();

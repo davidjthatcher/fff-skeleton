@@ -48,27 +48,27 @@ class EventController extends Controller
      *
      * @return void
      */
-    function eventLoadList()
+    function eventLoadCsvFile()
     {
 		// Save selected filename, load date.
         $filename = $this->f3->get('POST.filename');
 
 		$myfile = fopen('app/testdata/'."$filename", "r");
-		$myData = array();
+
 		// Read file into eventlist - TBD this block
 		while (($buffer = fgetcsv($myfile, 4096,",","'")) !== false) {
-			$myData[] = json_encode($buffer);
-			$event = new Event($this->db);
 
-			$event->dayofweek = $buffer[0];
-			$event->timeofday = $buffer[1];
-			$event->area      = $buffer[2];
-			$event->grp       = $buffer[3];
-			$event->address   = $buffer[4];
-			$event->city      = $buffer[5];
-			$event->state     = $buffer[6];
-			$event->zip       = $buffer[7];
-			$event->type      = $buffer[8];
+			$event = new Event($this->db);
+			// Ensure we don't overwrite end of buffer for event stings.
+			$event->dayofweek = mb_substr($buffer[0], 0, $event->elementLength('dayofweek'));
+			$event->timeofday = mb_substr($buffer[1], 0, $event->elementLength('timeofday'));
+			$event->area      = mb_substr($buffer[2], 0, $event->elementLength('area'));
+			$event->grp       = mb_substr($buffer[3], 0, $event->elementLength('grp'));
+			$event->address   = mb_substr($buffer[4], 0, $event->elementLength('address'));
+			$event->city      = mb_substr($buffer[5], 0, $event->elementLength('city'));
+			$event->state     = mb_substr($buffer[6], 0, $event->elementLength('state'));
+			$event->zip       = mb_substr($buffer[7], 0, $event->elementLength('zip'));
+			$event->type      = mb_substr($buffer[8], 0, $event->elementLength('type'));
 			$event->geo       = NULL;
 
 			$event->save();
@@ -76,7 +76,7 @@ class EventController extends Controller
 
 		fclose($myfile);
 
-        $this->showArray($myData);
+        $this->eventList();
     }
     /**
      * Delete selected event.
@@ -104,7 +104,7 @@ class EventController extends Controller
         $event = new Event($this->db);
         $event->getById($id);
 
-        $this->showArray($event->fields());
+        $this->showString(print_r($event, true));
     }
 
 }
