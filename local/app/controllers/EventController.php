@@ -52,24 +52,26 @@ class EventController extends Controller
     {
 		// Save selected filename, load date.
         $filename = $this->f3->get('POST.filename');
-
 		$myfile = fopen('app/testdata/'."$filename", "r");
+
+		// Get field length array for avoid input string length errors.
+		$event1 = new Event($this->db);
+		$fieldLength = $event1->fieldLengthArray();
 
 		// Read file into eventlist - TBD this block
 		while (($buffer = fgetcsv($myfile, 4096,",","'")) !== false) {
-
 			$event = new Event($this->db);
 			// Ensure we don't overwrite end of buffer for event stings.
-			$event->dayofweek = mb_substr($buffer[0], 0, $event->elementLength('dayofweek'));
-			$event->timeofday = mb_substr($buffer[1], 0, $event->elementLength('timeofday'));
-			$event->area      = mb_substr($buffer[2], 0, $event->elementLength('area'));
-			$event->grp       = mb_substr($buffer[3], 0, $event->elementLength('grp'));
-			$event->address   = mb_substr($buffer[4], 0, $event->elementLength('address'));
-			$event->city      = mb_substr($buffer[5], 0, $event->elementLength('city'));
-			$event->state     = mb_substr($buffer[6], 0, $event->elementLength('state'));
-			$event->zip       = mb_substr($buffer[7], 0, $event->elementLength('zip'));
-			$event->type      = mb_substr($buffer[8], 0, $event->elementLength('type'));
-			$event->geo       = NULL;
+			$event->dayofweek = mb_substr($buffer[0], 0, $fieldLength["dayofweek"]);
+			$event->timeofday = mb_substr($buffer[1], 0, $fieldLength["timeofday"]);
+			$event->area      = mb_substr($buffer[2], 0, $fieldLength["area"]);
+			$event->grp       = mb_substr($buffer[3], 0, $fieldLength["grp"]);
+			$event->address   = mb_substr($buffer[4], 0, $fieldLength["address"]);
+			$event->city      = mb_substr($buffer[5], 0, $fieldLength["city"]);
+			$event->state     = mb_substr($buffer[6], 0, $fieldLength["state"]);
+			$event->zip       = mb_substr($buffer[7], 0, $fieldLength["zip"]);
+			$event->type      = mb_substr($buffer[8], 0, $fieldLength["type"]);
+			$event->geocode   = mb_substr($buffer[9], 0, $fieldLength["geocode"]);;
 
 			$event->save();
 		}
@@ -100,11 +102,15 @@ class EventController extends Controller
         $query = $this->f3->get('QUERY');
         parse_str($query, $qvars);
         $id = $qvars['id'];
-
         $event = new Event($this->db);
-        $event->getById($id);
+		$event->getById($id);
 
-        $this->showString(print_r($event, true));
+        $this->f3->set('event', $event);
+        $this->f3->set('header', 'Event View');
+        $this->f3->set('view', 'eventView.htm');
+
+        $template=new Template;
+        echo $template->render('layout.htm');
     }
 
 }

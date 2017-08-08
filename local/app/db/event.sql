@@ -16,8 +16,3 @@ misc 		varchar(40),
 geocode		varchar(20),
 PRIMARY KEY (id)
 );
-
-INSERT INTO event (id, dayofweek, timeofday, area, grp, address, city, state, zip, type, misc, geocode)
-VALUES (1,"SUN","07:00 AM","E","Beaches Unity Group","322 Penman Rd","Jacksonville Beach","FL","32250","O-DR-HF","NULL","NULL");
-INSERT INTO event (id, dayofweek, timeofday, area, grp, address, city, state, zip, type, misc, geocode)
-VALUES (2,"MON","07:00 AM","E","Beaches Unity Group","322 Penman Rd","Jacksonville Beach","FL","32250","O-DR-HF","NULL","NULL");

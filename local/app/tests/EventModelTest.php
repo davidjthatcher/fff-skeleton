@@ -23,6 +23,11 @@ class EventModelTest extends Controller {
 		);
 
 		$test->expect(
+			'event' == $event->table(),
+			'Table name is Model Name == event'
+		);
+
+		$test->expect(
 			true,
 			'Event Model Methods(FYI): '.json_encode(get_class_methods($event), JSON_PRETTY_PRINT)
 		);
@@ -41,17 +46,23 @@ class EventModelTest extends Controller {
 		}
 
 		$test->expect(
-			$event->elementLength('grp') == 50,
-			'Event Model Element grp: '. $event->elementLength('grp')
+			$event->fieldLength('dayofweek') == 3,
+			'Event Model Element dayofweek: '. $event->fieldLength('dayofweek')
+		);
+
+		$test->expect(
+			$event->fieldLength('grp') == 50,
+			'Event Model Element grp: '. $event->fieldLength('grp')
 		);
 			
 		$test->expect(
-			$event->elementLength('dayofweek') == 3,
-			'Event Model Element dayofweek: '. $event->elementLength('dayofweek')
+			$event->fieldLength('xxx') === 0,
+			'Event Model Element invalid: '. $event->fieldLength('xxx')
 		);
+
 		$test->expect(
-			'event' == $event->table(),
-			'Table name is Model Name == event'
+			true,
+			'Element Lengths ' . json_encode($event->fieldLengthArray(), JSON_PRETTY_PRINT)
 		);
 
 		$test->expect(

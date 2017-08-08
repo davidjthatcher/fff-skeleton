@@ -107,15 +107,15 @@ class Event extends DB\SQL\Mapper
         $this->erase();
     }
     /**
-    * Get lenght of elements
+    * Get length of fields
     *
-    * @param string $name is element name
-    *   element can be of type int(n) or varchar(m) where n and m define
-    *   the length of the element
+    * @param string $name is field name
+    *   field can be of type int(n) or varchar(m) where n and m define
+    *   the length of the field
     *
     * @return integer
     */
-    public function elementLength($name)
+    public function fieldLength($name)
     {
         $schema = $this->schema();
         $type = $schema[$name]['type'];
@@ -126,4 +126,23 @@ class Event extends DB\SQL\Mapper
 
         return($length);
     }
+    /**
+    * Return key=>value array of model fields
+    *
+    * @param none
+    *
+    * @return array
+    */
+    public function fieldLengthArray()
+    {
+		$fieldLengths = array();
+
+        $fields = $this->fields();
+		foreach($fields as $field) {
+			$fieldLengths["$field"] = $this->fieldLength($field);
+		}
+
+        return($fieldLengths);
+    }
+
 }
