@@ -71,7 +71,8 @@ class EventController extends Controller
 			$event->state     = mb_substr($buffer[6], 0, $fieldLength["state"]);
 			$event->zip       = mb_substr($buffer[7], 0, $fieldLength["zip"]);
 			$event->type      = mb_substr($buffer[8], 0, $fieldLength["type"]);
-			$event->geocode   = mb_substr($buffer[9], 0, $fieldLength["geocode"]);;
+			$event->misc      = mb_substr($buffer[9], 0, $fieldLength["misc"]);
+			$event->geocode   = mb_substr($buffer[10], 0, $fieldLength["geocode"]);;
 
 			$event->save();
 		}
