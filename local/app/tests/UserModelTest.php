@@ -147,6 +147,11 @@ class UserModelTest extends Controller {
 		$f3->set('results',$test->results());
 	}
 
+	// Allow Tests to be run w/out login
+    function beforeroute()
+    {
+    }
+
 	function afterroute() {
 		//echo \Preview::instance()->render('testresults.htm');
         $this->f3->set('view', 'testresults.htm');
